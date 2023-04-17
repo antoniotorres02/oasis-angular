@@ -1,1 +1,54 @@
-<p>header works!</p>
+<div class="header">
+  <nav class="navbar sticky-top">
+    <div class="container-fluid sticky-top">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="div_logo_barra">
+        <div class="div_logo">
+          <a href="index.hmtl"><img src="IMG/oasis_color_carrito.png" alt="" class="logo"></a>
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+          <button class="btn btn-outline-dark" type="button" id="button-addon2"><img src="IMG/lupa.svg" alt=""></button>
+        </div>
+
+
+
+
+
+      </div>
+      <div class="login">
+        <button type="button"><a href="login.html">Identifícate</a></button>
+        <div class="btn2_login">
+          <a href="login.html"> <img src="IMG/user_chido.svg" alt=""/> </a>
+        </div>
+      </div>
+      <div class="cart">
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
+        <div class="btn2_cart">
+          <img src="IMG/carrito.svg" alt=""/>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start text" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Categorias</h5>
+          <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="/IMG/close_button.svg" alt=""></button>
+        </div>
+        <div class="offcanvas-body">
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
+    <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="IMG/close_button.svg" alt=""></button>
+  </div>
+  <div class="offcanvas-body" id="cuerpo_carrito">
+    <button class="btn_añadir_articulos" type="button">Añadir articulos</button>
+  </div>
+</div>
