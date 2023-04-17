@@ -1,1 +1,76 @@
-<p>principal works!</p>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<script src="./JS/javascript.js"></script>
+<script src="./JS/scraping.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<div class="header">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start text" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Categorias</h5>
+          <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="/IMG/close_button.svg" alt=""></button>
+        </div>
+        <div class="offcanvas-body">
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="login">
+  <button type="button"><a href="login.html">Identifícate</a></button>
+  <div class="btn2_login">
+    <a href="login.html"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+  </div>
+
+</div>
+<div class="cart">
+  <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
+  <div class="btn2_cart">
+    <img src="./assets/IMG/carrito.svg" alt=""/>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
+    <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="IMG/close_button.svg" alt=""></button>
+  </div>
+  <div class="offcanvas-body" id="cuerpo_carrito">
+    <button class="btn_añadir_articulos" type="button">Añadir articulos</button>
+  </div>
+</div>
+
+
+
+<img src="IMG/oasis_color_carrito.png" alt="" class="logo">
+<div class="input-group mb-3">
+  <input type="text" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+  <button class="btn btn-outline-dark" type="button" id="button-addon2"><img src="IMG/lupa.svg" alt=""></button>
+</div>
+
+<div class="marcos_tiendas">
+  <button class="btn_marcos" type="button"><img src="IMG/curz_azul.svg" alt="" class="imagen_marco"></button>
+  <div class="marco1">
+    <a href="tienda.html"><img src="IMG/foot_locker.svg" alt=""></a>
+  </div>
+  <div class="marco2">
+    <!--<img src="IMG/foot_locker.svg" alt="">-->
+    <a href="tienda.html"><img src="IMG/Zara_logo.svg" alt=""></a>
+  </div>
+  <div class="marco3">
+    <!--<img src="IMG/foot_locker.svg" alt="">-->
+    <a href="tienda.html"><img src="IMG/JD_logo.svg" alt=""></a>
+  </div>
+</div>
+
+<div id="datos"></div>
