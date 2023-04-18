@@ -196,7 +196,7 @@
 }
 
 .input-group {
-  position: absolute;
+  position: relative;
   width: 600px;
   margin: auto;
 }

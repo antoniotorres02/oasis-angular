@@ -1,0 +1,28 @@
+#selector {
+  display: grid;
+  width: 100%;
+  background-color: #FCCD5F;
+  height: 50px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+
+}
+
+#selector button {
+  height: 30px;
+  background-color: transparent;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.44);
+  transition: background-color 0.5s, border 0.5s;
+}
+
+
+#selector button:hover {
+  border: 2px solid rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.03);
+}
