@@ -1,1 +1,217 @@
-<p>profile works!</p>
+<main class="cosa">
+  <div id="general-information-main" class="row">
+    <div id="gi-principal">
+      <div class="col">
+        <div class="row">
+          <img src="IMG/accountCircle.png" alt="Imagen de Perfil" id="img-perfil-central">
+        </div>
+        <div class="row" id="div-text">
+          <p>Nombre Genérico Y Apellidos</p>
+          <p>Cliente desde el 06/03/2023</p>
+        </div>
+      </div>
+      <div class="col" id="div-info">
+        <div class="row column-div-info">
+          <h4>Pedidos en Curso</h4>
+          <img src="IMG/Circled 3.png" alt="numero de pedidos" id="imagen-numero-pedidos">
+        </div>
+        <div class="row column-div-info">
+          <p>Pedidos Realizados: 14</p>
+        </div>
+        <div class="row column-div-info">
+          <p>Pedidos cancelados: 1</p>
+        </div>
+        <div class="row column-div-info">
+          <p>Lista de Deseos: 9999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="categories">
+    <div id="secciones">
+      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_categories);">Pedidos
+        en Curso</button>
+      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_historial);">Historial
+        de Pedidos</button>
+      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_wishlist);">Lista de
+        deseos</button>
+      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_queries);">Soporte
+        técnico</button>
+      <button type="button" class="btn btn-outline-secondary cosita"
+              onclick="cambiar(s_profileData);">Configuración</button>
+    </div>
+
+  </div>
+  <div id="s_categories">
+    <div id="header_auxiliar_h">
+      <h2>Pedidoso en Cuso</h2>
+      <p>Fecha: 2023</p>
+      <p>Ordenar por: Fecha Decreciente</p>
+
+    </div>
+    <!--Pedido-->
+    <div class="row pedido">
+      <div class="pedido_header">
+        <p>Nº Pedido: 6969696969</p>
+        <p>Fecha de creación: 21/03/2023</p>
+      </div>
+      <div class="pedido_header">
+        <div class="pedido_botones">
+          <button type="button" class="btn btn-outline-secondary pedido_boton">Generar Factura</button>
+        </div>
+        <div class="pedido_botones">
+          <button type="button" class="btn btn-outline-secondary pedido_boton">Detalles del Pedido</button>
+        </div>
+      </div>
+      <div class="pedido_header borde_doble">
+        <p>Estado: Enviado</p>
+        <button type="button" class="btn btn-outline-secondary pedido_boton">Seguimiento</button>
+      </div>
+      <div class="pedido_header borde_doble_fuerte">
+        <p>Tienda: PcComp</p>
+      </div>
+      <!--Esto es el producto del pedido-->
+      <div class="container">
+        <div class="col producto_pedido ">
+          <div class="col producto_imagen col-md-2">
+            <img src="/IMG/ejemplo_producto.png" alt="">
+          </div>
+          <div class="col col-lg-6">
+            <p>MSI RTX 3080 TI </p>
+            <p>1.600 €</p>
+            <p>x 1 Unidades</p>
+          </div>
+          <div id="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary pedido_boton_devolver ">Devolver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--fin pedido-->
+  <!--Fin pedidos en curso-->
+  <div id="s_historial">
+
+    <div id="header_auxiliar_h">
+      <h2>Historial de Pedidos</h2>
+      <p>Fecha: 2023</p>
+      <p>Ordenar por: Fecha Decreciente</p>
+
+    </div>
+    <!--Pedido-->
+    <div class="row pedido">
+      <div class="pedido_header">
+        <p>Nº Pedido: 6969696969</p>
+        <p>Fecha de creación: 21/03/2023</p>
+      </div>
+      <div class="pedido_header">
+        <div class="pedido_botones">
+          <button type="button" class="btn btn-outline-secondary pedido_boton">Generar Factura</button>
+        </div>
+        <div class="pedido_botones">
+          <button type="button" class="btn btn-outline-secondary pedido_boton">Detalles del Pedido</button>
+        </div>
+      </div>
+      <div class="pedido_header borde_doble">
+        <p>Estado: Completado</p>
+        <button type="button" class="btn btn-outline-secondary pedido_boton">Seguimiento</button>
+      </div>
+      <div class="pedido_header borde_doble_fuerte">
+        <p>Tienda: PcComp</p>
+      </div>
+      <!--Esto es el producto del pedido-->
+      <div class="container">
+        <div class="col producto_pedido ">
+          <div class="col producto_imagen col-md-2">
+            <img src="/IMG/ejemplo_producto.png" alt="">
+          </div>
+          <div class="col col-lg-6">
+            <p>MSI RTX 3080 TI </p>
+            <p>1.600 €</p>
+            <p>x 1 Unidades</p>
+          </div>
+          <div id="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary boton_wishlist ">Valorar Producto</button>
+            <button type="button" class="btn btn-outline-secondary boton_wishlist ">Devolver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="s_wishlist">
+    <div class="container_h2">
+      <h2>Lista de Deseos</h2>
+    </div>
+    <!--Ejemplo wishlist 1-->
+    <div class="wishlist">
+      <div class="col-4 columna_wishlist">
+        <div class="col">
+          <img src="/IMG/ejemplo_producto.png" alt="">
+        </div>
+        <div class="col">
+          <p>-MSI RTX 3080 TI </p>
+          <p>-1.600 €</p>
+          <p>-x 1 Unidades</p>
+        </div>
+      </div>
+      <div class="col-5 columna_mid_wishlist">
+        <p><strong>Tienda: </strong> PcComponentes</p>
+      </div>
+      <div class="col-5 columna_r_wishlist">
+        <button type="button" class="btn btn-outline-secondary boton_wishlist">Añadir al carrito</button>
+        <button type="button" class="btn btn-outline-secondary boton_wishlist">Eliminar</button>
+      </div>
+    </div>
+    <!--Ejemplo wishlist 2-->
+    <div class="wishlist">
+      <div class="col-4 columna_wishlist">
+        <div class="col">
+          <img src="/IMG/ejemplo_vans.png" alt="">
+        </div>
+        <div class="col">
+          <p>-Zapatillas Vans Sk8 Hi </p>
+          <p>-80 €</p>
+          <p>-x 1 Unidades</p>
+        </div>
+      </div>
+      <div class="col-5 columna_mid_wishlist">
+        <p><strong>Tienda: </strong> Vans Store</p>
+      </div>
+      <div class="col-5 columna_r_wishlist">
+        <button type="button" class="btn btn-outline-secondary boton_wishlist">Añadir al carrito</button>
+        <button type="button" class="btn btn-outline-secondary boton_wishlist">Eliminar</button>
+      </div>
+    </div>
+    <!--Fin ejemplos wishlist-->
+  </div>
+
+
+
+
+  <div id="s_queries">
+
+  </div>
+  <div id="s_profileData">
+    <h2><strong>Datos de mi Cuenta</strong></h2>
+    <div class="row datos_generales">
+      <div class="row">
+        <p>Nombre y Apellidos</p>
+      </div>
+      <div class="row borde_inferior">
+        <input type="text" class="input_perfil" placeholder="Nombre">
+        <input type="text" class="input_perfil" placeholder="Apellidos">
+      </div>
+    </div>
+    <div class="row datos_generales">
+      <div class="row">
+        <p>Contraseña</p>
+      </div>
+      <div class="row borde_inferior">
+        <input type="text" class="input_perfil" placeholder="Contraseña Actual">
+        <input type="text" class="input_perfil" placeholder="Contraseña Nueva">
+        <input type="text" class="input_perfil" placeholder="Repetir Nueva Contraseña">
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+</main>
