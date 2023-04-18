@@ -19,7 +19,7 @@ import { CartComponent } from './pages/cart/cart.component';
     ShopComponent,
     PrincipalComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule
