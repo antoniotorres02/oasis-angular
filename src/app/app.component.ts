@@ -9,4 +9,5 @@ import {PrincipalComponent} from "./pages/principal/principal.component";
 export class AppComponent {
   title = 'oasis-angular';
   principal: object= PrincipalComponent;
+
 }
