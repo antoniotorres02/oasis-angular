@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {PrincipalComponent} from "./pages/principal/principal.component";
 import {LoginComponent} from "./pages/login/login.component";
+
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,13 @@ import {LoginComponent} from "./pages/login/login.component";
 })
 export class AppComponent {
   title = 'oasis-angular';
-  principal: object= PrincipalComponent;
-  login: object= LoginComponent;
+  nomuestranavbar: boolean;
+  principal: PrincipalComponent;
   constructor() {
-    let array: Array<object> = [this.principal, this.login];
+    this.principal = new PrincipalComponent();
+    this.nomuestranavbar =  this.principal.navbar;
   }
 
+  protected readonly LoginComponent = LoginComponent;
+  protected readonly PrincipalComponent = PrincipalComponent;
 }

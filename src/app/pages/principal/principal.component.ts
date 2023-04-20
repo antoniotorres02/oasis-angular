@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent {
-  constructor() {}
+  principal: boolean;
+  constructor() {
+    this.principal = false;
+  }
+
+  get navbar(): boolean{
+    return this.principal;
+  }
+
 }
