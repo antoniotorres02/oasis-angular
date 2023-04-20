@@ -1,4 +1,7 @@
-<app-header *ngIf="!principal"></app-header>
+<div *ngIf!="principal">
+  <app-header></app-header>
+</div>
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
