@@ -10,12 +10,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import {RouterModule, Routes} from "@angular/router";
 
+
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
   {path: 'login', component:LoginComponent}
-
-
 ];
 
 @NgModule({
@@ -37,4 +36,8 @@ const appRoute: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  get root(){
+    return RouterModule.forRoot(appRoute);
+  }
+}
