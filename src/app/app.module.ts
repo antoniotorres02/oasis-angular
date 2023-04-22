@@ -8,7 +8,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
-import {RouterModule, Routes} from "@angular/router";
+import {RouterModule, ROUTES, Routes} from "@angular/router";
 
 
 const appRoute: Routes = [
@@ -37,7 +37,4 @@ const appRoute: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  get root(){
-    return RouterModule.forRoot(appRoute);
-  }
 }

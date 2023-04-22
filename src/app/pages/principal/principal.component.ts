@@ -1,21 +1,21 @@
-import {Component, ElementRef, AfterViewInit, ViewChild, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+
+
+
 
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css']
 })
-export class PrincipalComponent implements  OnInit{
-  principal: boolean;
-  constructor() {
-    this.principal = true;
-  }
-  ngOnInit() {
-    return true;
-  }
+export class PrincipalComponent{
 
-  get navbar(): boolean{
-    return this.principal;
-  }
+  @Output() principalRefChange = new EventEmitter<boolean>();
+  principalRef = true;
 
+  setPrincipal() {
+    this.principalRef = false;
+    this.principalRefChange.emit(this.principalRef);
+  }
 }
