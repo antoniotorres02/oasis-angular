@@ -16,5 +16,8 @@ export class AppComponent{
     this.principalRef = this.principal.principalRef;
   }
 
+  GetPrincipal(){
+    return this.principal.principalRef;
+  }
 
 }

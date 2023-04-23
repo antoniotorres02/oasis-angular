@@ -1,13 +1,18 @@
 
 .navbar{
+  display: flex;
   background-color: #FCCD5F;
-  display: grid;
+  justify-content: space-between;
 }
 .container-fluid{
-  position: relative;
-  display: grid;
+  margin: 0.5em 0 auto;
+  display: flex;
+  width: 50px;
+  justify-content: center;
   align-items: center;
 }
+
+
 .btn_cerrar{
   border: none;
   background-color: white;
@@ -15,26 +20,7 @@
   height: 38px;
   transition: all 0.6s;
 }
-.div_logo{
-  position: relative;
-  background-color: rgba(46, 79, 79, 1);
-  width: 100px;
-  height: 35.45px;
-  border-radius: 5px;
-}
 
-.div_logo_barra{
-  position: relative;
-  margin: 0 auto;
-  display: grid;
-  margin-left: 1em;
-}
-
-.logo{
-  position: relative;
-  display: grid;
-  width: 100px;
-}
 
 .btn_cerrar:hover{
   transform: scale(1.01);
@@ -43,36 +29,63 @@
   border-radius: 7px;
 }
 
-.login {
-  position: absolute;
-  margin-left: 92em;
+.div_logo{
+  background-color: rgba(46, 79, 79, 1);
+  border-radius: 5px;
+  width: 150px;
 }
-.cart{
-  position: absolute;
-  margin-left: 105em;
+.div_logo img{
+  max-width: 150px;
+}
+
+.input-group{
+  width: 500px;
+}
+
+.input-group input{
+  width: 450px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(46, 79, 79, 0.75);
+  text-indent: 1em;
+}
+
+.input-group button{
+  background-color: rgba(46, 79, 79, 0.75);
+  border: none;
+  outline: none;
+}
+.input-group input::placeholder{
+  color: #CBE4DE;
+}
+
+.input-group input:hover{
+  border: solid;
+  background-color: white;
+  border-color: rgba(46, 79, 79, 0.75);
+}
+
+.login{
+  display: flex;
+  width: 150px;
+
 }
 .login button {
-  width: 0;
-  height: 100%;
+  width: 100px;
+  height: 43px;
   text-align: center;
-  position: relative;
-  padding: 0 21px;
   font-size: 18px;
   background-color:white;
   outline: none;
-  border: 0px;
-  border-radius: 30px;
-  transition: all 0.6s ease;
+  border: none;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
+
 .login button a{
-  display: inline-block;
-  right: 0;
-  top: 0;
   line-height: 43px;
   width: 100%;
-  transition: all 0.6s ease;
-  transform: scale(0, 1);
   text-decoration: none;
   color: black;
 }
@@ -81,89 +94,50 @@
   vertical-align: sub;
 }
 
-.btn2_cart img{
-  vertical-align: sub;
-}
-
 .btn2_login {
   width: 43px;
   height: 43px;
   line-height: 44px;
-  top: 0;
-  left: 0;
-  position: absolute;
   background: rgba(46, 79, 79, 1);
   text-align: center;
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
-
-.login:hover button {
-  width: 200px;
-}
-
-.login:hover button a{
-  transform: scale(1, 1);
-
-}
-
-.login button:focus {
-  width: 200px;
+.cart{
+  display: flex;
+  width: 150px;
 }
 
 .cart button {
-  width: 0;
-  height: 100%;
+  width: 100px;
+  height: 43px;
   text-align: center;
-  position: relative;
-  padding: 0 21px;
   font-size: 18px;
   background-color:white;
   outline: none;
-  border: 0px;
-  border-radius: 30px;
-  transition: all 0.6s ease;
-  float: left; /*esta cosa malvada hace que se quede el eje x(0,0) en la derecha que loco no?*/
+  border: none;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .btn2_cart {
   width: 43px;
   height: 43px;
   line-height: 44px;
-  top: 0;
-  left: 0;
-  position: absolute;
   background: rgba(46, 79, 79, 1);
   text-align: center;
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .cart button p{
-  display: inline-block;
-  margin: 0;
   line-height: 43px;
   width: 100%;
-  transition: transform 0.6s ease-in-out;
-  transform: scale(0, 1);
+  text-decoration: none;
+  color: black;
 }
 
-
-.cart:hover button {
-  width: 200px;
-
-}
-.cart button:focus{
-  width: 200px;
-}
-
-.cart:hover button p{
-  transform: scale(1, 1);
-
-}
 
 #cuerpo_carrito{
   display: flex;
@@ -195,36 +169,3 @@
   border-color: black;
 }
 
-.input-group {
-  position: relative;
-  width: 600px;
-}
-
-.input-group input{
-  max-width: 100%;
-  max-height: 100%;
-  border: none;
-  border-radius: 7px;
-  width: 600px;
-  background-color: rgba(46, 79, 79, 0.75);
-  margin-left: 10em;
-  text-indent: 1em;
-
-}
-
-.input-group button{
-  position: relative;
-  background-color: rgba(46, 79, 79, 0.75);
-  border: none;
-  outline: none;
-  display: grid;
-}
-.input-group input::placeholder{
-  color: #CBE4DE;
-}
-
-.input-group input:hover{
-  border: solid;
-  background-color: white;
-  border-color: rgba(46, 79, 79, 0.75);
-}
