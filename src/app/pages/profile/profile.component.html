@@ -45,65 +45,34 @@
   </div>
   <div class="row" id="categories">
     <div id="secciones">
-      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_categories);">Pedidos
+      <button (click)="cargarComponente(0)" type="button" class="btn btn-outline-secondary cosita">Pedidos
         en Curso</button>
-      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_historial);">Historial
+      <button (click)="cargarComponente(1)" type="button" class="btn btn-outline-secondary cosita" >Historial
         de Pedidos</button>
-      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_wishlist);">Lista de
+      <button (click)="cargarComponente(2)" type="button" class="btn btn-outline-secondary cosita" >Lista de
         deseos</button>
-      <button type="button" class="btn btn-outline-secondary cosita" onclick="cambiar(s_queries);">Soporte
+      <button (click)="cargarComponente(3)" type="button" class="btn btn-outline-secondary cosita" >Soporte
         técnico</button>
-      <button type="button" class="btn btn-outline-secondary cosita"
-              onclick="cambiar(s_profileData);">Configuración</button>
-    </div>
-
-  </div>
-  <div id="s_categories">
-    <div id="header_auxiliar_h">
-      <h2>Pedidoso en Cuso</h2>
-      <p>Fecha: 2023</p>
-      <p>Ordenar por: Fecha Decreciente</p>
-
-    </div>
-    <!--Pedido-->
-    <div class="row pedido">
-      <div class="pedido_header">
-        <p>Nº Pedido: 6969696969</p>
-        <p>Fecha de creación: 21/03/2023</p>
-      </div>
-      <div class="pedido_header">
-        <div class="pedido_botones">
-          <button type="button" class="btn btn-outline-secondary pedido_boton">Generar Factura</button>
-        </div>
-        <div class="pedido_botones">
-          <button type="button" class="btn btn-outline-secondary pedido_boton">Detalles del Pedido</button>
-        </div>
-      </div>
-      <div class="pedido_header borde_doble">
-        <p>Estado: Enviado</p>
-        <button type="button" class="btn btn-outline-secondary pedido_boton">Seguimiento</button>
-      </div>
-      <div class="pedido_header borde_doble_fuerte">
-        <p>Tienda: PcComp</p>
-      </div>
-      <!--Esto es el producto del pedido-->
-      <div class="container">
-        <div class="col producto_pedido ">
-          <div class="col producto_imagen col-md-2">
-            <img src="assets/IMG/ejemplo_producto.png" alt="">
-          </div>
-          <div class="col col-lg-6">
-            <p>MSI RTX 3080 TI </p>
-            <p>1.600 €</p>
-            <p>x 1 Unidades</p>
-          </div>
-          <div id="col-lg-2">
-            <button type="button" class="btn btn-outline-secondary pedido_boton_devolver ">Devolver</button>
-          </div>
-        </div>
-      </div>
+      <button (click)="cargarComponente(4)" type="button" class="btn btn-outline-secondary cosita" >Configuración</button>
     </div>
   </div>
+  <div *ngIf="arrayAux[0]">
+    <app-orders-in-progress></app-orders-in-progress>
+  </div>
+  <div *ngIf="arrayAux[1]">
+    <app-completed-orders></app-completed-orders>
+  </div>
+  <div *ngIf="arrayAux[2]">
+    <app-wishlist></app-wishlist>
+  </div>
+  <div *ngIf="arrayAux[3]">
+    <app-s-queries></app-s-queries>
+  </div>
+  <div *ngIf="arrayAux[4]">
+    <app-profile-data></app-profile-data>
+  </div>
+
+
   <!--fin pedido-->
   <!--Fin pedidos en curso-->
   <br><br><br><br><br><br>
