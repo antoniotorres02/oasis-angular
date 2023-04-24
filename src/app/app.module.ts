@@ -8,6 +8,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import {RouterModule, ROUTES, Routes} from "@angular/router";
 import {RouterModule, Routes} from "@angular/router";
 import {FormempresaComponent} from "./pages/formempresa/formempresa.component";
 import {RegisterComponent} from "./pages/register/register.component";

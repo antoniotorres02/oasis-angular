@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+.text-highlight{
+  color: #FCCD5F;
+}
+.mt-5 {
+  margin-top: 5em !important;
+}
+
+.mt-2 {
+  margin-top: 2em !important;
+}
+
+.mt-5{
+  margin-top: 5em !important;}
+
+.mt-10{
+  margin-top: 10em !important;
+}
+
+
+.ml-2 {
+  margin-left: 2em !important;
+}
+
+.ml-10 {
+  margin-left: 10em !important;
+}
+.ml-20 {
+  margin-left: 20em !important;
+}
+
+.mr-2 {
+  margin-right: 2em !important;
+}
+
+.mr-5 {
+  margin-right: 5em !important;
+}
+
+.mr-10{
+  margin-right: 10em !important;
+}
+.mb-2 {
+  margin-bottom: 2em !important;
+}
+
+
+
+/*Estilo de Juan Jesús*/
+
+
+
+
