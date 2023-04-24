@@ -1,6 +1,5 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { auth } from './FirebaseAuth.js'
-import { showToast } from './Toastify.js'
 
 const user = document.getElementById("user");
 const email = document.getElementById("e-mail");
@@ -16,7 +15,7 @@ form.addEventListener("submit", async(e) => {
     } else {
         e.preventDefault();
         ready=0;
-        pwd.classList.add("is-invalid");} 
+        pwd.classList.add("is-invalid");}
 
     if (pwd.value !== rpwd.value) {
         rpwd.classList.add("is-invalid");
@@ -26,16 +25,16 @@ form.addEventListener("submit", async(e) => {
         if(ready==1){
             try{
                 const userCredentials = await createUserWithEmailAndPassword(auth, email.value, pwd.value);
-                showToast('Bienvenido:  '+user.value,'sucess')
+                alert('Bienvenido:  '+user.value,'sucess')
             } catch(error){
                 console.log(error.message);
                 console.log(error.code);
 
                 if(error.code === 'auth/email-already-in-use'){
-                    showToast('El email ya está en uso','error')
+                    alert('El email ya está en uso','error')
                 } else if (error.code === 'auth/invalid-email'){
-                    showToast('El email no es válido','error')
-                }         
+                    alert('El email no es válido','error')
+                }
             }
         }
     }

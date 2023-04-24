@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 
@@ -10,6 +10,9 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent{
+  user: any;
+  signedOut = false;
+
 
   @Output() principalRefChange = new EventEmitter<boolean>();
   principalRef = true;
@@ -18,4 +21,5 @@ export class PrincipalComponent{
     this.principalRef = false;
     this.principalRefChange.emit(this.principalRef);
   }
+
 }

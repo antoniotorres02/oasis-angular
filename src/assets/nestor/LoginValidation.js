@@ -10,16 +10,16 @@ signInForm.addEventListener("submit", async e => {
 
     try {
         const credentials = await signInWithEmailAndPassword(auth, email.value, password.value)
-      console.log('Bienvenido:  '+email.value,'sucess')
+      alert('Bienvenido:  '+email.value,'sucess')
         console.log(credentials)
     } catch (error) {
         console.log("test")
         if (error.code === "auth/wrong-password") {
-            console.log('La contraseña no coincide', 'error')
+          alert('La contraseña no coincide', 'error')
         } else if (error.code === 'auth/user-not-found') {
-          console.log('No se encuentra el usuario', 'error')
+          alert('No se encuentra el usuario', 'error')
         } else if (error.code === 'auth/too-many-requests') {
-          console.log('Demasiados intentos, intentelo más tarde', 'error')
+          alert('Demasiados intentos, intentelo más tarde', 'error')
         }
     }
 

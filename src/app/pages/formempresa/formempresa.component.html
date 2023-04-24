@@ -26,8 +26,8 @@
     </div>
     <!--Right-->
     <div class="border-start row position-relative mt-5" d-fle>
-      <form id="form" class="ml-10" action="/index.html" class="" method="GET" required>
-        <div class="mb-3">
+      <form id="form" class="ml-10" action="/index.html" class="" method="GET" (submit)="enviarSolicitud()" required>
+      <div class="mb-3">
           <p>Nombre de la empresa</p>
           <input type="text" class="form-control" id="Cname" placeholder="Company's name" required>
         </div>
