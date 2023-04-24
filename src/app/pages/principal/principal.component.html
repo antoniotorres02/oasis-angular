@@ -24,20 +24,20 @@
     </nav>
   </div>
 
-  <div class="login" [routerLink]="['/login']" (click)="setPrincipal()">
-    <button type="button" (click)="setPrincipal()"><a [routerLink]="['/login']">Identifícate</a></button>
-    <div class="btn2_login">
-      <a [routerLink]="['/login']" (click)="setPrincipal()"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+  <div class ="Contenedor-de-botones">
+    <div class="login" [routerLink]="['/login']" (click)="setPrincipal()">
+      <button type="button" (click)="setPrincipal()"><a [routerLink]="['/login']">Identifícate</a></button>
+      <div class="btn2_login">
+        <a [routerLink]="['/login']" (click)="setPrincipal()"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+      </div>
     </div>
-
-  </div>
-  <div class="cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
-    <div class="btn2_cart">
-      <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./assets/IMG/carrito.svg" alt=""/></a>
+    <div class="cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
+      <div class="btn2_cart">
+        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./assets/IMG/carrito.svg" alt=""/></a>
+      </div>
     </div>
   </div>
-
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
