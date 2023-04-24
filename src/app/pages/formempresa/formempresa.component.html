@@ -26,7 +26,7 @@
     </div>
     <!--Right-->
     <div class="border-start row position-relative mt-5" d-fle>
-      <form id="form" class="ml-10" action="/index.html" class="" method="GET" (submit)="enviarSolicitud()" required>
+      <form id="form" class="ml-10"  class="" method="GET" (submit)="enviarSolicitud()" target="frame" required>
       <div class="mb-3">
           <p>Nombre de la empresa</p>
           <input type="text" class="form-control" id="Cname" placeholder="Company's name" required>
@@ -51,6 +51,7 @@
           <button type="submit" class="btn btn-outline-warning orange-button">Enviar</button>
         </div>
       </form>
+      <iframe name="frame" style="display:none;"></iframe>
     </div>
   </div>
 </main>
