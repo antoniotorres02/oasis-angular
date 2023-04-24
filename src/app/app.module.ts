@@ -8,17 +8,12 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
-import {RouterModule, Routes} from "@angular/router";
-import {FormempresaComponent} from "./pages/formempresa/formempresa.component";
-import {RegisterComponent} from "./pages/register/register.component";
+import {RouterModule, ROUTES, Routes} from "@angular/router";
 
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent},
-  {path: 'formempresa', component:FormempresaComponent}
-
 
 ];
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {PrincipalComponent} from "../../pages/principal/principal.component";
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
 }
