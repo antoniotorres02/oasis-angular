@@ -25,7 +25,7 @@
     </div>
 
     <div class="div_logo" >
-      <a href="./app/pages/principal/principal.component.html"><img src="./assets/IMG/oasis_color_carrito.png" alt="" class="logo"></a>
+      <a [routerLink]="['./Home']"><img src="./assets/IMG/oasis_color_carrito.png" alt="" class="logo"></a>
     </div>
 
     <div class="input-group">
@@ -34,10 +34,10 @@
     </div>
     <div class="login">
       <div class="btn2_login">
-        <a href="login.html"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+        <a [routerLink]="['./Home']"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
 
       </div>
-      <button type="button"><a href="login.html">Identifícate</a></button>
+      <button type="button" [routerLink]="['./Home']" ><a [routerLink]="['./Home']">Identifícate</a></button>
 
     </div>
     <div class="cart">
