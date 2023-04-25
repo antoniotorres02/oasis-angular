@@ -23,7 +23,7 @@
       </div>
     </nav>
   </div>
-
+<div class="contenedor-central">
   <div class ="Contenedor-de-botones">
     <div class="login" [routerLink]="['/login']" (click)="setPrincipal()">
       <button type="button" (click)="setPrincipal()"><a [routerLink]="['/login']">Identifícate</a></button>
@@ -47,7 +47,10 @@
       <button class="btn_añadir_articulos" type="button">Añadir articulos</button>
     </div>
   </div>
-  <img src="./assets/IMG/oasis_color_carrito.png" alt="" class="logo">
+  <div class="logo">
+    <img src="./assets/IMG/oasis_color_carrito.png" alt="">
+  </div>
+
   <div class="input-group mb-3">
     <input type="text" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
     <button class="btn btn-outline-dark" type="button" id="button-addon2"><img src="./assets/IMG/lupa.svg" alt=""></button>
@@ -67,5 +70,6 @@
       <a href="tienda.html"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
     </div>
   </div>
+</div>
 
-  <div id="datos"></div>
+

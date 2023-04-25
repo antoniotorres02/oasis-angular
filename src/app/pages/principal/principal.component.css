@@ -5,6 +5,12 @@ body{
   background-color: #FCCD5F;
 }
 
+.contenedor-central{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10em;
+}
+
 .btn_cerrar{
   border: none;
   background-color: white;
@@ -31,6 +37,7 @@ p{
 }
 
 .Contenedor-de-botones{
+  margin-top: 1em;
   display: flex;
   justify-content: flex-end;
   gap: 10em;
@@ -204,20 +211,17 @@ p{
 }
 
 .input-group {
-  width: 100%;
-  vertical-align: sub;
-  margin: auto;
-  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-group input{
-  max-width: 100%;
-  max-height: 100%;
   border: none;
   border-radius: 7px;
   width: 900px;
+  height: 36px;
   background-color: rgba(46, 79, 79, 0.75);
-  margin-left: 30em;
   text-indent: 1em;
 
 }
@@ -236,6 +240,48 @@ p{
   background-color: white;
   border-color: rgba(46, 79, 79, 0.75);
 }
+
+.marcos_tiendas{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  margin-top: -5em;
+  flex-wrap: wrap;
+}
+
+.marco1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  width: 195px;
+  height: 165px;
+
+}
+
+.marco2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  width: 195px;
+  height: 165px;
+}
+
+.marco3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  width: 195px;
+  height: 165px;
+
+}
+
 .btn_marcos{
   border-radius: 50%;
   width: 56px;
@@ -247,49 +293,14 @@ p{
 
 }
 
-.marcos_tiendas{
-  width: 50%;
-  text-align: start;
-  margin: auto;
-  margin-left: 25em;
-  margin-top: 3em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .imagen_marco{
   transition: transform 1s ease-in-out;
 }
 .imagen_marco:hover{
   transform: rotate(180deg);
 }
-.marco1{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
 
-}
-.marco2{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
-}
 .marco1:hover{
   transform: scale(1.05);
   box-shadow: 0 0 10px black;
@@ -305,20 +316,7 @@ p{
   box-shadow: 0 0 10px black;
   transition: all 0.6s ease;
 }
-.marco3{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
 
-}
 .marco1 img{
   max-width: 100%;
   max-height: 100%;
@@ -338,7 +336,11 @@ p{
 }
 
 .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img{
   width: 500px;
-  margin-left: 42em;
-  padding-top: 5em;
 }
