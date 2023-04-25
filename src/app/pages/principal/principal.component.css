@@ -158,9 +158,6 @@ p{
   width: 200px;
 
 }
-.cart button:focus{
-  width: 200px;
-}
 
 .cart:hover button p{
   transform: scale(1, 1);
