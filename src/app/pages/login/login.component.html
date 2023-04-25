@@ -1,0 +1,66 @@
+
+<!-- Main -->
+<main class="container">
+  <script type="module" src="JS/LoginValidation.js"></script>
+  <div class="d-flex justify-content-center">
+    <!--Left-->
+    <div class="mr-5 mt-5">
+      <h3 class="text-highlight">¿No tienes una cuenta?</h3> <br> <br>
+      <div class="d-flex"><img src="./assets/IMG/descargar.png" alt="X">
+        <h4>Guarda el historial de compras y tus tickets</h4>
+      </div> <br> <br>
+      <div class="d-flex"><img src="./assets/IMG/Group.png" alt="X">
+        <h4>Compra y gana descuentos</h4>
+      </div> <br> <br>
+      <div class="d-flex"><img src="./assets/IMG/ic_outline-discount.png" alt="X">
+        <h4>Ahorra en tus envíos</h4>
+      </div> <br> <br>
+      <div class="d-flex"><img src="./assets/IMG/Corazon.png" alt="X">
+        <h4>Guarda tus tiendas favoritas</h4>
+      </div> <br> <br>
+
+      <form action="/register"><button type="submit" class="btn btn-warning orange-button w-25">Registrarse</button></form>
+    </div>
+    <!--Right-->
+    <div class="border-start row position-relative mt-5">
+
+      <!--Up-->
+      <div class="ml-2 justify-content-center d-flex mb-5">
+        <div>
+          <button type="button" id="facebookLogin" class="mb-5 btn btn-primary w-100">
+            Facebook
+          </button>
+
+          <h4 style="text-align: center;">- Or -</h4>
+
+          <button type="button" id="googleLogin" class="mt-2 btn btn-danger w-100">
+            Google
+          </button>
+          <div id="g_id_signin" data-locale="es"></div>
+          <div id="my-signin2"></div>
+        </div>
+      </div>
+
+      <!--Down-->
+      <div class="border-top justify-content-center d-flex ml-2 ,t">
+        <form id="signInForm" class="ml-2 mt-5 w-50" target="frame">
+          <div class="mb-3">
+            <p>Correo electronico</p>
+            <input type="email" class="form-control" id="e-mail" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <p>Contraseña</p>
+            <input type="password" class="form-control" id="pwd" placeholder="******" required>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="enviar" class="btn btn-warning orange-button">Enviar</button>
+          </div>
+        </form>
+        <iframe name="frame" style="display:none;"></iframe>
+        <script type="module" src="JS/LoginValidation.js"></script>
+        <script type="module" src="JS/googleLogin.js"></script>
+        <script type="module" src="JS/facebookLogin.js"></script>
+      </div>
+    </div>
+  </div>
+</main>

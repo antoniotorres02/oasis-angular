@@ -3,12 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
+import { LoginComponent} from "./pages/login/login.component";
 import { ShopComponent } from './pages/shop/shop.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrdersInProgressComponent } from './pages/profile/orders-in-progress/orders-in-progress.component';
+import {RouterModule, ROUTES, Routes} from "@angular/router";
+import {RegisterComponent} from "./pages/register/register.component";
+import {FormempresaComponent} from "./pages/formempresa/formempresa.component";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from './environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+
+
+
 
 import { RouterModule } from "@angular/router";
 import { CompletedOrdersComponent } from './pages/profile/completed-orders/completed-orders.component';
@@ -16,12 +28,19 @@ import { WishlistComponent } from './pages/profile/wishlist/wishlist.component';
 import { SQueriesComponent } from './pages/profile/s-queries/s-queries.component';
 import { ProfileDataComponent } from './pages/profile/profile-data/profile-data.component';
 
+const appRoute: Routes = [
+  {path: '', redirectTo:'Home', pathMatch:'full'},
+  {path: 'Home', component:PrincipalComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'register', component:RegisterComponent},
+  {path: 'form_emp', component:FormempresaComponent},
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
     ShopComponent,
     PrincipalComponent,
     ProfileComponent,
@@ -31,9 +50,20 @@ import { ProfileDataComponent } from './pages/profile/profile-data/profile-data.
     WishlistComponent,
     SQueriesComponent,
     ProfileDataComponent,
+    CartComponent,
+    LoginComponent,
+    RegisterComponent,
+    FormempresaComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoute),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
