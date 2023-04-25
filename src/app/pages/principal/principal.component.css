@@ -99,7 +99,6 @@ p{
   text-align: center;
   font-size: 18px;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 
@@ -112,9 +111,7 @@ p{
 
 }
 
-.login button:focus {
-  width: 200px;
-}
+
 
 .cart button {
   width: 0;
@@ -304,12 +301,10 @@ p{
   .Contenedor-de-botones{
     margin-right: 1em;
     margin-left: 1em;
+    justify-content: space-between;
   }
 
   .login {
-    position: relative;
-    width: 50px;
-    flex-grow: 1;
   }
 
   .logo img{
