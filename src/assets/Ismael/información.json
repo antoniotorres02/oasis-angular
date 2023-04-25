@@ -1,0 +1,23 @@
+[
+{
+
+        "nombre": "Camiseta básica de algodón",
+        "descripcion": "Camiseta básica de cuello redondo, confeccionada en algodón suave y transpirable. Disponible en varios colores."
+      },
+      {
+        "nombre": "Jeans ajustados",
+        "descripcion": "Jeans de corte ajustado, confeccionados en mezcla de algodón y elastano para mayor comodidad y flexibilidad. Diseño de cinco bolsillos."
+      },
+      {
+        "nombre": "Vestido estampado floral",
+        "descripcion": "Vestido ligero y fresco con estampado floral, perfecto para los días cálidos de verano. Cuenta con un escote en V y una cintura elástica para un ajuste favorecedor."
+      },
+      {
+        "nombre": "Chaqueta de cuero",
+        "descripcion": "Chaqueta de cuero sintético de alta calidad, con cierre frontal de cremallera y detalles de bolsillos con cremallera. Ideal para un estilo elegante y moderno."
+      },
+      {
+        "nombre": "Falda plisada",
+        "descripcion": "Falda plisada de longitud media, confeccionada en tejido ligero y suave. Cuenta con una cintura elástica para un ajuste cómodo."
+      }
+    ]
