@@ -18,11 +18,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-
-
-
-
-import { RouterModule } from "@angular/router";
 import { CompletedOrdersComponent } from './pages/profile/completed-orders/completed-orders.component';
 import { WishlistComponent } from './pages/profile/wishlist/wishlist.component';
 import { SQueriesComponent } from './pages/profile/s-queries/s-queries.component';
@@ -34,6 +29,7 @@ const appRoute: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
