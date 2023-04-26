@@ -9,6 +9,24 @@ import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ManagerComponent } from './pages/manager/manager.component';
+import {RouterModule, RouterOutlet, Routes} from "@angular/router";
+import { OrdersComponent } from './src/app/subpages/orders/orders.component';
+import { MyshopComponent } from './src/app/subpages/myshop/myshop.component';
+import { MyinfoComponent } from './src/app/subpages/myinfo/myinfo.component';
+import { ShopsupportComponent } from './src/app/subpages/shopsupport/shopsupport.component';
+import { ShopapiComponent } from './src/app/subpages/shopapi/shopapi.component';
+
+
+const routes: Routes = [
+  { path: 'manager', component: ManagerComponent, children: [
+      {path: 'orders', component: OrdersComponent},
+      {path: 'myshop', component: MyshopComponent},
+      {path: 'myinfo', component: MyinfoComponent},
+      {path: 'shopsupport', component: ShopsupportComponent},
+      {path: 'shopapi', component: ShopapiComponent}
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
@@ -19,10 +37,17 @@ import { ManagerComponent } from './pages/manager/manager.component';
     PrincipalComponent,
     ProfileComponent,
     CartComponent,
-    ManagerComponent
+    ManagerComponent,
+    OrdersComponent,
+    MyshopComponent,
+    MyinfoComponent,
+    ShopsupportComponent,
+    ShopapiComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterOutlet,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
