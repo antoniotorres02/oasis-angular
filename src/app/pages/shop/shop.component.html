@@ -23,8 +23,8 @@
 </div>
 -->
 <div class="main" style="display: inline-flex;">
-  <div class="card" style="width: 18rem;" *ngFor="let card of cards; index as i">
-    <img src="../../../assets/IMG/foto.jpg" class="card-img-top" alt="...">
+  <div class="card" style="width: 18rem;" *ngFor="let producto of productos | async; index as i">
+    <img [src]="producto.foto" class="card-img-top" alt="...">
     <div class="card-body">
       <div class="star-rating">
         <input type="radio" [id]="'star5-' + i" [name]="'rating-' + i" value="5"><label [for]="'star5-' + i" title="5 estrellas"></label>
@@ -37,11 +37,11 @@
         <div class="accordion-item">
           <h2 class="accordion-header" [id]="'flush-heading' + i">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i">
-              Producto
+              {{producto.name}}
             </button>
           </h2>
           <div [id]="'flush-collapse' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-heading' + i" [attr.data-bs-parent]="'#accordionFlushExample' + i">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+            <div class="accordion-body">{{producto.description}}</div>
           </div>
         </div>
       </div>

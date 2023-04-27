@@ -1,23 +1,44 @@
 [
-{
-
-        "nombre": "Camiseta básica de algodón",
-        "descripcion": "Camiseta básica de cuello redondo, confeccionada en algodón suave y transpirable. Disponible en varios colores."
-      },
-      {
-        "nombre": "Jeans ajustados",
-        "descripcion": "Jeans de corte ajustado, confeccionados en mezcla de algodón y elastano para mayor comodidad y flexibilidad. Diseño de cinco bolsillos."
-      },
-      {
-        "nombre": "Vestido estampado floral",
-        "descripcion": "Vestido ligero y fresco con estampado floral, perfecto para los días cálidos de verano. Cuenta con un escote en V y una cintura elástica para un ajuste favorecedor."
-      },
-      {
-        "nombre": "Chaqueta de cuero",
-        "descripcion": "Chaqueta de cuero sintético de alta calidad, con cierre frontal de cremallera y detalles de bolsillos con cremallera. Ideal para un estilo elegante y moderno."
-      },
-      {
-        "nombre": "Falda plisada",
-        "descripcion": "Falda plisada de longitud media, confeccionada en tejido ligero y suave. Cuenta con una cintura elástica para un ajuste cómodo."
-      }
-    ]
+  {
+    "name": "Zapatillas de running",
+    "description": "Zapatillas de running con parte superior de malla transpirable y mediasuela de espuma para una gran comodidad y amortiguación. Diseño deportivo y moderno que se adapta a cualquier estilo. Suela de goma duradera para una gran tracción y agarre en cualquier terreno."
+  },
+  {
+    "name": "Sudadera con capucha",
+    "description": "Sudadera con capucha y manga larga con un diseño moderno y llamativo. Confeccionada con un tejido suave y cómodo para una gran sensación de comodidad. Diseño versátil que se adapta a cualquier estilo."
+  },
+  {
+    "name": "Pantalones de entrenamiento",
+    "description": "Pantalones de entrenamiento con cintura elástica y cordón ajustable. Confeccionados con un tejido suave y cómodo para una gran sensación de comodidad. Diseño moderno y elegante que se adapta a cualquier estilo."
+  },
+  {
+    "name": "Gorra de béisbol",
+    "description": "Gorra de béisbol con diseño clásico y elegante. Confeccionada con un tejido resistente y duradero para una gran protección y comodidad. Diseño versátil que se adapta a cualquier estilo y ocasión."
+  },
+  {
+    "name": "Mochila de deporte",
+    "description": "Mochila de deporte con múltiples bolsillos y compartimentos para guardar tus pertenencias de forma segura y organizada. Diseño moderno y elegante que se adapta a cualquier estilo. Confeccionada con un tejido resistente y duradero para una gran protección y comodidad."
+  },
+  {
+    "name": "Chaqueta cortavientos",
+    "description": "Chaqueta cortavientos con capucha y manga larga. Diseño deportivo y moderno que se adapta a cualquier estilo. Confeccionada con un tejido resistente al viento y al agua para una gran protección en cualquier clima."
+  },
+  {
+    "name": "Calcetines deportivos",
+    "description": "Calcetines deportivos con diseño cómodo y transpirable. Confeccionados con un tejido resistente y duradero para una gran protección y comodidad. Diseño versátil que se adapta a cualquier actividad deportiva."
+  },
+  {
+    "name": "Camiseta de entrenamiento",
+    "description": "Camiseta de entrenamiento con diseño transpirable y cómodo. Confeccionada con un tejido suave y resistente para una gran comodidad y protección. Diseño moderno y elegante que se adapta a cualquier estilo."
+  },
+  {
+    "name": "Zapatillas de baloncesto",
+    "description": "Zapatillas de baloncesto con diseño moderno y elegante. Confeccionadas con un tejido transpirable y resistente para una gran comodidad y protección. Suela de goma duradera para una gran tracción y agarre en cualquier terreno."
+  },
+  {
+    "name": "Polo de golf",
+    "description": "Polo de golf con diseño elegante y sofisticado. Confeccionado con un tejido transpirable y resistente para una gran comodidad y protección durante todo el juego. Diseño versátil que se adapta a cualquier estilo y ocasión."
+  }
+  ]
+    
+        

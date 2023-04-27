@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
+interface Producto {
+  name: string;
+  description: string;
+  foto:string;
+}
 
 @Component({
   selector: 'app-shop',
@@ -9,16 +16,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShopComponent implements OnInit {
   selectedImg = '';
+  productos!: Observable<Producto[]>; // Añade el signo de exclamación aquí
 
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore) { }
+  
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.selectedImg = params.get('img')!;
     });
+  
+    this.productos = this.firestore.collection<Producto>('Zara').valueChanges();
+    
+    // Agregar esto para verificar si se están recibiendo los datos correctamente
+    this.productos.subscribe(data => {
+      console.log('Productos: ', data);
+    });
   }
-  
-  
   
   cards = [
     { title: 'Tarjeta 1', content: 'Contenido 1' },
