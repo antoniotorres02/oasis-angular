@@ -10,11 +10,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ManagerComponent } from './pages/manager/manager.component';
 import {RouterModule, RouterOutlet, Routes} from "@angular/router";
-import { OrdersComponent } from './src/app/subpages/orders/orders.component';
-import { MyshopComponent } from './src/app/subpages/myshop/myshop.component';
-import { MyinfoComponent } from './src/app/subpages/myinfo/myinfo.component';
-import { ShopsupportComponent } from './src/app/subpages/shopsupport/shopsupport.component';
-import { ShopapiComponent } from './src/app/subpages/shopapi/shopapi.component';
+import { OrdersComponent } from './pages/manager/subpages/orders/orders.component';
+import { MyshopComponent } from './pages/manager/subpages/myshop/myshop.component';
+import { MyinfoComponent } from './pages/manager/subpages/myinfo/myinfo.component';
+import { ShopsupportComponent } from './pages/manager/subpages/shopsupport/shopsupport.component';
+import { ShopapiComponent } from './pages/manager/subpages/shopapi/shopapi.component';
 
 
 const routes: Routes = [
