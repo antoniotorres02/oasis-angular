@@ -1,19 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyinfoComponent } from './myinfo.component';
-
-describe('MyinfoComponent', () => {
-  let component: MyinfoComponent;
-  let fixture: ComponentFixture<MyinfoComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MyinfoComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(MyinfoComponent);
-
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
