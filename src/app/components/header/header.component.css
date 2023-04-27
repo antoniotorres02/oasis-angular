@@ -3,11 +3,12 @@
   display: flex;
   background-color: #FCCD5F;
   justify-content: space-between;
+  align-items: center;
 }
 .container-fluid{
   margin: 0.5em 0 auto;
   display: flex;
-  width: 50px;
+  width: 70px;
   justify-content: center;
   align-items: center;
 }
@@ -42,8 +43,10 @@
   width: 500px;
 }
 
+
+
 .input-group input{
-  width: 450px;
+  width: 80%;
   border: none;
   border-radius: 7px;
   background-color: rgba(46, 79, 79, 0.75);
@@ -71,7 +74,7 @@
 
 }
 .login button {
-  width: 100px;
+  width: 80%;
   height: 43px;
   text-align: center;
   font-size: 18px;
@@ -94,6 +97,10 @@
   vertical-align: sub;
 }
 
+.btn2_cart{
+  vertical-align: sub;
+}
+
 .btn2_login {
   width: 43px;
   height: 43px;
@@ -110,7 +117,7 @@
 }
 
 .cart button {
-  width: 100px;
+  width: 80%;
   height: 43px;
   text-align: center;
   font-size: 18px;
@@ -168,4 +175,24 @@
   border: 1px solid;
   border-color: black;
 }
-
+@media (max-width: 800px){
+  .input-group{
+    width: 300px;
+  }
+  .input-group input{
+    border-radius: 50px;
+  }
+  .input-group button{
+    border-radius: 50px;
+  }
+  .navbar{
+    display:flex;
+    justify-content: center;
+    flex: max-content;
+    column-gap: 5em;
+    row-gap: 1em;
+  }
+  .container-fluid {
+    flex-grow: 1;
+  }
+}
