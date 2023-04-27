@@ -9,6 +9,7 @@ import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import {RouterModule, ROUTES, Routes} from "@angular/router";
+import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 
 
 const appRoute: Routes = [
@@ -26,7 +27,8 @@ const appRoute: Routes = [
     PrincipalComponent,
     ProfileComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    PrincipalModalComponent
   ],
   imports: [
     BrowserModule,
