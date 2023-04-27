@@ -1,0 +1,44 @@
+<main class="container">
+  <div class=" container d-flex justify-content-center mt-5">
+    <img class="justify-content-center" src="../assets/IMG/oasis_negro.png" alt="Logo" width="300em" height="120em">
+  </div>
+  <div class=" container mt-2 d-flex justify-content-center b">
+    <h4 class="justify">Empieza a formar parte de nuestra comunidad</h4>
+  </div>
+  <div class=" container d-flex mt-2 justify-content-center border-top">
+    <div class="w-25 mt-2">
+      <form id="form" target="frame">
+        <div class="mb-3">
+          <p>Usuario</p>
+          <input type="text" class="form-control" id="user" placeholder="User" required>
+        </div>
+        <div class="mb-3">
+          <p>Contraseña</p>
+          <input type="password" maxlength="15" class="form-control" id="pwd" placeholder="********" required>
+          <div class="invalid-feedback">
+            La contraseña necesita tener minimo un numero, una mayuscula y un caracter especial(@#$%&*)
+          </div>
+        </div>
+        <div class="mb-3">
+          <p>Repetir contraseña</p>
+          <input type="password" maxlength="15" class="form-control" id="rpwd" placeholder="********" required>
+          <div class="invalid-feedback">********
+
+            Las contraseñas tienen que ser iguales
+          </div>
+        </div>
+        <div class="mb-3">
+          <p>Correo electronico</p>
+          <input type="email" class="form-control" id="e-mail" placeholder="name@example.com" required>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-outline-warning orange-button">Enviar</button>
+        </div>
+      </form>
+      <iframe name="frame" style="display:none;"></iframe>
+      <!--Validation-->
+      <script type="module" src="JS/formvalidation.js"></script>
+      <!--Validation-->
+    </div>
+  </div>
+</main>
