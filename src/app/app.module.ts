@@ -23,6 +23,7 @@ import {ShopapiComponent} from "./pages/manager/subpages/shopapi/shopapi.compone
 import {MyshopComponent} from "./pages/manager/subpages/myshop/myshop.component";
 import {OrdersComponent} from "./pages/manager/subpages/orders/orders.component";
 import {ManagerComponent} from "./pages/manager/manager.component";
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,6 +32,7 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
+  {path: 'shop', component:ShopComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
@@ -63,6 +65,9 @@ const appRoute: Routes = [
     LoginComponent,
     RegisterComponent,
     FormempresaComponent,
+    LoginComponent,
+    RegisterComponent,
+    FormempresaComponent,
 
   ],
   imports: [
@@ -70,6 +75,7 @@ const appRoute: Routes = [
     RouterModule.forRoot(appRoute),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    HttpClientModule,
     AngularFireAuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
@@ -77,4 +83,7 @@ const appRoute: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}
