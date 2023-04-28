@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
 
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -20,34 +22,32 @@ export class ProfileComponent {
   user: any;
   actualuser$: Observable<any[]> | null = null; // inicializando con null
 
+  nombreUser?: string;
+  public userFirebase: any;
+
   arrayAux: (&boolean[]) = [this.pedidosCargado, this.pedidosCompletosCargado, this.wishlist, this.soporteCargado, this.configuracionCargado];
-  constructor(private firestore: Firestore, public auth: AngularFireAuth) {
+  constructor(private firestore: Firestore, public auth: AngularFireAuth){
     this.auth.authState.subscribe(user => {
+      console.log(this.actualuser$);
       this.user = user;
       if (this.user) {
-        const aCollection = collection(this.firestore, "Usuarios");
-        const userDocRef = doc(this.firestore, `Usuarios/${this.user.id}`);
-        async getUserData() {
-          const userDocSnapshot = await getDoc(userDocRef);
-          if (userDocSnapshot.exists()) {
-            const userData = userDocSnapshot.data();
-            console.log(userData);
-          } else {
-            console.log('El usuario no existe.');
-          }
-        }
+        this.getUserData(this.user);
       }
     });
   }
 
 
-
-  getById = async (coll: string, id: string) => {
-    const docRef = doc(this.firestore, coll, id);
-    const docSnap = await getDoc(docRef);
-    return { ...docSnap.data(), id: docSnap.id };
-  };
-
+  async getUserData(user: any) {
+    const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
+    const userDocSnapshot = await getDoc(userDocRef);
+    if (userDocSnapshot.exists()) {
+      const userData = userDocSnapshot.data();
+      console.log(userData);
+      this.nombreUser = userData["Usuario"];
+    } else {
+      console.log('El usuario no existe.');
+    }
+  }
 
   public cargarComponente(currentDisplay: number) {
     this.arrayAux[this.current] = false;
