@@ -305,6 +305,9 @@ p{
  z-index: 2;
 
 }
+.contenedor_modal:active .modal{
+  transform: scale(1.1);
+}
 
 .modal{
   display: flex;
