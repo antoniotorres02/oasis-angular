@@ -24,6 +24,7 @@ import {MyshopComponent} from "./pages/manager/subpages/myshop/myshop.component"
 import {OrdersComponent} from "./pages/manager/subpages/orders/orders.component";
 import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
+import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 
 
 
@@ -36,6 +37,7 @@ const appRoute: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
+  {path: 'shop_login', component:ShoploginComponent},
   { path: 'manager', component: ManagerComponent, children: [
       {path: 'orders', component: OrdersComponent},
       {path: 'myshop', component: MyshopComponent},
@@ -68,6 +70,7 @@ const appRoute: Routes = [
     LoginComponent,
     RegisterComponent,
     FormempresaComponent,
+    ShoploginComponent,
 
   ],
   imports: [
