@@ -1,7 +1,6 @@
 
-  <app-header *ngIf=" GetPrincipal() == false"></app-header>
-  <app-principal *ngIf=" principal.principalRef == true"></app-principal>
-  <router-outlet *ngIf=" principal.principalRef == false"></router-outlet>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>
 
 

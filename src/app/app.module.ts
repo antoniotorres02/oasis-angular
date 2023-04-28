@@ -12,9 +12,11 @@ import {RouterModule, ROUTES, Routes} from "@angular/router";
 
 
 const appRoute: Routes = [
-  {path: '', redirectTo:'Home', pathMatch:'full'},
+  {path: '', redirectTo:'cart', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'cart', component:CartComponent}
+
 ];
 
 @NgModule({
