@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Firestore, collection, collectionData, doc} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { getDoc } from "firebase/firestore";
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -22,12 +24,31 @@ export class ProfileComponent {
   constructor(private firestore: Firestore, public auth: AngularFireAuth) {
     this.auth.authState.subscribe(user => {
       this.user = user;
-      if (user) {
-        const aCollection = collection(this.firestore, `Usuarios/${user.uid}`);
-        this.actualuser$ = collectionData(aCollection);
+      if (this.user) {
+        const aCollection = collection(this.firestore, "Usuarios");
+        const userDocRef = doc(this.firestore, `Usuarios/${this.user.id}`);
+        async getUserData() {
+          const userDocSnapshot = await getDoc(userDocRef);
+          if (userDocSnapshot.exists()) {
+            const userData = userDocSnapshot.data();
+            console.log(userData);
+          } else {
+            console.log('El usuario no existe.');
+          }
+        }
       }
     });
   }
+
+
+
+  getById = async (coll: string, id: string) => {
+    const docRef = doc(this.firestore, coll, id);
+    const docSnap = await getDoc(docRef);
+    return { ...docSnap.data(), id: docSnap.id };
+  };
+
+
   public cargarComponente(currentDisplay: number) {
     this.arrayAux[this.current] = false;
     this.arrayAux[currentDisplay] = true;
