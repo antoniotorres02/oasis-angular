@@ -16,17 +16,37 @@ interface Producto {
 })
 export class ShopComponent implements OnInit {
   selectedImg = '';
-  productos!: Observable<Producto[]>; // Añade el signo de exclamación aquí
+  productos!: Observable<Producto[]>;
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore) { }
-  
+
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.selectedImg = params.get('img')!;
+      this.loadProducts(this.selectedImg); // Llama a la función loadProducts aquí
     });
-  
-    this.productos = this.firestore.collection<Producto>('Zara').valueChanges();
-    
+  }
+
+  // Crea la función loadProducts para cargar los productos de la tienda seleccionada
+  loadProducts(store: string) {
+    let collectionName: string;
+
+    switch (store) {
+      case 'foot_locker.svg':
+        collectionName = 'footLocker';
+        break;
+      case 'Zara_logo.svg':
+        collectionName = 'Zara';
+        break;
+      case 'JD_logo.svg':
+        collectionName = 'JD';
+        break;
+      default:
+        collectionName = 'Zara';
+    }
+
+    this.productos = this.firestore.collection<Producto>(collectionName).valueChanges();
+
     // Agregar esto para verificar si se están recibiendo los datos correctamente
     this.productos.subscribe(data => {
       console.log('Productos: ', data);
@@ -44,3 +64,4 @@ export class ShopComponent implements OnInit {
     { title: 'Tarjeta 8', content: 'Contenido 8' }
   ];
 }
+

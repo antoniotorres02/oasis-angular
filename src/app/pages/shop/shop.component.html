@@ -24,7 +24,7 @@
 -->
 <div class="main" style="display: inline-flex;">
   <div class="card" style="width: 18rem;" *ngFor="let producto of productos | async; index as i">
-    <img [src]="producto.foto" class="card-img-top" alt="...">
+    <img [src]="producto.foto" class="card-img-top " alt="...">
     <div class="card-body">
       <div class="star-rating">
         <input type="radio" [id]="'star5-' + i" [name]="'rating-' + i" value="5"><label [for]="'star5-' + i" title="5 estrellas"></label>

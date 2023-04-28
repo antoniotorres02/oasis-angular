@@ -144,3 +144,9 @@ body{
   width: 13rem;
   border-radius: 10%;
 }
+.fixed-size-img {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+  max-width: 200px; /* Ancho máximo */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Ajusta la imagen para que se adapte al tamaño de la caja */
+}
