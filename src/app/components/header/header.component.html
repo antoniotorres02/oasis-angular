@@ -7,16 +7,17 @@
 
   <nav class="navbar">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" (click)="openCategoria()">
+        <span class="navbar-toggler-icon" ></span>
       </button>
 
       <div class="offcanvas offcanvas-start text" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Categorias</h5>
-          <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/IMG/close_button.svg" alt=""></button>
+          <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"  (click)="closeCaetegoria()"><img src="./assets/IMG/close_button.svg" alt=""></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body" *ngIf=" principal == true">
+          <app-categorias></app-categorias>
         </div>
       </div>
 

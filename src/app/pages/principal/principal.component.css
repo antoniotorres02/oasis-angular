@@ -5,6 +5,7 @@ body{
   background-color: #FCCD5F;
 }
 
+
 .contenedor-central{
   display: flex;
   flex-direction: column;

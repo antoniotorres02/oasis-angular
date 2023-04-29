@@ -7,5 +7,6 @@ import {PrincipalModalComponent} from "../pages/principal/principal-modal/princi
 export class PrincipalModalServicioService {
 
   $modal = new EventEmitter<any>();
+  $modal_Cat = new EventEmitter<any>();
 
 }

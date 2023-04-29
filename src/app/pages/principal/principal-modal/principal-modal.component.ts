@@ -12,4 +12,5 @@ export class PrincipalModalComponent {
   closeModal(){
     this.modal.$modal.emit(false);
   }
+
 }
