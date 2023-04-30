@@ -11,13 +11,11 @@ import { CartComponent } from './pages/cart/cart.component';
 import {RouterModule, ROUTES, Routes} from "@angular/router";
 import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 import { CategoriasComponent } from './pages/principal/categorias/categorias.component';
-import { TarjetaVinculadaComponent } from './pages/tarjeta-vinculada/tarjeta-vinculada.component';
 
 
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
-  {path: 'tarjetas', component:TarjetaVinculadaComponent},
   {path: 'login', component:LoginComponent}
 ];
 
@@ -32,8 +30,7 @@ const appRoute: Routes = [
     CartComponent,
     LoginComponent,
     PrincipalModalComponent,
-    CategoriasComponent,
-    TarjetaVinculadaComponent
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,
