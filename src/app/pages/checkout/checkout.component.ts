@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {JsService} from "../../service/js.service";
 
 @Component({
   selector: 'app-checkout',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
+
+  constructor(private js: JsService) {
+    this.js.loadScript('/daniel','checkout.js');
+  }
 
 }
 

@@ -25,15 +25,18 @@ import { ProfileDataComponent } from './pages/profile/profile-data/profile-data.
 import { LinkedCardsComponent } from './pages/profile/linked-cards/linked-cards.component';
 import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 import { CategoriasComponent } from './pages/principal/categorias/categorias.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 const appRoute: Routes = [
-  {path: '', redirectTo:'Home', pathMatch:'full'},
+  {path: '', redirectTo:'checkout', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'cart', component: CartComponent},
+  {path: 'checkout', component: CheckoutComponent}
 ];
 
 @NgModule({
@@ -57,7 +60,8 @@ const appRoute: Routes = [
     LinkedCardsComponent,
     LoginComponent,
     PrincipalModalComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
