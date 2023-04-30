@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {PrincipalComponent} from "../../pages/principal/principal.component";
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -10,11 +10,16 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class HeaderComponent implements OnInit{
   principal!:boolean;
-  constructor(private modal:PrincipalModalServicioService) {
-
+  user: any;
+  signedOut = false;
+  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth) {
+    this.auth.authState.subscribe(user => {
+      this.user = user;
+    });
   }
   ngOnInit() {
     this.modal.$modal_Cat.subscribe((valor) => {this.principal = valor});
+
   }
 
   openCategoria(){
@@ -24,19 +29,10 @@ export class HeaderComponent implements OnInit{
   closeCaetegoria(){
     this.modal.$modal_Cat.emit(false);
   }
-export class HeaderComponent {
-  user: any;
-  signedOut = false;
-
-  constructor(public auth: AngularFireAuth) {
-    this.auth.authState.subscribe(user => {
-      this.user = user;
-    });
-  }
 
   async signOut() {
     await this.auth['signOut']();
-    this.signedOut = true;
+    this.signedOut = false;
   }
 
   ngAfterViewInit() {

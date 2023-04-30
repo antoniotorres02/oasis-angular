@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 
 
 
@@ -9,9 +10,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css']
 })
-export class PrincipalComponent{
-  user: any;
-  signedOut = false;
+
 
 export class PrincipalComponent implements OnInit{
 
@@ -19,6 +18,8 @@ export class PrincipalComponent implements OnInit{
   principalRef = true;
   modalSwitch!:boolean;
   CategoriaSwitch!:boolean;
+  user: any;
+  signedOut = false;
 
   constructor(private modal:PrincipalModalServicioService) {
   }
