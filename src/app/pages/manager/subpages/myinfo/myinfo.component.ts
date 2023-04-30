@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./myinfo.component.css']
 })
 export class MyinfoComponent {
+  faqs: any;
 
 }

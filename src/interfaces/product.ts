@@ -12,5 +12,4 @@ interface Product {
   productImage: string; //URL
   productType: ProductType[];
   shopId: string;
-
 }

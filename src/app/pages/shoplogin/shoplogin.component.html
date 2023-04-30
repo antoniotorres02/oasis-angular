@@ -7,11 +7,11 @@
     <label for="shop_user">
       Usuario de Tienda:
     </label>
-    <input type="text" id="shop_user" required>
+    <input type="text" id="shop_user" required [(ngModel)]="shop_user">
     <label for="shop_passwd">
       Contraseña:
     </label>
-    <input type="text" id="shop_passwd" required>
-    <button type="submit">Entrar</button>
+    <input type="text" id="shop_passwd" required [(ngModel)]="shop_passwd">
+    <button type="submit" routerLink="/manager">Entrar</button>
   </div>
 </div>

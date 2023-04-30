@@ -25,6 +25,7 @@ import {OrdersComponent} from "./pages/manager/subpages/orders/orders.component"
 import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -73,16 +74,17 @@ const appRoute: Routes = [
     ShoploginComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoute),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    HttpClientModule,
-    AngularFireAuthModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoute),
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        HttpClientModule,
+        AngularFireAuthModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
