@@ -6,6 +6,11 @@
 .datos_generales{
   margin-top: 2%;
   margin-left: 2%;
+
+}
+
+.nombre_apellidos{
+  display: inline-flex;
 }
 
 .input_perfil{

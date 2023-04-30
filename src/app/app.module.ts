@@ -22,6 +22,7 @@ import { CompletedOrdersComponent } from './pages/profile/completed-orders/compl
 import { WishlistComponent } from './pages/profile/wishlist/wishlist.component';
 import { SQueriesComponent } from './pages/profile/s-queries/s-queries.component';
 import { ProfileDataComponent } from './pages/profile/profile-data/profile-data.component';
+import { LinkedCardsComponent } from './pages/profile/linked-cards/linked-cards.component';
 import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 import { CategoriasComponent } from './pages/principal/categorias/categorias.component';
 
@@ -53,6 +54,7 @@ const appRoute: Routes = [
     LoginComponent,
     RegisterComponent,
     FormempresaComponent,
+    LinkedCardsComponent,
     LoginComponent,
     PrincipalModalComponent,
     CategoriasComponent
