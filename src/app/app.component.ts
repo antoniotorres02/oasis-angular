@@ -1,8 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PrincipalComponent} from "./pages/principal/principal.component";
 import {Router} from "@angular/router";
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-
 
 @Component({
   selector: 'app-root',
