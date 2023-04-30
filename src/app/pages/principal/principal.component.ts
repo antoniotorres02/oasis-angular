@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 
 
 
@@ -10,6 +9,10 @@ import {PrincipalModalServicioService} from "../../Services/principal-modal-serv
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css']
 })
+export class PrincipalComponent{
+  user: any;
+  signedOut = false;
+
 export class PrincipalComponent implements OnInit{
 
   @Output() principalRefChange = new EventEmitter<boolean>();
@@ -29,6 +32,7 @@ export class PrincipalComponent implements OnInit{
     this.principalRef = false;
     this.principalRefChange.emit(this.principalRef);
   }
+
 
 
 

@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PrincipalComponent} from "./pages/principal/principal.component";
 import {Router} from "@angular/router";
+
+
 import {PrincipalModalServicioService} from "./Services/principal-modal-servicio.service";
 
 @Component({
@@ -12,6 +14,7 @@ export class AppComponent{
 
   @ViewChild(PrincipalComponent) principal!: PrincipalComponent;
   principalRef = true;
+  title: any;
 
   constructor(private router: Router) {
     this.principal = new PrincipalComponent(new PrincipalModalServicioService());
