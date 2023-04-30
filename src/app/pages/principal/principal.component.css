@@ -5,6 +5,13 @@ body{
   background-color: #FCCD5F;
 }
 
+
+.contenedor-central{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10em;
+}
+
 .btn_cerrar{
   border: none;
   background-color: white;
@@ -30,9 +37,22 @@ p{
   font-family: "Poppins", sans-serif;
 }
 
+.Contenedor-de-botones{
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10em;
+}
+
+
 .login {
-  position: absolute;
-  margin: 1em 101em auto;
+  position: relative;
+  width: 50px;
+}
+
+.cart{
+  position: relative;
+  width: 50px;
 }
 
 .login button {
@@ -80,7 +100,6 @@ p{
   text-align: center;
   font-size: 18px;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 
@@ -93,15 +112,7 @@ p{
 
 }
 
-.login button:focus {
-  width: 200px;
-}
 
-
-.cart{
-  position: relative;
-  margin: 1em 117em  auto;
-}
 
 .cart button {
   width: 0;
@@ -116,6 +127,7 @@ p{
   border-radius: 30px;
   transition: all 0.6s ease;
   float: right; /*esta cosa malvada hace que se quede el eje x(0,0) en la derecha que loco no?*/
+  align-self: flex-start;
 }
 
 .btn2_cart {
@@ -130,6 +142,7 @@ p{
   font-size: 18px;
   border-radius: 50%;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .cart button p{
@@ -145,9 +158,6 @@ p{
 .cart:hover button {
   width: 200px;
 
-}
-.cart button:focus{
-  width: 200px;
 }
 
 .cart:hover button p{
@@ -186,20 +196,18 @@ p{
 }
 
 .input-group {
-  width: 100%;
-  vertical-align: sub;
-  margin: auto;
-  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-group input{
-  max-width: 100%;
-  max-height: 100%;
   border: none;
   border-radius: 7px;
-  width: 900px;
+  max-width: 100%;
+  width: 830px;
+  height: 36px;
   background-color: rgba(46, 79, 79, 0.75);
-  margin-left: 30em;
   text-indent: 1em;
 
 }
@@ -218,7 +226,37 @@ p{
   background-color: white;
   border-color: rgba(46, 79, 79, 0.75);
 }
+
+.marcos_tiendas{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  margin-top: -5em;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-items: center;
+}
+
+
+.marcos_tiendas .marco1, .marcos_tiendas .marco2, .marcos_tiendas .marco3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 195px;
+  height: 165px;
+}
+
 .btn_marcos{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.btn_marcos button{
   border-radius: 50%;
   width: 56px;
   height: 55px;
@@ -226,101 +264,99 @@ p{
   border: currentColor;
   box-shadow:  0px 2px rgba(0,0,0,0.25);
   margin-bottom: 7em;
-
 }
 
-.marcos_tiendas{
-  width: 50%;
-  text-align: start;
-  margin: auto;
-  margin-left: 25em;
-  margin-top: 3em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
 .imagen_marco{
   transition: transform 1s ease-in-out;
 }
 .imagen_marco:hover{
   transform: rotate(180deg);
 }
-.marco1{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
 
-}
-.marco2{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
-}
-.marco1:hover{
+.marcos_tiendas .marco1:hover, .marcos_tiendas .marco2:hover, .marcos_tiendas .marco3:hover{
   transform: scale(1.05);
   box-shadow: 0 0 10px black;
   transition: all 0.6s ease;
 }
-.marco2:hover{
-  transform: scale(1.05);
-  box-shadow: 0 0 10px black;
-  transition: all 0.6s ease;
-}
-.marco3:hover{
-  transform: scale(1.05);
-  box-shadow: 0 0 10px black;
-  transition: all 0.6s ease;
-}
-.marco3{
-  background-color: #D9D9D9;
-  border-radius: 10px;
-  width: 195px;
-  height: 165px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-left: 3em;
-  padding-top: 1em;
-  text-align: center;
-
-}
-.marco1 img{
+.marcos_tiendas .marco1 img, .marcos_tiendas .marco2 img, .marcos_tiendas .marco3 img{
   max-width: 100%;
   max-height: 100%;
-}
-.marco2 img{
-  max-width: 100%;
-  max-height: 100%;
-  padding-bottom: 3.3em;
-  margin-top: 2em;
 }
 
-.marco3 img{
-  max-width: 100%;
-  max-height: 100%;
-  padding-bottom: 1em;
-  margin-top: 1em;
-}
 
 .logo{
-  width: 500px;
-  margin-left: 42em;
-  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.logo img{
+  max-width: 100%;
+  width: 500px;
+}
+
+
+
+.contenedor_modal{
+  background-color: rgba(0, 0, 0, 0.40);
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+
+}
+
+.modal{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.contenedor_modal:active .modal{
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px){
+  .Contenedor-de-botones{
+    margin-right: 1em;
+    margin-left: 1em;
+    justify-content: space-between;
+  }
+
+  .logo img{
+    width: 80%;
+  }
+
+  .input-group input{
+    width: 80%;
+    border-radius: 30px;
+  }
+  .input-group button{
+    border-radius: 30px;
+  }
+
+  .marcos_tiendas .marco1, .marcos_tiendas .marco2, .marcos_tiendas .marco3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    max-width: 100%;
+    width: 90px;
+    height: 90px;
+  }
+  .btn_marcos{
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+  }
+  .btn_marcos button{
+    margin-bottom: 0;
+  }
+}
+
+

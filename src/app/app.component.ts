@@ -1,5 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PrincipalComponent} from "./pages/principal/principal.component";
+import {Router} from "@angular/router";
+
+
+import {PrincipalModalServicioService} from "./Services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-root',
@@ -10,14 +14,15 @@ export class AppComponent{
 
   @ViewChild(PrincipalComponent) principal!: PrincipalComponent;
   principalRef = true;
+  title: any;
 
-  constructor() {
-    this.principal = new PrincipalComponent();
+  constructor(private router: Router) {
+    this.principal = new PrincipalComponent(new PrincipalModalServicioService());
     this.principalRef = this.principal.principalRef;
   }
 
   GetPrincipal(){
-    return this.principal.principalRef;
+    return this.router.url;
   }
 
 }
