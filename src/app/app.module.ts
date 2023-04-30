@@ -8,14 +8,16 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 import {RouterModule, ROUTES, Routes} from "@angular/router";
 
 
 const appRoute: Routes = [
-  {path: '', redirectTo:'cart', pathMatch:'full'},
+  {path: '', redirectTo:'checkout', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'cart', component:CartComponent}
+  {path: 'cart', component:CartComponent},
+  {path: 'checkout', component:CheckoutComponent}
 
 ];
 
@@ -28,7 +30,8 @@ const appRoute: Routes = [
     PrincipalComponent,
     ProfileComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
