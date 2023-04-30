@@ -20,7 +20,7 @@
   width: 350px;
   height: 200px;
   display: flex;
-  background-color: rgb(224, 123, 6);
+  background-color: #252525;
   border-radius: 10px;
   animation: desplazar 1s ease-out both;
 }
@@ -36,7 +36,7 @@
   animation: aparecer 1s ease-out both;
 }
 .contenido_marco_tarjeta p, h5{
-  color: white;
+  color: #D4AF37;
 }
 
 .marco_tarjeta:hover{

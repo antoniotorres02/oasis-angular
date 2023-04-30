@@ -11,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class HeaderComponent implements OnInit{
   principal!:boolean;
   user: any;
-  signedOut = false;
+  signedOut!:boolean;
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth) {
     this.auth.authState.subscribe(user => {
       this.user = user;
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit{
   }
   ngOnInit() {
     this.modal.$modal_Cat.subscribe((valor) => {this.principal = valor});
-
+    this.signedOut = false;
   }
 
   openCategoria(){
@@ -32,7 +32,8 @@ export class HeaderComponent implements OnInit{
 
   async signOut() {
     await this.auth['signOut']();
-    this.signedOut = false;
+    this.signedOut = true;
+    location.reload();
   }
 
   ngAfterViewInit() {
