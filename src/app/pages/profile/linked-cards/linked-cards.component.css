@@ -1,0 +1,79 @@
+.contenido{
+  display: flex;
+  flex-flow: row;
+
+
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.contenido_derecha{
+  display: flex;
+  flex-flow: column;
+}
+.tarjetas{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+.marco_tarjeta{
+  width: 350px;
+  height: 200px;
+  display: flex;
+  background-color: #252525;
+  border-radius: 10px;
+  animation: desplazar 1s ease-out both;
+}
+
+.contenido_marco_tarjeta{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  padding-left: 1em;
+  margin-top: 0.5em;
+  row-gap: 1em;
+
+  animation: aparecer 1s ease-out both;
+}
+
+.top{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.top h5{
+  margin-right: 1em;
+}
+.contenido_marco_tarjeta p, h5{
+  color: #D4AF37;
+}
+
+.marco_tarjeta:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px black;
+  transition: all 0.3s ease;
+}
+.marco_tarjeta .contenido_marco_tarjeta:hover{
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+@keyframes desplazar {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
