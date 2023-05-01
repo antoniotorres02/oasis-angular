@@ -26,6 +26,7 @@ import { LinkedCardsComponent } from './pages/profile/linked-cards/linked-cards.
 import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 import { CategoriasComponent } from './pages/principal/categorias/categorias.component';
 import {DialogoComponent} from "./pages/principal/dialogo/dialogo.component";
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 const appRoute: Routes = [
@@ -35,8 +36,8 @@ const appRoute: Routes = [
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'cart', component:CartComponent}
-
+  {path: 'cart', component:CartComponent},
+  {path: 'checkout', component: CheckoutComponent}
 ];
 
 
@@ -62,7 +63,8 @@ const appRoute: Routes = [
     LoginComponent,
     PrincipalModalComponent,
     CategoriasComponent,
-    DialogoComponent
+    DialogoComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
