@@ -25,6 +25,7 @@ import { ProfileDataComponent } from './pages/profile/profile-data/profile-data.
 import { LinkedCardsComponent } from './pages/profile/linked-cards/linked-cards.component';
 import { PrincipalModalComponent } from './pages/principal/principal-modal/principal-modal.component';
 import { CategoriasComponent } from './pages/principal/categorias/categorias.component';
+import {DialogoComponent} from "./pages/principal/dialogo/dialogo.component";
 
 
 const appRoute: Routes = [
@@ -35,6 +36,7 @@ const appRoute: Routes = [
   {path: 'form_emp', component:FormempresaComponent},
   {path: 'profile', component: ProfileComponent}
 ];
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ const appRoute: Routes = [
     LinkedCardsComponent,
     LoginComponent,
     PrincipalModalComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    DialogoComponent
   ],
   imports: [
     BrowserModule,
