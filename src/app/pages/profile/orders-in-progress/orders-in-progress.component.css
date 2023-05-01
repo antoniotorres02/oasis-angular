@@ -1,0 +1,113 @@
+#s_categories{
+  display: initial;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+#header_auxiliar_h{
+  box-sizing: border-box;
+  position: center;
+  width: 60%;
+  display: flex;
+  margin:auto;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 10px;
+
+
+}
+#header_auxiliar_h h2{
+  font-size: medium;
+  padding: 1% 5% 1%;
+
+}
+
+#header_auxiliar_h p{
+  font-size: medium;
+  padding: 1% 5% 1%;
+
+}
+
+.pedido{
+  box-sizing: border-box;
+  display: flex;
+  margin:auto;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  position: center;
+
+  width: 60%;
+
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.pedido_header{
+  display:inline-flex;
+  width: 100%;
+  padding: 0.5% 1% 0.5% 1%; /* top, right, bottom, left */
+
+}
+
+.pedido_header p{
+  padding-right: 4%;
+}
+
+.pedido_boton{
+  color: #000000;
+  border: 1px solid #000000;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+
+}
+
+.pedido_botones{
+  margin-right: 4%;
+}
+
+
+.borde_doble{
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #A7C3BC;
+}
+
+.borde_doble p{
+  margin-right: 3.2%;
+}
+
+.borde_doble_fuerte{
+  border-width: 2px 0px;
+  border-style: solid;
+  border-color: #000000;
+  max-width: 20%;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+}
+
+.producto_pedido{
+  margin-left: 5%;
+  min-width: 90%;
+  display: inline-flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.producto_pedido p{
+
+}
+
+.pedido_boton_devolver{
+  color: #000000;
+  border: 1px solid #000000;
+  display: flex;
+  margin-top: 40%;
+  margin-bottom: 0.5%;
+}

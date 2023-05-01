@@ -1,0 +1,33 @@
+a{
+ text-decoration: none;
+  color: #2192FF;
+  animation: aparecer 1s ease-out both;
+}
+
+
+.Contendor-Categorias{
+  display: flex;
+  flex-flow: column;
+  row-gap: 1.5em;
+  animation: desplazar 1s ease-out both;
+
+}
+
+@keyframes desplazar {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
