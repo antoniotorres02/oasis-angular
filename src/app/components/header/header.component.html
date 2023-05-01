@@ -39,7 +39,7 @@
       </div>
       <button type="button" [routerLink]="['./login']">
         <a><div *ngIf="(auth.user | async) && signedOut != true">
-          <p>{{ (auth.user | async)?.email }}</p>
+          <p>{{ (auth.user | async)?.email}}</p>
 
         </div>
 
@@ -48,9 +48,11 @@
       </button>
 
     </div>
-    <div *ngIf="(auth.user | async) && signedOut != true">
-      <button (click)="signOut()" [routerLink]="['/Home']" >
-        <img src="https://w7.pngwing.com/pngs/380/139/png-transparent-x-red-mark-incorrect-thumbnail.png" alt="Cerrar sesion" width="20px" height="20px" style="margin-right: 5%;">
+    <div *ngIf="(auth.user | async) && signedOut != true" class="cerrar_sesion">
+      <div class="btn2_cerrar_sesion" (click)="signOut()" [routerLink]="['/Home']">
+        <img src="./assets/IMG/log-out.svg" alt="Cerrar sesion">
+      </div>
+      <button (click)="signOut()" [routerLink]="['/Home']">
         Cerrar sesion
       </button>
     </div>
