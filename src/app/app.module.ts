@@ -34,7 +34,9 @@ const appRoute: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'form_emp', component:FormempresaComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'cart', component:CartComponent}
+
 ];
 
 
