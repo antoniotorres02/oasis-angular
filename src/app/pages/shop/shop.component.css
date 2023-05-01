@@ -28,7 +28,33 @@ body{
 
 }
 
+.star-rating {
+  display: inline-block;
+  font-size: 2rem; /* Aumenta el tamaño de fuente aquí */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
 
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: lightgray;
+  display: inline;
+  padding: 0;
+  cursor: pointer;
+}
+
+.star-rating label:before {
+  content: "★";
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
 .card{
   margin: 2rem;
 

@@ -1,0 +1,77 @@
+#main_content {
+  height: 100vh;
+  background-color: rgba(252, 205, 95, 0.17);
+  display: grid;
+  padding: 50px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+#login_frame {
+  width: 300px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+#login_frame button{
+  margin-top: 10px;
+  width: 100px;
+  justify-self: end;
+  background-color: rgba(252, 205, 95, 0.33);
+  border-radius: 10px;
+  border: 1px solid black;
+  transition: all 0.2s linear;
+}
+
+#login_frame button:hover {
+  background-color: rgb(252, 205, 95);
+}
+
+#login_frame label{
+  font-weight: bold;
+}
+
+
+#logo_frame {
+  display: grid;
+  grid-template-rows: 250px 50px;
+  height: 100%;
+  width: 100%;
+}
+
+#logo_frame img{
+  max-height: 100%;
+  max-width: 100%;
+  justify-self: center;
+  align-self: end;
+}
+
+#logo_frame h1 {
+  justify-self: center;
+  font-weight: bold;
+  margin-top: 0px;
+  transform: translateX(130px);
+}
+
+#logo_frame h1:start {
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(0px);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateX(130px);
+    opacity: 100%;
+  }
+}
+
+#logo_frame h1{
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 2s ease-in-out 1 slideInFromLeft;
+}

@@ -61,7 +61,7 @@
       </div>
       <div class="super_marco">
         <div class="marco1">
-          <a href="tienda.html"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
+          <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
         </div>
         <a (click)="openDialog()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
         <div class="dialogo" *ngIf="dialog == true">
@@ -73,7 +73,7 @@
       <div class="super_marco">
         <div class="marco2">
           <!--<img src="IMG/foot_locker.svg" alt="">-->
-          <a href="tienda.html"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
+          <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
         </div>
         <a (click)="openDialog2()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
         <div class="dialogo" *ngIf="dialog2 == true">
@@ -84,13 +84,27 @@
       <div class="super_marco">
         <div class="marco3">
           <!--<img src="IMG/foot_locker.svg" alt="">-->
-          <a href="tienda.html"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
+          <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
         </div>
         <a (click)="openDialog3()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
         <div class="dialogo" *ngIf="dialog3 == true">
           <app-dialogo></app-dialogo>
         </div>
       </div>
+  <div class="marcos_tiendas">
+    <button class="btn_marcos" type="button"><img src="../../../assets/IMG/curz_azul.svg" alt="" class="imagen_marco"></button>
+    <div class="marco1">
+      <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="../../../assets/IMG/foot_locker.svg" alt=""></a>
+    </div>
+    <div class="marco2">
+      <!--<img src="IMG/foot_locker.svg" alt="">-->
+      <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="../../../assets/IMG/Zara_logo.svg" alt=""></a>
+    </div>
+    <div class="marco3">
+      <!--<img src="IMG/foot_locker.svg" alt="">-->
+      <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="../../../assets/IMG/JD_logo.svg" alt=""></a>
+    </div>
+  </div>
 
     </div>
 

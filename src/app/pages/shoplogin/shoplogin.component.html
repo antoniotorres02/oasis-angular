@@ -1,0 +1,17 @@
+<div id="main_content">
+  <div id="logo_frame">
+    <img src="/assets/IMG/oasis_negro.png" alt="" srcset="">
+    <h1>SHOP MANAGER</h1>
+  </div>
+  <div id="login_frame">
+    <label for="shop_user">
+      Usuario de Tienda:
+    </label>
+    <input type="text" id="shop_user" required [(ngModel)]="shop_user">
+    <label for="shop_passwd">
+      Contraseña:
+    </label>
+    <input type="text" id="shop_passwd" required [(ngModel)]="shop_passwd">
+    <button type="submit" routerLink="/manager">Entrar</button>
+  </div>
+</div>
