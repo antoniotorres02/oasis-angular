@@ -39,7 +39,7 @@
       </div>
       <button type="button" [routerLink]="['./login']">
         <a><div *ngIf="(auth.user | async) && signedOut != true">
-          <p>{{ (auth.user | async)?.email}}</p>
+          <p>{{this.nombreUser}}</p> <!--{{ (auth.user | async)?.email}}-->
 
         </div>
 

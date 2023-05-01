@@ -73,8 +73,10 @@
   width: 150px;
 }
 .login button {
-  width: 100%;
+  width: 90%;
   height: 43px;
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-size: 18px;
   background-color:white;
@@ -86,6 +88,13 @@
 
 
 .login button a{
+  line-height: 43px;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+.login button p{
   line-height: 43px;
   width: 100%;
   text-decoration: none;
