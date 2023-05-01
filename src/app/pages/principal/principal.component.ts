@@ -21,6 +21,8 @@ export class PrincipalComponent implements OnInit{
   dialog!:boolean;
   dialog2!:boolean;
   dialog3!:boolean;
+  marco_visible!:boolean;
+
   user: any;
   signedOut = false;
 
@@ -33,6 +35,7 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor})
     this.modal.$modal_dialog2.subscribe((valor) => {this.dialog2 = valor})
     this.modal.$modal_dialog3.subscribe((valor) => {this.dialog3 = valor})
+    this.modal.$modal_marco.subscribe((valor) => {this.marco_visible = valor})
   }
 
   setPrincipal() {

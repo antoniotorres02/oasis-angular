@@ -11,5 +11,5 @@ export class PrincipalModalServicioService {
   $modal_dialog = new EventEmitter<any>();
   $modal_dialog2 = new EventEmitter<any>();
   $modal_dialog3 = new EventEmitter<any>();
-
+  $modal_marco = new EventEmitter<any>();
 }

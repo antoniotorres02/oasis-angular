@@ -59,7 +59,7 @@
       <div class="btn_marcos">
         <button type="button" (click)="openModal()" ><img src="./assets/IMG/curz_azul.svg" alt="" class="imagen_marco"></button>
       </div>
-      <div class="super_marco">
+      <div class="super_marco" *ngIf="marco_visible == undefined">
         <div class="marco1">
           <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
         </div>
