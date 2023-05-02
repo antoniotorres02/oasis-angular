@@ -37,13 +37,13 @@
         <a [routerLink]="['./login']"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
 
       </div>
-      <button type="button" [routerLink]="['./profile']">
-        <a><div *ngIf="(auth.user | async) && signedOut != true">
+      <button type="button">
+        <a><div *ngIf="(auth.user | async) && signedOut != true" [routerLink]="['./profile']">
           <p>{{this.nombreUser}}</p> <!--{{ (auth.user | async)?.email}}-->
 
         </div>
 
-          <div *ngIf="!(auth.user | async) || signedOut == true">
+          <div *ngIf="!(auth.user | async) || signedOut == true" [routerLink]="['./login']">
             <p>Iniciar sesión</p></div></a>
       </button>
 
