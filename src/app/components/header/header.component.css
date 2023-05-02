@@ -71,11 +71,12 @@
 .login{
   display: flex;
   width: 150px;
-
 }
 .login button {
-  width: 100%;
+  width: 90%;
   height: 43px;
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-size: 18px;
   background-color:white;
@@ -87,6 +88,13 @@
 
 
 .login button a{
+  line-height: 43px;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+.login button p{
   line-height: 43px;
   width: 100%;
   text-decoration: none;
@@ -131,6 +139,9 @@
 .btn2_cart {
   width: 43px;
   height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 44px;
   background: rgba(46, 79, 79, 1);
   text-align: center;
@@ -145,6 +156,33 @@
   color: black;
 }
 
+.btn2_cerrar_sesion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 43px;
+  line-height: 44px;
+  background: rgba(46, 79, 79, 1);
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.cerrar_sesion{
+  display: flex;
+  justify-content: center;
+}
+.cerrar_sesion button{
+  width: 100%;
+  height: 43px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+}
+.cerrar_sesion img{
+  max-width: 80%;
+  max-height: 80%;
+}
 
 #cuerpo_carrito{
   display: flex;

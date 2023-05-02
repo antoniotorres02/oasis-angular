@@ -2,6 +2,9 @@ import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {PrincipalComponent} from "../../pages/principal/principal.component";
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {Firestore, collection, collectionData, doc} from '@angular/fire/firestore';
+import {getDoc} from "firebase/firestore";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -12,14 +15,49 @@ export class HeaderComponent implements OnInit{
   principal!:boolean;
   user: any;
   signedOut!:boolean;
-  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth) {
+
+  nombreUser?: string;
+  registrationDate?: string;
+  wishlistCount?: string;
+  orderCount?: string;
+  ordersInProgress?: string;
+  actualuser$: Observable<any[]> | null = null; // inicializando con null
+  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
     this.auth.authState.subscribe(user => {
+      console.log(this.actualuser$);
       this.user = user;
+      if (this.user) {
+        this.getUserData(this.user);
+      }
     });
   }
   ngOnInit() {
     this.modal.$modal_Cat.subscribe((valor) => {this.principal = valor});
     this.signedOut = false;
+  }
+
+  async getUserData(user: any) {
+    const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
+    const userDocCardsRef = doc(this.firestore, `Usuarios/${user?.uid}/cards/cardsList`);
+
+    const userDocSnapshot = await getDoc(userDocRef);
+    const userDocCardShot = await getDoc(userDocCardsRef);
+
+    if (userDocSnapshot.exists()) {
+      const userData = userDocSnapshot.data();
+      const userCard:any =  userDocCardShot.data();
+
+      console.log(userData);
+      this.nombreUser = userData["usuario"];
+      this.registrationDate = userData["registrationDate"];
+      this.wishlistCount = userData["wishlist"];
+      this.orderCount = userData["orderCount"];
+      this.ordersInProgress = userData["ordersInProgress"];
+
+
+    } else {
+      console.log('El usuario no existe.');
+    }
   }
 
   openCategoria(){
