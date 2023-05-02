@@ -37,7 +37,7 @@
         <a [routerLink]="['./login']"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
 
       </div>
-      <button type="button" [routerLink]="['./login']">
+      <button type="button" [routerLink]="['./profile']">
         <a><div *ngIf="(auth.user | async) && signedOut != true">
           <p>{{this.nombreUser}}</p> <!--{{ (auth.user | async)?.email}}-->
 
