@@ -1,0 +1,55 @@
+<main>
+  <h1>Mi información</h1>
+  <hr>
+  <div id="description">
+    <h1>Mi descripción</h1>
+    <textarea id="description_text"></textarea>
+    <div id="description_buttons">
+      <button id="description_clean" class="apply">Limpiar</button>
+      <button id="description_apply" class="clean">Aplicar Cambios</button>
+    </div>
+  </div>
+  <div id="contact">
+    <h1>Mis datos de contactos</h1>
+    <label for="first_phone">Telefono de contacto:</label>
+    <input id="first_phone">
+    <label for="second_phone">Otro telefono de contacto:</label>
+    <input id="second_phone">
+    <label for="entity_name">Nombre de la entidad:</label>
+    <input id="entity_name">
+    <label for="country">País:</label>
+    <input id="country">
+    <label for="state">Localidad:</label>
+    <input id="state">
+    <label for="postal_code">Código postal:</label>
+    <input id="postal_code">
+    <label for="street">Calle:</label>
+    <input id="street">
+    <label for="address_number">Número</label>
+    <input id="address_number">
+    <label for="additional">Información adicional</label>
+    <input id="additional">
+    <div id="contact_buttons">
+      <button id="contact_clean" class="">Limpiar</button>
+      <button id="contact_apply" class="">Aplicar Cambios</button>
+    </div>
+  </div>
+
+  <div id="question_frame">
+    <h1>FAQS</h1>
+    <div id="question_adder">
+      <label for="question">Pregunta:</label>
+      <input id="question">
+      <label for="answer">Respuesta:</label>
+      <input id="answer">
+      <button>Añadir</button>
+    </div>
+    <div id="questions">
+      preguntas<br>
+      respuestas
+    </div>
+
+    <div *ngFor="faqs"></div>
+  </div>
+
+</main>

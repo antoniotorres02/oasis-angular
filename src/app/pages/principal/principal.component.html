@@ -1,65 +1,106 @@
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<body>
   <div class="header">
     <nav class="navbar">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" (click)="openCategoria()">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+
         <div class="offcanvas offcanvas-start text" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Categorias</h5>
-            <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/IMG/close_button.svg" alt=""></button>
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Categorías</h5>
+            <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close" (click)="closeCaetegoria()"><img src="./assets/IMG/close_button.svg" alt=""></button>
           </div>
-          <div class="offcanvas-body">
+          <div class="offcanvas-body" *ngIf="CategoriaSwitch == true">
+            <app-categorias></app-categorias>
           </div>
         </div>
+
+
       </div>
     </nav>
   </div>
+  <div class="contenedor-central">
+    <div class ="Contenedor-de-botones">
+      <div class="login" [routerLink]="['/login']" (click)="setPrincipal()">
+        <button type="button" (click)="setPrincipal()"><a [routerLink]="['/login']">Identifícate</a></button>
+        <div class="btn2_login">
+          <a [routerLink]="['/login']" (click)="setPrincipal()"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+        </div>
+      </div>
+      <div class="cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
+        <div class="btn2_cart">
+          <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./assets/IMG/carrito.svg" alt=""/></a>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
+        <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/IMG/close_button.svg" alt=""></button>
+      </div>
+      <div class="offcanvas-body" id="cuerpo_carrito">
+        <button class="btn_añadir_articulos" type="button">Añadir articulos</button>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="./assets/IMG/oasis_color_carrito.png" alt="">
+    </div>
 
-  <div class="login" [routerLink]="['/login']" (click)="setPrincipal()">
-    <button type="button" (click)="setPrincipal()"><a [routerLink]="['/login']"> ewe</a></button>
-    <div class="btn2_login">
-      <a [routerLink]="['/login']" (click)="setPrincipal()"> <img src="./assets/IMG/user_chido.svg" alt=""/> </a>
+    <div class="input-group mb-3">
+      <input type="text" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+      <button class="btn btn-outline-dark" type="button" id="button-addon2"><img src="./assets/IMG/lupa.svg" alt=""></button>
+    </div>
+
+    <div class="marcos_tiendas">
+      <div class="btn_marcos">
+        <button type="button" (click)="openModal()" ><img src="./assets/IMG/curz_azul.svg" alt="" class="imagen_marco"></button>
+      </div>
+      <div class="super_marco">
+        <div class="marco1">
+          <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
+        </div>
+        <a (click)="openDialog()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <div class="dialogo" *ngIf="dialog == true">
+          <app-dialogo></app-dialogo>
+        </div>
+
+      </div>
+
+      <div class="super_marco">
+        <div class="marco2">
+          <!--<img src="IMG/foot_locker.svg" alt="">-->
+          <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
+        </div>
+        <a (click)="openDialog2()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <div class="dialogo" *ngIf="dialog2 == true">
+          <app-dialogo></app-dialogo>
+        </div>
+      </div>
+
+      <div class="super_marco">
+        <div class="marco3">
+          <!--<img src="IMG/foot_locker.svg" alt="">-->
+          <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
+        </div>
+        <a (click)="openDialog3()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <div class="dialogo" *ngIf="dialog3 == true">
+          <app-dialogo></app-dialogo>
+        </div>
+      </div>
+
     </div>
 
   </div>
-  <div class="cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
-    <div class="btn2_cart">
-      <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./assets/IMG/carrito.svg" alt=""/></a>
-    </div>
-  </div>
 
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h3>
-      <button type="button" class="btn_cerrar" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/IMG/close_button.svg" alt=""></button>
-    </div>
-    <div class="offcanvas-body" id="cuerpo_carrito">
-      <button class="btn_añadir_articulos" type="button">Añadir articulos</button>
+  <div class="contenedor_modal" *ngIf="modalSwitch == true">
+    <div class="modal">
+      <app-principal-modal></app-principal-modal>
     </div>
   </div>
-  <img src="./assets/IMG/oasis_color_carrito.png" alt="" class="logo">
-  <div class="input-group mb-3">
-    <input type="text" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
-    <button class="btn btn-outline-dark" type="button" id="button-addon2"><img src="./assets/IMG/lupa.svg" alt=""></button>
-  </div>
+</body>
 
-  <div class="marcos_tiendas">
-    <button class="btn_marcos" type="button"><img src="./assets/IMG/curz_azul.svg" alt="" class="imagen_marco"></button>
-    <div class="marco1">
-      <a href="tienda.html"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
-    </div>
-    <div class="marco2">
-      <!--<img src="IMG/foot_locker.svg" alt="">-->
-      <a href="tienda.html"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
-    </div>
-    <div class="marco3">
-      <!--<img src="IMG/foot_locker.svg" alt="">-->
-      <a href="tienda.html"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
-    </div>
-  </div>
 
-  <div id="datos"></div>

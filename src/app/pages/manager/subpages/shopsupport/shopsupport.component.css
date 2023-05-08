@@ -1,0 +1,60 @@
+*:focus {
+  outline: 0;
+}
+
+#separator {
+  border: 1px solid gray;
+  width: 100%;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  padding: 30px;
+  grid-gap: 50px;
+}
+
+#ticket_frame {
+  display: grid;
+  background-color: rgba(255, 213, 2, 0.24);
+  width: 60vw;
+  padding: 50px;
+  border: 1px solid rgba(128, 128, 128, 0.41);
+  grid-gap: 40px;
+}
+
+#ticket_frame label {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#ticket_frame textarea {
+  padding: 10px;
+}
+
+#ticket_frame input {
+  padding-left: 10px;
+}
+
+#ticket_frame button {
+  justify-self: right;
+  background-color: rgba(255, 199, 94, 0.3);
+  border: 1px solid gray;
+  transition: all 0.5s ;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color:  black;
+}
+
+#ticket_frame button:hover {
+  transform: scale(1.2);
+  background-color: rgb(255, 199, 94);
+  color: #ffffff;
+}
+
+#ticket_frame button:active {
+  transition: all 0.05s ;
+  transform: scale(1);
+}
+

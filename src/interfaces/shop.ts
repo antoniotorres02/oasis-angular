@@ -1,0 +1,5 @@
+
+
+interface Shop {
+  shopId: string;
+}

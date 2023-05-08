@@ -1,0 +1,192 @@
+button {
+  transition: all 0.2s;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: min-content;
+  grid-gap: 20px;
+  height: 100%;
+  padding: 50px;
+}
+
+main h1 {
+  grid-row: 1;
+  grid-column: span 7;
+  justify-self: center;
+}
+
+main hr {
+  grid-column: span 7;
+}
+
+#description {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: span 2;
+  background-color: rgba(252, 205, 95, 0.49);
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+#description textarea{
+  margin-top: 10px;
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  resize: none;
+}
+
+*:focus{
+  outline: 0px;
+}
+
+#description_buttons {
+  margin-top: 10px;
+  grid-row: 3;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+#description_buttons button {
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#description_apply {
+  color: rgba(0, 128, 0, 0.79);
+  justify-self: right;
+}
+
+#description_apply:hover {
+  background-color: green;
+  border: 1px solid transparent;
+  color: white;
+}
+
+#description_clean {
+  color: red;
+}
+
+#description_clean:hover {
+  background-color: red;
+  border: 1px solid transparent;
+  color: white;
+}
+
+/*Contacto*/
+
+#contact {
+  display: grid;
+  grid-column: span 3;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(11, 1fr) 50px;
+  grid-gap: 20px;
+  padding: 50px;
+  background-color: rgba(252, 205, 95, 0.49);
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+#contact h1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+#contact input {
+  height: 30px;
+}
+
+#contact_buttons {
+  display: grid;
+  grid-column: span 2;
+  grid-auto-flow: column;
+}
+
+#contact_buttons button {
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#contact_apply {
+  color: rgba(0, 128, 0, 0.79);
+  justify-self: right;
+}
+
+#contact_apply:hover {
+  background-color: green;
+  border: 1px solid transparent;
+  color: white;
+}
+
+#contact_clean {
+  color: red;
+}
+
+#contact_clean:hover {
+  background-color: red;
+  border: 1px solid transparent;
+  color: white;
+}
+
+
+#question_frame {
+  background-color: rgba(252, 205, 95, 0.49);
+  border: 1px solid gray;
+  grid-column: span 2;
+  border-radius: 10px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 130px 1fr;
+}
+
+#question_adder {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#question_adder button{
+  grid-column: span 2;
+  width: 70px;
+  justify-self: right;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  font-weight: normal;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+#question_adder button:hover{
+  border-color: black;
+  transform: scale(1.1);
+}
+
+#question_adder button:active{
+  border-color: black;
+  transform: scale(0.9);
+}
+
+
+#questions {
+  grid-row: 3;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.49);
+  padding: 10px;
+}
+
+
+
+
+
