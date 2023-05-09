@@ -5,7 +5,6 @@ import {PrincipalModalComponent} from "../pages/principal/principal-modal/princi
   providedIn: 'root'
 })
 export class PrincipalModalServicioService {
-
   $modal = new EventEmitter<any>();
   $modal_Cat = new EventEmitter<any>();
   $modal_dialog = new EventEmitter<any>();

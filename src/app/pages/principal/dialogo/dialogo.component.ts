@@ -7,15 +7,14 @@ import {PrincipalModalServicioService} from "../../../Services/principal-modal-s
   styleUrls: ['./dialogo.component.css']
 })
 export class DialogoComponent implements OnInit{
-  @Input() marco?:string;
-  dialog!:boolean;
-  dialog2!:boolean;
-  dialog3!:boolean;
+  @Input() marco?:boolean;
+  @Input() marco2?:boolean;
+  @Input() marco3?:boolean;
+
   constructor(private modal:PrincipalModalServicioService) {
 
   }
   ngOnInit() {
-    this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor});
   }
 
   closeDialog(){
@@ -24,9 +23,16 @@ export class DialogoComponent implements OnInit{
     this.modal.$modal_dialog3.emit(false);
   }
 
-  closeMarco(event:Event){
-    this.modal.$modal_marco.emit(false);
-    this.modal.$modal_marco2.emit(false);
-    this.modal.$modal_marco3.emit(false);
+  closeMarco(){
+    if(this.marco){
+      this.modal.$modal_marco.emit(false);
+    }
+    if(this.marco2){
+      this.modal.$modal_marco2.emit(false);
+    }
+    if(this.marco3){
+      this.modal.$modal_marco3.emit(false);
+
+    }
   }
 }

@@ -1,5 +1,9 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {doc, Firestore} from "@angular/fire/firestore";
+import {Observable} from "rxjs";
+import {getDoc} from "firebase/firestore";
 
 
 
@@ -21,12 +25,13 @@ export class PrincipalComponent implements OnInit{
   dialog!:boolean;
   dialog2!:boolean;
   dialog3!:boolean;
-  marco_visible?: boolean;
-  marco_visible2?: boolean;
-  marco_visible3?: boolean;
+  marco_visible!: boolean;
+  marco_visible2!: boolean;
+  marco_visible3!: boolean;
 
+  principal!:boolean;
   user: any;
-  signedOut = false;
+
 
   constructor(private modal:PrincipalModalServicioService) {
   }
@@ -41,6 +46,7 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_marco2.subscribe((valor) => {this.marco_visible2 = valor})
     this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor})
   }
+
 
   setPrincipal() {
     this.principalRef = false;
@@ -63,14 +69,17 @@ export class PrincipalComponent implements OnInit{
     switch ((event.target as HTMLAnchorElement).id) {
       case "1":{
         this.modal.$modal_dialog.emit(true);
+        this.modal.$modal_marco.emit(true);
         break;
       }
       case "2":{
         this.modal.$modal_dialog2.emit(true);
+        this.modal.$modal_marco2.emit(true);
         break;
       }
       case "3":{
         this.modal.$modal_dialog3.emit(true);
+        this.modal.$modal_marco3.emit(true);
         break;
       }
     }
