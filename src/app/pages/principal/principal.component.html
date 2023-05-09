@@ -63,30 +63,29 @@
         <div class="marco1">
           <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
         </div>
-        <a (click)="openDialog()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="1"></a>
         <div class="dialogo" *ngIf="dialog == true">
           <app-dialogo></app-dialogo>
         </div>
-
       </div>
 
-      <div class="super_marco">
+      <div class="super_marco" *ngIf="marco_visible2 == undefined">
         <div class="marco2">
           <!--<img src="IMG/foot_locker.svg" alt="">-->
           <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
         </div>
-        <a (click)="openDialog2()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="2"></a>
         <div class="dialogo" *ngIf="dialog2 == true">
           <app-dialogo></app-dialogo>
         </div>
       </div>
 
-      <div class="super_marco">
+      <div class="super_marco" *ngIf="marco_visible3 == undefined">
         <div class="marco3">
           <!--<img src="IMG/foot_locker.svg" alt="">-->
           <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
         </div>
-        <a (click)="openDialog3()"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones"></a>
+        <a (click)="openDialog($event)" ><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="3"></a>
         <div class="dialogo" *ngIf="dialog3 == true">
           <app-dialogo></app-dialogo>
         </div>
