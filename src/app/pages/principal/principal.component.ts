@@ -32,25 +32,37 @@ export class PrincipalComponent implements OnInit{
   principal!:boolean;
   user: any;
 
+  signedOut!:boolean;
 
-  constructor(private modal:PrincipalModalServicioService) {
+  nombreUser ="Identifícate";
+  registrationDate?: string;
+  wishlistCount?: string;
+  orderCount?: string;
+  ordersInProgress?: string;
+  actualuser$: Observable<any[]> | null = null; // inicializando con null
+
+  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
+    this.auth.authState.subscribe(user => {
+      console.log(this.actualuser$);
+      this.user = user;
+      if (this.user) {
+        this.getUserData(this.user);
+      }
+    });
   }
 
   ngOnInit() {
-    this.modal.$modal.subscribe((valor) => {this.modalSwitch = valor})
-    this.modal.$modal_Cat.subscribe((valor) => {this.CategoriaSwitch = valor})
-    this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor})
-    this.modal.$modal_dialog2.subscribe((valor) => {this.dialog2 = valor})
-    this.modal.$modal_dialog3.subscribe((valor) => {this.dialog3 = valor})
-    this.modal.$modal_marco.subscribe((valor) => {this.marco_visible = valor})
-    this.modal.$modal_marco2.subscribe((valor) => {this.marco_visible2 = valor})
-    this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor})
-  }
+    this.modal.$modal.subscribe((valor) => {this.modalSwitch = valor});
+    this.modal.$modal_Cat.subscribe((valor) => {this.CategoriaSwitch = valor});
+    this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor});
+    this.modal.$modal_dialog2.subscribe((valor) => {this.dialog2 = valor});
+    this.modal.$modal_dialog3.subscribe((valor) => {this.dialog3 = valor});
+    this.modal.$modal_marco.subscribe((valor) => {this.marco_visible = valor});
+    this.modal.$modal_marco2.subscribe((valor) => {this.marco_visible2 = valor});
+    this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor});
+    this.signedOut = false;
 
 
-  setPrincipal() {
-    this.principalRef = false;
-    this.principalRefChange.emit(this.principalRef);
   }
 
 
@@ -84,5 +96,48 @@ export class PrincipalComponent implements OnInit{
       }
     }
 
+  }
+
+  async getUserData(user: any) {
+    const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
+    const userDocCardsRef = doc(this.firestore, `Usuarios/${user?.uid}/cards/cardsList`);
+
+    const userDocSnapshot = await getDoc(userDocRef);
+    const userDocCardShot = await getDoc(userDocCardsRef);
+
+    if (userDocSnapshot.exists()) {
+      const userData = userDocSnapshot.data();
+      const userCard:any =  userDocCardShot.data();
+
+      console.log(userData);
+      this.nombreUser = userData["usuario"];
+      this.registrationDate = userData["registrationDate"];
+      this.wishlistCount = userData["wishlist"];
+      this.orderCount = userData["orderCount"];
+      this.ordersInProgress = userData["ordersInProgress"];
+
+
+    } else {
+      console.log('El usuario no existe.');
+    }
+  }
+
+
+
+  async signOut() {
+    await this.auth['signOut']();
+    this.signedOut = true;
+    location.reload();
+  }
+
+  ngAfterViewInit() {
+    const cerrarSesionBtn = document.getElementById('cerrar-sesion-btn');
+    if (cerrarSesionBtn) {
+      cerrarSesionBtn.addEventListener('click', () => {
+        this.signOut();
+      });
+    } else {
+      console.warn('Elemento no encontrado: cerrar-sesion-btn');
+    }
   }
 }
