@@ -41,6 +41,8 @@ export class PrincipalComponent implements OnInit{
   ordersInProgress?: string;
   actualuser$: Observable<any[]> | null = null; // inicializando con null
 
+  html = '<p> hola </p>'; //ejemplo para escribir html desde el propio ts
+
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
     this.auth.authState.subscribe(user => {
       console.log(this.actualuser$);
