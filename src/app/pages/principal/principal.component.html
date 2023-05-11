@@ -75,7 +75,7 @@
       </div>
       <div class="contenedor_marcos" *ngIf="(auth.user | async)">
         <div class="super_marco" *ngIf="marco_visible == undefined || marco_visible == true">
-          <div class="marco1">
+          <div class="marco" >
             <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
           </div>
           <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="1"></a>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="super_marco" *ngIf="marco_visible2 == undefined || marco_visible2 == true">
-          <div class="marco2">
+          <div class="marco">
             <!--<img src="IMG/foot_locker.svg" alt="">-->
             <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
           </div>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="super_marco" *ngIf="marco_visible3 == undefined || marco_visible3 == true">
-          <div class="marco3">
+          <div class="marco">
             <!--<img src="IMG/foot_locker.svg" alt="">-->
             <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
           </div>
@@ -112,13 +112,10 @@
 
   <div class="contenedor_modal" *ngIf="modalSwitch == true">
     <div class="modal">
-      <app-principal-modal [html]="this.html"></app-principal-modal>
+      <app-principal-modal (messageEvent)="getMessage($event)"></app-principal-modal>
     </div>
   </div>
 
-  <div [innerHTML]="html" >
-
-  </div>
 </body>
 
 

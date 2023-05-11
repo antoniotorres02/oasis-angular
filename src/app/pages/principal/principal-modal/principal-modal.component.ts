@@ -8,15 +8,21 @@ import {PrincipalModalServicioService} from "../../../Services/principal-modal-s
 })
 export class PrincipalModalComponent {
   @Output() messageEvent = new EventEmitter<string>();
-  @Input() html!:string;
+  html =
+    '          <div class="marco">\n' +
+    '            <a [routerLink]="[\'/shop\', {img: \'foot_locker.svg\'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>\n' +
+    '          </div>\n' +
+    '          <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="1"></a>\n' +
+    '          <div class="dialogo" *ngIf="dialog == true">\n' +
+    '            <app-dialogo [marco]="this.marco_visible"></app-dialogo>\n' +
+    '          </div>\n';
+
   constructor(private modal:PrincipalModalServicioService) {
   }
   closeModal(){
     this.modal.$modal.emit(false);
   }
   sethtml(){
-
-    this.html = 'hola';
     this.messageEvent.emit(this.html);
   }
 }

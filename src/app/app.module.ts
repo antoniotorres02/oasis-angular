@@ -41,6 +41,7 @@ import {FormsModule} from "@angular/forms";
 
 
 
+
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   {path: 'Home', component:PrincipalComponent},
@@ -97,7 +98,7 @@ const appRoute: Routes = [
     CategoriasComponent,
     DialogoComponent,
     CheckoutComponent,
-    ShoploginComponent,
+    ShoploginComponent
 
   ],
     imports: [

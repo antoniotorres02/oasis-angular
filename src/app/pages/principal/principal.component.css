@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
 }
 .navbar{
@@ -252,12 +256,13 @@ p{
   flex-flow: row;
   gap: 1em;
 }
+
 .super_marco .option{
   max-width: 100%;
   max-height: 100%;
 }
 
-.marcos_tiendas .marco1, .marcos_tiendas .marco2, .marcos_tiendas .marco3{
+.marcos_tiendas .marco{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -300,13 +305,13 @@ p{
 
 
 
-.marcos_tiendas .marco1:hover, .marcos_tiendas .marco2:hover, .marcos_tiendas .marco3:hover{
+.marcos_tiendas .marco:hover{
   transform: scale(1.05);
   box-shadow: 0 0 10px black;
   transition: all 0.6s ease;
 }
 
-.marcos_tiendas .marco1 img, .marcos_tiendas .marco2 img, .marcos_tiendas .marco3 img{
+.marcos_tiendas .marco img{
   max-width: 100%;
   max-height: 100%;
 }

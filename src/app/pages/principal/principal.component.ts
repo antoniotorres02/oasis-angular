@@ -1,9 +1,11 @@
-import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild, Compiler, Pipe, PipeTransform} from '@angular/core';
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {doc, Firestore} from "@angular/fire/firestore";
-import {Observable} from "rxjs";
+import {filter, Observable} from "rxjs";
 import {getDoc} from "firebase/firestore";
+import {NavigationEnd, Router} from "@angular/router";
+import {DomSanitizer} from "@angular/platform-browser";
 
 
 
@@ -12,7 +14,8 @@ import {getDoc} from "firebase/firestore";
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
+
 })
 
 
@@ -43,7 +46,7 @@ export class PrincipalComponent implements OnInit{
 
   html!: string; //ejemplo para escribir html desde el propio ts
 
-  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
+  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
     this.auth.authState.subscribe(user => {
       console.log(this.actualuser$);
       this.user = user;
@@ -55,6 +58,13 @@ export class PrincipalComponent implements OnInit{
   }
 
   ngOnInit() {
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+
     this.modal.$modal.subscribe((valor) => {this.modalSwitch = valor});
     this.modal.$modal_Cat.subscribe((valor) => {this.CategoriaSwitch = valor});
     this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor});
@@ -64,12 +74,13 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_marco2.subscribe((valor) => {this.marco_visible2 = valor});
     this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor});
     this.signedOut = false;
-
+    this.getMessage(this.html);
   }
 
-  getMessage($event:any){
-    this.html = $event;
+  getMessage(event:string){
+    return this.html = event;
   }
+
   openModal(){
     this.modalSwitch = true;
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import {filter, Observable} from 'rxjs';
 
 interface Producto {
   name: string;
@@ -18,9 +18,16 @@ export class ShopComponent implements OnInit {
   selectedImg = '';
   productos!: Observable<Producto[]>;
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, private router: Router) { }
 
   ngOnInit() {
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+
     this.route.paramMap.subscribe(params => {
       this.selectedImg = params.get('img')!;
       this.loadProducts(this.selectedImg); // Llama a la función loadProducts aquí
@@ -52,7 +59,7 @@ export class ShopComponent implements OnInit {
       console.log('Productos: ', data);
     });
   }
-  
+
   cards = [
     { title: 'Tarjeta 1', content: 'Contenido 1' },
     { title: 'Tarjeta 2', content: 'Contenido 2' },
