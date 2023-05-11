@@ -112,13 +112,13 @@
 
   <div class="contenedor_modal" *ngIf="modalSwitch == true">
     <div class="modal">
-      <app-principal-modal></app-principal-modal>
+      <app-principal-modal [html]="this.html"></app-principal-modal>
     </div>
   </div>
 
-  <!--<div [innerHTML]="html" >
+  <div [innerHTML]="html" >
 
-  </div>-->
+  </div>
 </body>
 
 

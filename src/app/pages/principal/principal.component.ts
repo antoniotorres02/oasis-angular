@@ -41,7 +41,7 @@ export class PrincipalComponent implements OnInit{
   ordersInProgress?: string;
   actualuser$: Observable<any[]> | null = null; // inicializando con null
 
-  html = '<p> hola </p>'; //ejemplo para escribir html desde el propio ts
+  html!: string; //ejemplo para escribir html desde el propio ts
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
     this.auth.authState.subscribe(user => {
@@ -51,6 +51,7 @@ export class PrincipalComponent implements OnInit{
         this.getUserData(this.user);
       }
     });
+
   }
 
   ngOnInit() {
@@ -64,10 +65,11 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor});
     this.signedOut = false;
 
-
   }
 
-
+  getMessage($event:any){
+    this.html = $event;
+  }
   openModal(){
     this.modalSwitch = true;
   }
@@ -99,6 +101,7 @@ export class PrincipalComponent implements OnInit{
     }
 
   }
+
 
   async getUserData(user: any) {
     const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
