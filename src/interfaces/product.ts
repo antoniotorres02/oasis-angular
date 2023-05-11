@@ -4,7 +4,6 @@ interface ProductType {
   type: string;
   options: string[];
 }
-
 interface Product {
   productId: string;
   productName: string;
@@ -12,4 +11,5 @@ interface Product {
   productImage: string; //URL
   productType: ProductType[];
   shopId: string;
+  productDescription: string;
 }

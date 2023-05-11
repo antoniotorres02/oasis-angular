@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {opacity} from "../../animations/animation";
 
 @Component({
   selector: 'app-formempresa',
   templateUrl: './formempresa.component.html',
-  styleUrls: ['./formempresa.component.css']
+  styleUrls: ['./formempresa.component.css'],
+  animations: [ opacity ]
 })
 export class FormempresaComponent {
 

@@ -3,13 +3,15 @@ import {Firestore, collection, collectionData, doc} from '@angular/fire/firestor
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
+import {opacity} from "../../animations/animation";
 
 
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  animations: [ opacity ]
 })
 export class ProfileComponent {
   pedidosCargado: boolean = true;

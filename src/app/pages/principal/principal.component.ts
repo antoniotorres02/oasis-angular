@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {opacity} from "../../animations/animation";
 
 
 
@@ -8,10 +9,9 @@ import {PrincipalModalServicioService} from "../../Services/principal-modal-serv
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
+  animations: [ opacity ]
 })
-
-
 export class PrincipalComponent implements OnInit{
 
   @Output() principalRefChange = new EventEmitter<boolean>();

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import {opacity} from "../../animations/animation";
 
 interface Producto {
   name: string;
@@ -12,7 +13,8 @@ interface Producto {
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
+  animations: [ opacity ]
 })
 export class ShopComponent implements OnInit {
   selectedImg = '';
@@ -52,7 +54,7 @@ export class ShopComponent implements OnInit {
       console.log('Productos: ', data);
     });
   }
-  
+
   cards = [
     { title: 'Tarjeta 1', content: 'Contenido 1' },
     { title: 'Tarjeta 2', content: 'Contenido 2' },

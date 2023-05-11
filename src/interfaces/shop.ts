@@ -1,5 +1,11 @@
+import {Info} from "./info";
 
 
-interface Shop {
-  shopId: string;
+export interface Shop {
+  id: string;
+  name: string;
+  email: string;
+  login_id: string;
+  passwd: string;
+  products: string[];
 }
