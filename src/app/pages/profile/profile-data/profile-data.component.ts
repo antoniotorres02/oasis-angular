@@ -9,6 +9,11 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./profile-data.component.css']
 })
 export class ProfileDataComponent {
+  @Input()
+  name?: string | undefined;
+  @Input()
+  lastName?: string | undefined;
+
   user: any;
   actualuser$: Observable<any[]> | null = null; // inicializando con null
   constructor(private firestore: Firestore, public auth: AngularFireAuth) {

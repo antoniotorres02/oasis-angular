@@ -30,6 +30,8 @@ export class ProfileComponent {
   orderCount?: string;
   ordersInProgress?: string;
 
+  name?: string | undefined;
+  lastName?: string | undefined;
 
   //datos de usuario
   card1?: string[] = [];
@@ -67,6 +69,9 @@ export class ProfileComponent {
       this.wishlistCount = userData["wishlist"];
       this.orderCount = userData["orderCount"];
       this.ordersInProgress = userData["ordersInProgress"];
+
+      this.name = userData["name"];
+      this.lastName = userData["lastName"];
 
       //tarjeta?
       this.card1 = userCard["card1"];
