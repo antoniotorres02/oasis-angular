@@ -15,6 +15,8 @@ export class ProfileDataComponent {
   lastName?: string | undefined;
 
   user: any;
+
+
   actualuser$: Observable<any[]> | null = null; // inicializando con null
   constructor(private firestore: Firestore, public auth: AngularFireAuth) {
 

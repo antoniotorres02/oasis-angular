@@ -9,6 +9,10 @@
 
 }
 
+#nameLastname p{
+  padding-right: 1%;
+}
+
 .nombre_apellidos{
   display: inline-flex;
 }

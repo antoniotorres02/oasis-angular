@@ -36,6 +36,7 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
+import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipment-address.component';
 
 
 
@@ -98,6 +99,7 @@ const appRoute: Routes = [
     DialogoComponent,
     CheckoutComponent,
     ShoploginComponent,
+    ShipmentAddressComponent,
 
   ],
     imports: [

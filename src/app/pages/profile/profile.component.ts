@@ -35,7 +35,11 @@ export class ProfileComponent {
 
   //datos de usuario
   card1?: string[] = [];
+
+
   //fin Datos usuarios
+
+
   //fin variables usuario
   public userFirebase: any;
 
@@ -70,6 +74,10 @@ export class ProfileComponent {
       this.orderCount = userData["orderCount"];
       this.ordersInProgress = userData["ordersInProgress"];
 
+      this.name = userData["name"];
+      this.lastName = userData["lastName"];
+
+      //datos usuario
       this.name = userData["name"];
       this.lastName = userData["lastName"];
 
