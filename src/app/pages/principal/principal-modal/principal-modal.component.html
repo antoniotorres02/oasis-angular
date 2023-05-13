@@ -9,14 +9,13 @@
       </div>
     </div>
     <div class="marcos">
-      <div class="marco1" (click)="sethtml()"><img src="./assets/IMG/foot_locker.svg"></div>
-      <div class="marco2"><img src="./assets/IMG/Zara_logo.svg"></div>
-      <div class="marco3"><img src="./assets/IMG/JD_logo.svg"></div>
+      <div class="marco1" (click)="setData('FootLocker'); closeModal()"><img src="./assets/IMG/foot_locker.svg"></div>
+      <div class="marco2" (click)="setData('Zara'); closeModal()"><img src="./assets/IMG/Zara_logo.svg"></div>
+      <div class="marco3" (click)="setData('JD'); closeModal()"><img src="./assets/IMG/JD_logo.svg"></div>
     </div>
 
     <div class="botones">
       <button class="cerrar" (click)="closeModal()">Cerrar</button>
-      <button class="guardar">Guardar</button>
     </div>
   </div>
 

@@ -31,7 +31,7 @@ export class PrincipalComponent implements OnInit{
   marco_visible!: boolean;
   marco_visible2!: boolean;
   marco_visible3!: boolean;
-
+  tiendas_fav!:string[];
   principal!:boolean;
   user: any;
 
@@ -45,6 +45,7 @@ export class PrincipalComponent implements OnInit{
   actualuser$: Observable<any[]> | null = null; // inicializando con null
 
   html!: string; //ejemplo para escribir html desde el propio ts
+  data!:string;
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
     this.auth.authState.subscribe(user => {
@@ -75,7 +76,11 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor});
     this.signedOut = false;
     this.getMessage(this.html);
+
+    this.modal.data$.subscribe((valor) => {this.data = valor});
   }
+
+  //funcion que modifique los parametros del firebase para las tiendas_fav
 
   getMessage(event:string){
     return this.html = event;
@@ -126,12 +131,13 @@ export class PrincipalComponent implements OnInit{
       const userCard:any =  userDocCardShot.data();
 
       console.log(userData);
+
       this.nombreUser = userData["usuario"];
       this.registrationDate = userData["registrationDate"];
       this.wishlistCount = userData["wishlist"];
       this.orderCount = userData["orderCount"];
       this.ordersInProgress = userData["ordersInProgress"];
-
+      this.tiendas_fav = userData["favStore"];
 
     } else {
       console.log('El usuario no existe.');

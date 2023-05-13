@@ -35,7 +35,7 @@
       </div>
 
       <div class="login" [routerLink]="['/profile']" *ngIf="(auth.user | async)">
-        <button type="button" >
+        <button type="button">
           <a [routerLink]="['/profile']">{{this.nombreUser}}</a>
         </button>
         <div class="btn2_login">
@@ -114,6 +114,10 @@
     <div class="modal">
       <app-principal-modal (messageEvent)="getMessage($event)"></app-principal-modal>
     </div>
+  </div>
+
+  <div>
+    <p>{{this.data}}</p>
   </div>
 
 </body>

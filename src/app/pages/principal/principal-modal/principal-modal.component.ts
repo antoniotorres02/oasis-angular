@@ -19,6 +19,10 @@ export class PrincipalModalComponent {
 
   constructor(private modal:PrincipalModalServicioService) {
   }
+
+  setData(datos:string){
+    this.modal.setData(datos);
+  }
   closeModal(){
     this.modal.$modal.emit(false);
   }

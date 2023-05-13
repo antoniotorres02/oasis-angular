@@ -71,7 +71,7 @@
   </div>
   <div *ngIf="arrayAux[4]">
     <app-profile-data></app-profile-data>
-    <app-linked-cards [card] = "card1" ></app-linked-cards>
+    <app-linked-cards [card] = "card1" *ngIf="(auth.user | async)"></app-linked-cards>
   </div>
 
 
