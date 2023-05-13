@@ -3,7 +3,7 @@ import {Firestore, collection, collectionData, doc} from '@angular/fire/firestor
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
-
+import {ShipmentAddress} from "../../../interfaces/shipment-address";
 
 
 @Component({
@@ -38,15 +38,15 @@ export class ProfileComponent {
 
 
   //fin Datos usuarios
+  //Direcciones de envio
+  addresses: ShipmentAddress[] = [];
 
-
-  //fin variables usuario
   public userFirebase: any;
 
   arrayAux: (&boolean[]) = [this.pedidosCargado, this.pedidosCompletosCargado, this.wishlist, this.soporteCargado, this.configuracionCargado];
   constructor(private firestore: Firestore, public auth: AngularFireAuth){
     this.auth.authState.subscribe(user => {
-      console.log(this.actualuser$);
+      //console.log(this.actualuser$);
       this.user = user;
       if (this.user) {
         this.getUserData(this.user);
@@ -58,16 +58,25 @@ export class ProfileComponent {
   async getUserData(user: any) {
     const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
     const userDocCardsRef = doc(this.firestore, `Usuarios/${user?.uid}/cards/cardsList`);
+    const userDocSARef = doc(this.firestore, `Usuarios/${user?.uid}/cards/shippingAddresses`);
 
     const userDocSnapshot = await getDoc(userDocRef);
     const userDocCardShot = await getDoc(userDocCardsRef);
+    const userDocSAShot = await getDoc(userDocSARef);
 
     if (userDocSnapshot.exists()) {
       const userData = userDocSnapshot.data();
       const userCard:any =  userDocCardShot.data();
+      const userSA:Record<string, string | string[]> = userDocSAShot.data() ?? {};
 
-      console.log(userData);
-      console.log(userCard);
+
+      for (const campo of Object.entries(userSA)) {
+        //console.log(`${campo}: ${valor}`);
+        const cosa: string[] = campo[1] as string[];
+        this.cargarDireccion(cosa);
+      }
+      console.log(this.addresses);
+
       this.nombreUser = userData["usuario"];
       this.registrationDate = userData["registrationDate"];
       this.wishlistCount = userData["wishlist"];
@@ -83,7 +92,7 @@ export class ProfileComponent {
 
       //tarjeta?
       this.card1 = userCard["card1"];
-      console.log(this.card1);
+
     } else {
       console.log('El usuario no existe.');
     }
@@ -93,6 +102,23 @@ export class ProfileComponent {
     this.arrayAux[this.current] = false;
     this.arrayAux[currentDisplay] = true;
     this.current = currentDisplay;
-    console.log(this.arrayAux[currentDisplay]);
+
+  }
+
+  public cargarDireccion(datosDireccion: String[]){
+    const sAaux: ShipmentAddress = {
+      name: datosDireccion[0],
+      lastName: datosDireccion[1],
+      dni: datosDireccion[2],
+      phoneNumber: datosDireccion[3],
+      alias: datosDireccion[4],
+      shipmentAddress: datosDireccion[5],
+      additionalInformation: datosDireccion[6],
+      zipCode: datosDireccion[7],
+      population: datosDireccion[8],
+      province: datosDireccion[9]
+    }
+
+    this.addresses?.push(sAaux);
   }
 }
