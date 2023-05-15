@@ -17,16 +17,17 @@ export class PrincipalModalComponent {
     '            <app-dialogo [marco]="this.marco_visible"></app-dialogo>\n' +
     '          </div>\n';
 
+  valores!:any;
   constructor(private modal:PrincipalModalServicioService) {
   }
 
   setData(datos:string){
-    this.modal.setData(datos);
+    this.modal.addFavStore(datos);
+    this.modal.SubirFavStore();
   }
   closeModal(){
     this.modal.$modal.emit(false);
   }
-  sethtml(){
-    this.messageEvent.emit(this.html);
-  }
+
+
 }

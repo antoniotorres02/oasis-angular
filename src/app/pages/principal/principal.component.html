@@ -110,15 +110,9 @@
   </div>
   <div class="contenedor_modal" *ngIf="modalSwitch == true">
     <div class="modal">
-      <app-principal-modal (messageEvent)="getMessage($event)"></app-principal-modal>
+      <app-principal-modal></app-principal-modal>
     </div>
   </div>
-
-  <div *ngIf="this.data != undefined">
-    <p>{{this.data}}</p>
-    <button (click)="SubirFavStore()">pulsame</button>
-  </div>
-
 </body>
 
 

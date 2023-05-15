@@ -22,7 +22,6 @@ import {DomSanitizer} from "@angular/platform-browser";
 export class PrincipalComponent implements OnInit{
 
   @Output() principalRefChange = new EventEmitter<boolean>();
-  principalRef = true;
   modalSwitch!:boolean;
   CategoriaSwitch!:boolean;
   dialog!:boolean;
@@ -31,33 +30,16 @@ export class PrincipalComponent implements OnInit{
   marco_visible!: boolean;
   marco_visible2!: boolean;
   marco_visible3!: boolean;
-  tiendas_fav!:string[];
   principal!:boolean;
   user: any;
 
   signedOut!:boolean;
 
-  nombreUser ="Identifícate";
-  registrationDate?: string;
-  wishlistCount?: string;
-  orderCount?: string;
-  ordersInProgress?: string;
-  actualuser$: Observable<any[]> | null = null; // inicializando con null
-
-  html!: string; //ejemplo para escribir html desde el propio ts
-  data!:string;
-  lastName!:string;
-  name!:string;
-
+  nombreUser!:string;
+  tiendas_fav!:string[];
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
-    this.auth.authState.subscribe(user => {
-      console.log(this.actualuser$);
-      this.user = user;
-      if (this.user) {
-        this.getUserData(this.user);
-      }
-    });
+
   }
 
   ngOnInit() {
@@ -76,17 +58,11 @@ export class PrincipalComponent implements OnInit{
     this.modal.$modal_marco2.subscribe((valor) => {this.marco_visible2 = valor});
     this.modal.$modal_marco3.subscribe((valor) => {this.marco_visible3 = valor});
     this.signedOut = false;
-    this.getMessage(this.html);
 
-    this.modal.data$.subscribe((valor) => {this.data = valor});
-
+    this.modal.obtenerNombreUser().subscribe(valor => {this.nombreUser = valor});
   }
 
-  //funcion que modifique los parametros del firebase para las tiendas_fav
 
-  getMessage(event:string){
-    return this.html = event;
-  }
 
   openModal(){
     this.modalSwitch = true;
@@ -120,72 +96,4 @@ export class PrincipalComponent implements OnInit{
 
   }
 
-
-  async getUserData(user: any) {
-    const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
-    const userDocCardsRef = doc(this.firestore, `Usuarios/${user?.uid}/cards/cardsList`);
-
-    const userDocSnapshot = await getDoc(userDocRef);
-    const userDocCardShot = await getDoc(userDocCardsRef);
-
-    if (userDocSnapshot.exists()) {
-      const userData = userDocSnapshot.data();
-      const userCard:any =  userDocCardShot.data();
-
-      console.log(userData);
-
-      this.nombreUser = userData["usuario"];
-      this.lastName = userData["lastName"];
-      this.name = userData["name"];
-      this.registrationDate = userData["registrationDate"];
-      this.wishlistCount = userData["wishlist"];
-      this.orderCount = userData["orderCount"];
-      this.ordersInProgress = userData["ordersInProgress"];
-      this.tiendas_fav = userData["favStore"];
-
-    } else {
-      console.log('El usuario no existe.');
-    }
-  }
-
-
-
-  async signOut() {
-    await this.auth['signOut']();
-    this.signedOut = true;
-    location.reload();
-  }
-
-  async SubirFavStore(){
-
-    /*for(let i = 0 ; i < this.tiendas_fav.length ; i++){
-      if(this.tiendas_fav[i] == this.data){
-        this.tiendas_fav[i] = this.data;
-        break;
-      }
-
-    }*/
-
-    this.tiendas_fav.push(this.data);
-    await setDoc(doc(this.firestore, `Usuarios/${this.user.uid}`), {
-      favStore: this.tiendas_fav,
-      lastName: this.lastName,
-      name: this.name,
-      orderCount: this.orderCount,
-      ordersInProgress:this.ordersInProgress,
-      registrationDate: this.registrationDate,
-      usuario: this.nombreUser,
-    });
-  }
-
-  ngAfterViewInit() {
-    const cerrarSesionBtn = document.getElementById('cerrar-sesion-btn');
-    if (cerrarSesionBtn) {
-      cerrarSesionBtn.addEventListener('click', () => {
-        this.signOut();
-      });
-    } else {
-      console.warn('Elemento no encontrado: cerrar-sesion-btn');
-    }
-  }
 }
