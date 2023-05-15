@@ -25,4 +25,7 @@ export class PrincipalModalServicioService {
     this.data.next(valor);
   }
 
+
+
+
 }

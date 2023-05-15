@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild, Compiler, Pipe, PipeTransform} from '@angular/core';
 import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {doc, Firestore} from "@angular/fire/firestore";
+import {doc, Firestore, setDoc} from "@angular/fire/firestore";
 import {filter, Observable} from "rxjs";
 import {getDoc} from "firebase/firestore";
 import {NavigationEnd, Router} from "@angular/router";
@@ -46,6 +46,9 @@ export class PrincipalComponent implements OnInit{
 
   html!: string; //ejemplo para escribir html desde el propio ts
   data!:string;
+  lastName!:string;
+  name!:string;
+
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
     this.auth.authState.subscribe(user => {
@@ -55,7 +58,6 @@ export class PrincipalComponent implements OnInit{
         this.getUserData(this.user);
       }
     });
-
   }
 
   ngOnInit() {
@@ -65,7 +67,6 @@ export class PrincipalComponent implements OnInit{
     ).subscribe(() => {
       window.scrollTo(0, 0);
     });
-
     this.modal.$modal.subscribe((valor) => {this.modalSwitch = valor});
     this.modal.$modal_Cat.subscribe((valor) => {this.CategoriaSwitch = valor});
     this.modal.$modal_dialog.subscribe((valor) => {this.dialog = valor});
@@ -78,6 +79,7 @@ export class PrincipalComponent implements OnInit{
     this.getMessage(this.html);
 
     this.modal.data$.subscribe((valor) => {this.data = valor});
+
   }
 
   //funcion que modifique los parametros del firebase para las tiendas_fav
@@ -133,6 +135,8 @@ export class PrincipalComponent implements OnInit{
       console.log(userData);
 
       this.nombreUser = userData["usuario"];
+      this.lastName = userData["lastName"];
+      this.name = userData["name"];
       this.registrationDate = userData["registrationDate"];
       this.wishlistCount = userData["wishlist"];
       this.orderCount = userData["orderCount"];
@@ -150,6 +154,28 @@ export class PrincipalComponent implements OnInit{
     await this.auth['signOut']();
     this.signedOut = true;
     location.reload();
+  }
+
+  async SubirFavStore(){
+
+    /*for(let i = 0 ; i < this.tiendas_fav.length ; i++){
+      if(this.tiendas_fav[i] == this.data){
+        this.tiendas_fav[i] = this.data;
+        break;
+      }
+
+    }*/
+
+    this.tiendas_fav.push(this.data);
+    await setDoc(doc(this.firestore, `Usuarios/${this.user.uid}`), {
+      favStore: this.tiendas_fav,
+      lastName: this.lastName,
+      name: this.name,
+      orderCount: this.orderCount,
+      ordersInProgress:this.ordersInProgress,
+      registrationDate: this.registrationDate,
+      usuario: this.nombreUser,
+    });
   }
 
   ngAfterViewInit() {
