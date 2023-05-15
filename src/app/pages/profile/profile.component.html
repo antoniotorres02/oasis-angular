@@ -70,6 +70,13 @@
   </div>
   <div *ngIf="arrayAux[4]">
     <app-profile-data [name] = "name" [lastName] = "lastName" ></app-profile-data>
+    <div class="paco">
+      <div class="ship-address-component" *ngFor="let direccion of addresses" >
+        <app-shipment-address [address] = "direccion" ></app-shipment-address>
+      </div>
+
+    </div>
+
     <app-linked-cards [card] = "card1" ></app-linked-cards>
   </div>
 
