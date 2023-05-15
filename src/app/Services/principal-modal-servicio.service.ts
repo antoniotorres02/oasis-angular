@@ -4,6 +4,7 @@ import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import {getDoc} from "firebase/firestore";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 interface Usuario {
   favStore: string[];
@@ -50,7 +51,7 @@ export class PrincipalModalServicioService {
   lastName!:string;
   name!:string;
   tiendas_fav = new BehaviorSubject<string[]>([]);
-  constructor(public auth: AngularFireAuth, private firestore: Firestore) {
+  constructor(public auth: AngularFireAuth, private firestore: Firestore, private firestore2: AngularFirestore) {
     this.auth.authState.subscribe(user => {
       console.log(this.actualuser$);
       this.user = user;
@@ -114,17 +115,19 @@ export class PrincipalModalServicioService {
 
   async addFavStore(tienda:string){
     this.tiendas_fav.value.push(tienda);
+
+
   }
 
   async SubirFavStore(){
     await setDoc(doc(this.firestore, `Usuarios/${this.user.uid}`), {
-      favStore: this.tiendas_fav,
+      favStore: this.tiendas_fav.value,
       lastName: this.lastName,
       name: this.name,
       orderCount: this.orderCount,
       ordersInProgress:this.ordersInProgress,
       registrationDate: this.registrationDate,
-      usuario: this.nombreUser,
+      usuario: this.nombreUser.value,
     });
   }
 
