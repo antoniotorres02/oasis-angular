@@ -1,34 +1,40 @@
 import { Injectable } from '@angular/core';
-import {collection, doc, Firestore, getDoc, getDocs} from "@angular/fire/firestore";
+import {collection, collectionData, doc, docData, Firestore, getDoc, getDocs} from "@angular/fire/firestore";
 import {Shop} from "../../interfaces/shop";
+import {Observable} from "rxjs";
+import {docChanges} from "@angular/fire/compat/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
 
-  private emptyShop: Shop= {
+  private emptyShop: Shop = {
     id: '',
     name: '',
     email: '',
     login_id: '',
     passwd: '',
+    image: '',
     products: []
   }
 
   constructor(private firestore: Firestore) { }
 
-  async getShops(): Promise<any> {
-    let docsSnap = await getDocs(collection(this.firestore, 'shops'));
+  getShops(): Observable<Shop[]> {
+    const shops = collection(this.firestore, 'shops');
+    return collectionData(shops, { idField: 'id' }) as Observable<Shop[]>;
   }
 
-  async getShop(id: string): Promise<Shop> {
-    let docSnap = await getDoc(doc(this.firestore, 'shops', id));
-    if (docSnap.exists()) {
-      return docSnap.data() as Shop;
-    } else {
-      console.log("No such document!: " + id);
-    }
-    return this.emptyShop;
+  getShop(id: string): Observable<Shop> {
+    const shop = doc(this.firestore, 'shops', id);
+    return docData(shop) as Observable<Shop>;
   }
+
+  async appendProductReferenceToShop() {
+    //TODO: append product reference to shop in firebase
+
+  }
+
+
 }

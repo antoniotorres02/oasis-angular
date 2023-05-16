@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import {opacity} from "../../animations/animation";
+import {ShopService} from "../../Services/shop.service";
+import {Shop} from "../../../interfaces/shop";
 
 interface Producto {
   name: string;
@@ -20,7 +22,7 @@ export class ShopComponent implements OnInit {
   selectedImg = '';
   productos!: Observable<Producto[]>;
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, private shopService: ShopService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {

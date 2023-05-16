@@ -4,7 +4,7 @@ interface ProductType {
   type: string;
   options: string[];
 }
-interface Product {
+export interface Product {
   productId: string;
   productName: string;
   productPrize: number;
