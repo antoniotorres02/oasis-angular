@@ -60,6 +60,8 @@ export class PrincipalComponent implements OnInit{
     this.signedOut = false;
 
     this.modal.obtenerNombreUser().subscribe(valor => {this.nombreUser = valor});
+    this.modal.obtenerFavStore().subscribe(valor => {this.tiendas_fav = valor});
+
   }
 
 

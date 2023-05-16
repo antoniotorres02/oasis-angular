@@ -98,6 +98,10 @@ export class PrincipalModalServicioService {
     return this.tiendas_fav.asObservable();
   }
 
+  setFavStore(tiendas:string[]){
+    this.tiendas_fav.next(tiendas);
+  }
+
   async signOut() {
     await this.auth['signOut']();
     this.signedOut = true;
@@ -114,8 +118,9 @@ export class PrincipalModalServicioService {
   }
 
   async addFavStore(tienda:string){
-    this.tiendas_fav.value.push(tienda);
-
+    if(!this.tiendas_fav.value.find(valor => valor == tienda)){
+      this.tiendas_fav.value.push(tienda);
+    }
 
   }
 
