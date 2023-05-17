@@ -27,14 +27,16 @@ export class DialogoComponent implements OnInit{
 
   }
 
+  openEditDialog(){
+    this.modal.$editarMarco.emit(true);
+  }
+
   closeMarco(){
     if(this.marco){
       const resultado = this.tiendas_fav.filter(valor => valor != this.tiendas_fav[0]);
       this.modal.setFavStore(resultado);
       this.modal.SubirFavStore();
       this.modal.$modal_marco.emit(false);
-
-
 
 
     }

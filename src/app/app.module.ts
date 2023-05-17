@@ -36,6 +36,7 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
+import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
 
 
 
@@ -98,7 +99,8 @@ const appRoute: Routes = [
     CategoriasComponent,
     DialogoComponent,
     CheckoutComponent,
-    ShoploginComponent
+    ShoploginComponent,
+    EditarMarcoComponent
 
   ],
     imports: [

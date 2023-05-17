@@ -37,6 +37,7 @@ export class PrincipalComponent implements OnInit{
 
   nombreUser!:string;
   tiendas_fav!:string[];
+  editarMarco!:boolean;
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
 
@@ -61,7 +62,7 @@ export class PrincipalComponent implements OnInit{
 
     this.modal.obtenerNombreUser().subscribe(valor => {this.nombreUser = valor});
     this.modal.obtenerFavStore().subscribe(valor => {this.tiendas_fav = valor});
-
+    this.modal.$editarMarco.subscribe(valor => {this.editarMarco=valor});
   }
 
 

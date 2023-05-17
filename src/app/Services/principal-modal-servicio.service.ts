@@ -29,6 +29,8 @@ export class PrincipalModalServicioService {
   $modal_marco2 = new EventEmitter<any>();
   $modal_marco3 = new EventEmitter<any>();
 
+  $editarMarco = new EventEmitter<any>();
+
   //servicios para varianbles no booleanas
 
   private data = new BehaviorSubject<string>('');
