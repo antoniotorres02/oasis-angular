@@ -15,6 +15,7 @@
   flex-flow: column;
   flex-wrap: wrap;
   border-radius: 10px;
+  gap: 3em;
 }
 
 .top, .botom{
