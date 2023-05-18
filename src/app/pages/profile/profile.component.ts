@@ -4,19 +4,21 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
 import {ShipmentAddress} from "../../../interfaces/shipment-address";
-
+import {DialogService} from "../../Services/dialog-service.service";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
   pedidosCargado: boolean = true;
   pedidosCompletosCargado: boolean = false;
   wishlist: boolean = false;
   soporteCargado: boolean = false;
   configuracionCargado: boolean = false;
+
+  dialogoAbierto!: boolean;
 
   current: number = 0;
   user: any;
@@ -44,7 +46,7 @@ export class ProfileComponent {
   public userFirebase: any;
 
   arrayAux: (&boolean[]) = [this.pedidosCargado, this.pedidosCompletosCargado, this.wishlist, this.soporteCargado, this.configuracionCargado];
-  constructor(private firestore: Firestore, public auth: AngularFireAuth){
+  constructor(private firestore: Firestore, public auth: AngularFireAuth, private dialogService: DialogService){
     this.auth.authState.subscribe(user => {
       //console.log(this.actualuser$);
       this.user = user;
@@ -121,4 +123,15 @@ export class ProfileComponent {
 
     this.addresses?.push(sAaux);
   }
+
+  ngOnInit() {
+    this.dialogService.$dialogoAbierto.subscribe(valor => {this.dialogoAbierto = valor});
+  }
+
+  openDialog(){
+    this.dialogService.$dialogoAbierto.emit(true);
+    console.log(this.dialogoAbierto);
+  }
+
+
 }

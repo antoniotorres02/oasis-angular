@@ -76,10 +76,13 @@
       </div>
 
     </div>
-
+    <button (click)="openDialog()" type="button" class="btn btn-outline-secondary cosita btn-add-direcciones" >Añadir más direcciones</button>
     <app-linked-cards [card] = "card1" ></app-linked-cards>
   </div>
+  <div *ngIf="dialogoAbierto">
+    <app-new-shippment-address></app-new-shippment-address>
 
+  </div>
 
   <!--fin pedido-->
   <!--Fin pedidos en curso-->
