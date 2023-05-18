@@ -1,4 +1,8 @@
 
+h5{
+  color: white;
+}
+
 .contenedor{
   width: 300px;
   height: 200px;
@@ -19,7 +23,19 @@
 }
 
 .top, .botom{
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
+
 }
+
+.top{
+  flex-flow: column;
+}
+
+.top input{
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+}
+
