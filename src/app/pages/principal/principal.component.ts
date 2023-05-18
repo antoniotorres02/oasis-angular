@@ -76,6 +76,7 @@ export class PrincipalComponent implements OnInit{
   }
   closeCaetegoria(){
     this.modal.$modal_Cat.emit(false);
+
   }
 
   openDialog(event:Event){

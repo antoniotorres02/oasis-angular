@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
 import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
+import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 
 
 
@@ -100,7 +101,8 @@ const appRoute: Routes = [
     DialogoComponent,
     CheckoutComponent,
     ShoploginComponent,
-    EditarMarcoComponent
+    EditarMarcoComponent,
+    MarcosComponent
 
   ],
     imports: [

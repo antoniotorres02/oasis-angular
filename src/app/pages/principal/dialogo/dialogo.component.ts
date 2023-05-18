@@ -28,7 +28,22 @@ export class DialogoComponent implements OnInit{
   }
 
   openEditDialog(){
-    this.modal.$editarMarco.emit(true);
+    if(this.marco){
+      this.modal.$editarMarco.emit(true);
+      this.modal.setEditarMarco1(true);
+
+
+    }
+    if(this.marco2){
+      this.modal.$editarMarco.emit(true);
+      this.modal.setEditarMarco2(true);
+
+    }
+    if(this.marco3){
+      this.modal.$editarMarco.emit(true);
+      this.modal.setEditarMarco3(true);
+
+    }
   }
 
   closeMarco(){

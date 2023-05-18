@@ -2,11 +2,11 @@
   <div class="contenedor-modal">
 
     <div class="top">
-      <input>
+      <input [(ngModel)]="valorInput">
     </div>
 
     <div class="botom">
-      <input>
+      <button (click)="editarMarco();CloseMarco()">editar</button>
     </div>
 
   </div>

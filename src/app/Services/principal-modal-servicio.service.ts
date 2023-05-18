@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter, Injectable, OnInit} from '@angular/core';
 import {PrincipalModalComponent} from "../pages/principal/principal-modal/principal-modal.component";
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -18,7 +18,7 @@ interface Usuario {
 @Injectable({
   providedIn: 'root'
 })
-export class PrincipalModalServicioService {
+export class PrincipalModalServicioService{
   //servicios para vartiables booleanas
   $modal = new EventEmitter<any>();
   $modal_Cat = new EventEmitter<any>();
@@ -30,6 +30,16 @@ export class PrincipalModalServicioService {
   $modal_marco3 = new EventEmitter<any>();
 
   $editarMarco = new EventEmitter<any>();
+
+
+  editarMarco1 = new BehaviorSubject<boolean>(false);
+
+
+  editarMarco2 = new BehaviorSubject<boolean>(false);
+
+
+  editarMarco3 = new BehaviorSubject<boolean>(false);
+
 
   //servicios para varianbles no booleanas
 
@@ -62,9 +72,6 @@ export class PrincipalModalServicioService {
       }
     });
   }
-
-
-
   async getUserData(user: any) {
     const userDocRef = doc(this.firestore, `Usuarios/${user?.uid}`);
     const userDocCardsRef = doc(this.firestore, `Usuarios/${user?.uid}/cards/cardsList`);
@@ -85,7 +92,7 @@ export class PrincipalModalServicioService {
       this.wishlistCount = userData["wishlist"];
       this.orderCount = userData["orderCount"];
       this.ordersInProgress = userData["ordersInProgress"];
-      this.tiendas_fav.next(userData["favStore"]);
+      this.setFavStore(userData["favStore"]);
 
     } else {
       console.log('El usuario no existe.');
@@ -102,6 +109,26 @@ export class PrincipalModalServicioService {
 
   setFavStore(tiendas:string[]){
     this.tiendas_fav.next(tiendas);
+  }
+
+  obtenerEditarMarco1(){
+    return this.editarMarco1.asObservable();
+  }
+  setEditarMarco1(valor:boolean){
+    this.editarMarco1.next(valor);
+  }
+
+  obtenerEditarMarco2(){
+    return this.editarMarco2.asObservable();
+  }
+  setEditarMarco2(valor:boolean){
+    this.editarMarco2.next(valor);
+  }
+  obtenerEditarMarco3(){
+    return this.editarMarco3.asObservable();
+  }
+  setEditarMarco3(valor:boolean){
+    this.editarMarco3.next(valor);
   }
 
   async signOut() {

@@ -75,6 +75,7 @@
       </div>
       <div class="contenedor_marcos" *ngIf="(auth.user | async)">
         <div class="super_marco" *ngIf="marco_visible == undefined || marco_visible == true">
+
           <div class="marco" >
             <a [routerLink]="['/shop', {img: 'foot_locker.svg'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>
           </div>
@@ -86,7 +87,7 @@
 
         <div class="super_marco" *ngIf="marco_visible2 == undefined || marco_visible2 == true">
           <div class="marco">
-            <!--<img src="IMG/foot_locker.svg" alt="">-->
+
             <a [routerLink]="['/shop', {img: 'Zara_logo.svg'}]"><img src="./assets/IMG/Zara_logo.svg" alt=""></a>
           </div>
           <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="2"></a>
@@ -97,7 +98,7 @@
 
         <div class="super_marco" *ngIf="marco_visible3 == undefined || marco_visible3 == true">
           <div class="marco">
-            <!--<img src="IMG/foot_locker.svg" alt="">-->
+
             <a [routerLink]="['/shop', {img: 'JD_logo.svg'}]"><img src="./assets/IMG/JD_logo.svg" alt=""></a>
           </div>
           <a (click)="openDialog($event)" ><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="3"></a>
