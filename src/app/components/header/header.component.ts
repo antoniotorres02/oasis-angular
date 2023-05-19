@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {Firestore, collection, collectionData, doc} from '@angular/fire/firestore';
 import {getDoc} from "firebase/firestore";
 import {Observable} from "rxjs";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit{
   orderCount?: string;
   ordersInProgress?: string;
   actualuser$: Observable<any[]> | null = null; // inicializando con null
-  constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
+  constructor(private translateService: TranslateService, private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore) {
     this.auth.authState.subscribe(user => {
       console.log(this.actualuser$);
       this.user = user;
@@ -31,9 +32,15 @@ export class HeaderComponent implements OnInit{
       }
     });
   }
+
+  setLanguage(lang: string) {
+    this.translateService.use(lang);
+  }
   ngOnInit() {
     this.modal.$modal_Cat.subscribe((valor) => {this.principal = valor});
     this.signedOut = false;
+    this.setLanguage('es'); // Establecer español como idioma por defecto
+
   }
 
   async getUserData(user: any) {
