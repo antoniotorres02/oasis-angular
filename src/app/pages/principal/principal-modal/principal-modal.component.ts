@@ -10,7 +10,7 @@ export class PrincipalModalComponent {
   @Output() messageEvent = new EventEmitter<string>();
   html =
     '          <div class="marco">\n' +
-    '            <a [routerLink]="[\'/shop\', {img: \'foot_locker.svg\'}]"><img src="./assets/IMG/foot_locker.svg" alt=""></a>\n' +
+    '            <a [routerLink]="[\'/shop\', {img: \'FootLocker.svg\'}]"><img src="./assets/IMG/FootLocker.svg" alt=""></a>\n' +
     '          </div>\n' +
     '          <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="1"></a>\n' +
     '          <div class="dialogo" *ngIf="dialog == true">\n' +

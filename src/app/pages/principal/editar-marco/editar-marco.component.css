@@ -7,6 +7,12 @@ h5{
   width: 300px;
   height: 200px;
   display: flex;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 .contenedor-modal{
@@ -22,11 +28,17 @@ h5{
   gap: 3em;
 }
 
-.top, .botom{
+.top{
   width: 90%;
   display: flex;
   justify-content: center;
+}
 
+.botom{
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
 }
 
 .top{
@@ -34,8 +46,56 @@ h5{
 }
 
 .top input{
-  border-radius: 10px;
+  border-radius: 50px;
   height: 35px;
+  outline: none;
+  border: solid 0.5px black;
+  background-color: rgb(46, 79, 79);
+  transition: all 0.6s ease;
+  text-indent: 1em;
+}
+
+.top input:focus{
+  color: white;
+}
+
+.top input::placeholder{
+  color: #CBE4DE;
+
+}
+
+.top input:hover{
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
+  color: black;
+}
+
+.botom button{
+  width: 70px;
+  height: 30px;
+  background-color: rgba(46, 79, 79, 0.75);
+  border-radius: 7px;
+  outline: none;
+  border: 1px inset;
+  transition: all 0.6s ease;
+  color: #CBE4DE;
+  box-shadow: 0 0 2px white;
+
+
+}
+
+@keyframes latidos {
+  from { transform: none;}
+  50% { transform: scale(1.05); }
+  to { transform: none;}
+}
+
+.botom button:hover{
+  background-color: rgba(46, 79, 79, 0.70);
+  transform: scale(1.01);
+  box-shadow: 0 0 2px black;
+  border: 1px solid black;
+  animation: latidos 3s infinite;
+  transform-origin: center;
 }
 

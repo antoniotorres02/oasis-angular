@@ -18,6 +18,7 @@ export class DialogoComponent implements OnInit{
   }
   ngOnInit() {
     this.modal.obtenerFavStore().subscribe(valor => {this.tiendas_fav = valor});
+    console.log(this.marco, this.marco2, this.marco3);
   }
 
   closeDialog(){

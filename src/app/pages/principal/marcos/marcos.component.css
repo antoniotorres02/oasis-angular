@@ -1,3 +1,15 @@
+.contenedor-total{
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  flex-wrap: wrap;
+}
+
+.contenedor{
+  display: flex;
+  gap: 1em;
+}
+
 .marco{
   display: flex;
   justify-content: center;
@@ -18,6 +30,13 @@
   transform: scale(1.05);
   box-shadow: 0 0 10px black;
   transition: all 0.6s ease;
+}
+
+.dialogo{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 900px){

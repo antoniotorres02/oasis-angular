@@ -273,12 +273,7 @@ p{
   height: 165px;
 }
 
-.dialogo{
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .btn_marcos{
   display: flex;

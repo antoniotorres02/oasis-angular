@@ -39,13 +39,13 @@ export class ShopComponent implements OnInit {
     let collectionName: string;
 
     switch (store) {
-      case 'foot_locker.svg':
+      case 'FootLocker.svg':
         collectionName = 'footLocker';
         break;
-      case 'Zara_logo.svg':
+      case 'Zara.svg':
         collectionName = 'Zara';
         break;
-      case 'JD_logo.svg':
+      case 'JD.svg':
         collectionName = 'JD';
         break;
       default:

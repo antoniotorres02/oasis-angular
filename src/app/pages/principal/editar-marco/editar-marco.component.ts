@@ -32,8 +32,9 @@ export class EditarMarcoComponent implements OnInit{
   editarMarco(){
     if(this.marco){
       const tiendasTmp = this.tiendas_fav;
-
-      if(this.tiendas.includes(this.valorInput)){
+      if(this.tiendas_fav.includes(this.valorInput)){
+        alert("Esa tienda ya existe");
+      }else if(this.tiendas.includes(this.valorInput)){
         tiendasTmp[0] = this.valorInput;
         this.modal.setFavStore(tiendasTmp);
         this.modal.SubirFavStore();
@@ -45,9 +46,11 @@ export class EditarMarcoComponent implements OnInit{
     }
     if(this.marco2){
       const tiendasTmp = this.tiendas_fav;
-      if(this.tiendas.includes(this.valorInput)){
+      if(this.tiendas_fav.includes(this.valorInput)){
+        alert("Esa tienda ya existe");
+      }else if(this.tiendas.includes(this.valorInput)){
         tiendasTmp[1] = this.valorInput;
-        this.modal.setFavStore(tiendasTmp);
+        this.modal.setFavStore([...new Set(tiendasTmp)]);
         this.modal.SubirFavStore();
       }else{
         alert("No se ha encontrado esa tienda");
@@ -56,9 +59,11 @@ export class EditarMarcoComponent implements OnInit{
     }
     if(this.marco3){
       const tiendasTmp = this.tiendas_fav;
-      if(this.tiendas.includes(this.valorInput)){
+      if(this.tiendas_fav.includes(this.valorInput)){
+        alert("Esa tienda ya existe");
+      }else if(this.tiendas.includes(this.valorInput)){
         tiendasTmp[2] = this.valorInput;
-        this.modal.setFavStore(tiendasTmp);
+        this.modal.setFavStore([...new Set(tiendasTmp)]);
         this.modal.SubirFavStore();
       }else{
         alert("No se ha encontrado esa tienda");
@@ -70,6 +75,9 @@ export class EditarMarcoComponent implements OnInit{
 
   CloseMarco(){
     this.modal.$editarMarco.emit(false);
+    this.modal.setEditarMarco3(false);
+    this.modal.setEditarMarco2(false);
+    this.modal.setEditarMarco1(false);
   }
 
 
