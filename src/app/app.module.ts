@@ -36,6 +36,11 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
+import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
+import { MarcosComponent } from './pages/principal/marcos/marcos.component';
+
+
+
 import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipment-address.component';
 import { NewShippmentAddressComponent } from './pages/profile/new-shippment-address/new-shippment-address.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -100,6 +105,8 @@ const appRoute: Routes = [
     DialogoComponent,
     CheckoutComponent,
     ShoploginComponent,
+    EditarMarcoComponent,
+    MarcosComponent
     ShipmentAddressComponent,
     NewShippmentAddressComponent,
 
