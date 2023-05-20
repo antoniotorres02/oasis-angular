@@ -106,9 +106,9 @@ const appRoute: Routes = [
     CheckoutComponent,
     ShoploginComponent,
     EditarMarcoComponent,
-    MarcosComponent
+    MarcosComponent,
     ShipmentAddressComponent,
-    NewShippmentAddressComponent,
+    NewShippmentAddressComponent
 
   ],
     imports: [
