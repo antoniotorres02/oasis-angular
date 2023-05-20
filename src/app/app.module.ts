@@ -38,10 +38,10 @@ import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
 import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipment-address.component';
 import { NewShippmentAddressComponent } from './pages/profile/new-shippment-address/new-shippment-address.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
 import { MarcosComponent } from './pages/principal/marcos/marcos.component';
+import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
 
 
 
@@ -109,6 +109,7 @@ const appRoute: Routes = [
     MarcosComponent,
     ShipmentAddressComponent,
     NewShippmentAddressComponent,
+    OpcionesTarjetaComponent,
 
   ],
     imports: [
@@ -121,7 +122,6 @@ const appRoute: Routes = [
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
         FormsModule,
-        MatDialogModule,
         BrowserAnimationsModule
     ],
   providers: [],

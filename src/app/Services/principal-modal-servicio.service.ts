@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import {getDoc} from "firebase/firestore";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFirestore, DocumentData} from "@angular/fire/compat/firestore";
 
 interface Usuario {
   favStore: string[];
@@ -40,6 +40,9 @@ export class PrincipalModalServicioService{
 
   editarMarco3 = new BehaviorSubject<boolean>(false);
 
+  //linked Cards
+  $dialogo_tarjeta = new BehaviorSubject<boolean[]>([false,false,false,false,false]);
+
 
   //servicios para varianbles no booleanas
 
@@ -63,6 +66,7 @@ export class PrincipalModalServicioService{
   lastName!:string;
   name!:string;
   tiendas_fav = new BehaviorSubject<string[]>([]);
+  cards = new BehaviorSubject<DocumentData>([]);
   constructor(public auth: AngularFireAuth, private firestore: Firestore, private firestore2: AngularFirestore) {
     this.auth.authState.subscribe(user => {
       console.log(this.actualuser$);
@@ -81,7 +85,7 @@ export class PrincipalModalServicioService{
 
     if (userDocSnapshot.exists()) {
       const userData = userDocSnapshot.data();
-      const userCard:any =  userDocCardShot.data();
+      const userCard =  userDocCardShot.data();
 
       console.log(userData);
 
@@ -93,6 +97,7 @@ export class PrincipalModalServicioService{
       this.orderCount = userData["orderCount"];
       this.ordersInProgress = userData["ordersInProgress"];
       this.setFavStore(userData["favStore"]);
+      this.setCards(userCard);
 
     } else {
       console.log('El usuario no existe.');
@@ -109,6 +114,22 @@ export class PrincipalModalServicioService{
 
   setFavStore(tiendas:string[]){
     this.tiendas_fav.next(tiendas);
+  }
+
+  obtenerCards(){
+    return this.cards.asObservable();
+  }
+
+  setCards(new_card:any){
+    this.cards.next(new_card);
+  }
+
+  obtenerDialogTarjetas(){
+    return this.$dialogo_tarjeta.asObservable();
+  }
+
+  setDialogTarjetas(newValor:boolean[]){
+    this.$dialogo_tarjeta.next(newValor);
   }
 
   obtenerEditarMarco1(){
@@ -162,6 +183,14 @@ export class PrincipalModalServicioService{
       ordersInProgress:this.ordersInProgress,
       registrationDate: this.registrationDate,
       usuario: this.nombreUser.value,
+    });
+  }
+
+  async Editartarjeta(){
+    await setDoc(doc(this.firestore, `Usuarios/${this.user.uid}/cards/cardsList`), {
+      card1: this.cards.value["card1"],
+      card2: this.cards.value["card2"],
+      card3: this.cards.value["card3"]
     });
   }
 

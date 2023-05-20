@@ -1,20 +1,43 @@
 .contenido{
   display: flex;
-  flex-flow: row;
-
-
   margin-top: 2%;
   margin-left: 2%;
 }
 
+.opciones{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
 .contenido_derecha{
+  width: 100%;
   display: flex;
   flex-flow: column;
+
 }
+
+.contendor-tarjetas{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
 .tarjetas{
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  gap: 1em;
 }
 .marco_tarjeta{
   width: 350px;
@@ -57,6 +80,14 @@
 .marco_tarjeta .contenido_marco_tarjeta:hover{
   transform: scale(1.05);
   transition: all 0.3s ease;
+}
+
+.dialogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-left: 10em;
 }
 
 @keyframes desplazar {

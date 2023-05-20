@@ -5,6 +5,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
 import {ShipmentAddress} from "../../../interfaces/shipment-address";
 import {DialogService} from "../../Services/dialog-service.service";
+import {DocumentData} from "@angular/fire/compat/firestore";
+import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-profile',
@@ -37,7 +39,7 @@ export class ProfileComponent implements OnInit{
 
   //datos de usuario
   card1?: string[] = [];
-
+  tarjetas!:DocumentData;
 
   //fin Datos usuarios
   //Direcciones de envio
@@ -46,7 +48,7 @@ export class ProfileComponent implements OnInit{
   public userFirebase: any;
 
   arrayAux: (&boolean[]) = [this.pedidosCargado, this.pedidosCompletosCargado, this.wishlist, this.soporteCargado, this.configuracionCargado];
-  constructor(private firestore: Firestore, public auth: AngularFireAuth, private dialogService: DialogService){
+  constructor(private firestore: Firestore, public auth: AngularFireAuth, private dialogService: DialogService, private modal:PrincipalModalServicioService){
     this.auth.authState.subscribe(user => {
       //console.log(this.actualuser$);
       this.user = user;
@@ -126,6 +128,7 @@ export class ProfileComponent implements OnInit{
 
   ngOnInit() {
     this.dialogService.$dialogoAbierto.subscribe(valor => {this.dialogoAbierto = valor});
+    this.modal.obtenerCards().subscribe(valor => {this.tarjetas = valor});
   }
 
   openDialog(){
