@@ -2,52 +2,62 @@
   {
     "name": "Zapatillas de running",
     "description": "Zapatillas de running con parte superior de malla transpirable y mediasuela de espuma para una gran comodidad y amortiguación. Diseño deportivo y moderno que se adapta a cualquier estilo. Suela de goma duradera para una gran tracción y agarre en cualquier terreno.",
-    "id":"1"
+    "id":"1",
+    "rating":"3"
   },
   {
     "name": "Sudadera con capucha",
     "description": "Sudadera con capucha y manga larga con un diseño moderno y llamativo. Confeccionada con un tejido suave y cómodo para una gran sensación de comodidad. Diseño versátil que se adapta a cualquier estilo.",
-    "id":"2"
+    "id":"2",
+    "rating":"2"
   },
   {
     "name": "Pantalones de entrenamiento",
     "description": "Pantalones de entrenamiento con cintura elástica y cordón ajustable. Confeccionados con un tejido suave y cómodo para una gran sensación de comodidad. Diseño moderno y elegante que se adapta a cualquier estilo.",
-    "id":"3"
+    "id":"3",
+    "rating":"4"
   },
   {
     "name": "Gorra de béisbol",
     "description": "Gorra de béisbol con diseño clásico y elegante. Confeccionada con un tejido resistente y duradero para una gran protección y comodidad. Diseño versátil que se adapta a cualquier estilo y ocasión.",
-    "id":"4"
+    "id":"4",
+    "rating":"2"
   },
   {
     "name": "Mochila de deporte",
     "description": "Mochila de deporte con múltiples bolsillos y compartimentos para guardar tus pertenencias de forma segura y organizada. Diseño moderno y elegante que se adapta a cualquier estilo. Confeccionada con un tejido resistente y duradero para una gran protección y comodidad.",
-    "id":"5"
+    "id":"5",
+    "rating":"4"
   },
   {
     "name": "Chaqueta cortavientos",
     "description": "Chaqueta cortavientos con capucha y manga larga. Diseño deportivo y moderno que se adapta a cualquier estilo. Confeccionada con un tejido resistente al viento y al agua para una gran protección en cualquier clima.",
-    "id":"6"
+    "id":"6",
+    "rating":"4.4"
   },
   {
     "name": "Calcetines deportivos",
     "description": "Calcetines deportivos con diseño cómodo y transpirable. Confeccionados con un tejido resistente y duradero para una gran protección y comodidad. Diseño versátil que se adapta a cualquier actividad deportiva.",
-    "id":"7"
+    "id":"7",
+    "rating":"2"
   },
   {
     "name": "Camiseta de entrenamiento",
     "description": "Camiseta de entrenamiento con diseño transpirable y cómodo. Confeccionada con un tejido suave y resistente para una gran comodidad y protección. Diseño moderno y elegante que se adapta a cualquier estilo.",
-    "id":"8"
+    "id":"8",
+    "rating":"3"
   },
   {
     "name": "Zapatillas de baloncesto",
     "description": "Zapatillas de baloncesto con diseño moderno y elegante. Confeccionadas con un tejido transpirable y resistente para una gran comodidad y protección. Suela de goma duradera para una gran tracción y agarre en cualquier terreno.",
-    "id":"9"
+    "id":"9",
+    "rating":"3.4"
   },
   {
     "name": "Polo de golf",
     "description": "Polo de golf con diseño elegante y sofisticado. Confeccionado con un tejido transpirable y resistente para una gran comodidad y protección durante todo el juego. Diseño versátil que se adapta a cualquier estilo y ocasión.",
-    "id":"10"
+    "id":"10",
+    "rating":"4.5"
   }
   ]
     
