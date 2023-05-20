@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Firestore, query, setDoc, where} from "@angular/fire/firestore";
+import {deleteDoc, Firestore, query, setDoc, where} from "@angular/fire/firestore";
 import {collection, collectionData, doc, docData, getDoc, getDocs} from "@angular/fire/firestore";
 import {filter, Observable} from "rxjs";
 import {Product} from "../../interfaces/product";
@@ -32,8 +32,12 @@ export class ProductService {
 
   async addProductToShop(shopId: string, product: Product): Promise<void> {
     `//TODO: add product to shop in firebase`
+    product.shopId = shopId;
     await setDoc(doc(this.firestore, 'products', product.productId), product);
   }
 
+  async deleteProductFromShop(productId: string): Promise<void> {
+    await deleteDoc(doc(this.firestore, 'products', productId));
+  }
 
 }

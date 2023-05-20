@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {PrincipalComponent} from "../../pages/principal/principal.component";
-import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../services/principal-modal-servicio.service";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {Firestore, collection, collectionData, doc} from '@angular/fire/firestore';
 import {getDoc} from "firebase/firestore";

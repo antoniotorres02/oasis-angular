@@ -11,7 +11,6 @@ export class ShoploginComponent {
   shop_user: string = 'foo';
   shop_passwd: string = 'foo123';
   constructor(private service: ShopLoginServiceService) {
-
   }
 
   sendLogin() {
@@ -19,7 +18,9 @@ export class ShoploginComponent {
       shop_id: this.shop_user,
       shop_passwd: this.shop_passwd
     }
-
     this.service.login(shopLogin);
   }
+
+
+
 }

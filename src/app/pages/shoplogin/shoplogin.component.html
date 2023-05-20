@@ -12,6 +12,6 @@
       Contraseña:
     </label>
     <input type="text" id="shop_passwd" required [(ngModel)]="shop_passwd">
-    <button type="submit" routerLink="/manager">Entrar</button>
+    <button type="submit" (click)="sendLogin()">Entrar</button>
   </div>
 </div>

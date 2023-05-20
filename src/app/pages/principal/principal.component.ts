@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
-import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../services/principal-modal-servicio.service";
 import {opacity} from "../../animations/animation";
 
 

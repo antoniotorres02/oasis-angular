@@ -3,7 +3,7 @@ import {PrincipalComponent} from "./pages/principal/principal.component";
 import {Router} from "@angular/router";
 
 
-import {PrincipalModalServicioService} from "./Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "./services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-root',

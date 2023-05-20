@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {PrincipalModalServicioService} from "../../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../../services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-principal-modal',
