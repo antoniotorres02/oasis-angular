@@ -9,6 +9,8 @@ main {
   grid-gap: 20px;
   height: 100%;
   padding: 50px;
+  background-color: rgba(252, 205, 95, 0.34);
+  border-radius: 0px 0px 10px 10px;
 }
 
 main h1 {

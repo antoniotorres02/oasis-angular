@@ -8,8 +8,8 @@ import {ShopLogin, ShopLoginServiceService} from "../../services/shop-login-serv
   providers: [ShopLoginServiceService]
 })
 export class ShoploginComponent {
-  shop_user: string = 'foo';
-  shop_passwd: string = 'foo123';
+  shop_user: string = '';
+  shop_passwd: string = '';
   constructor(private service: ShopLoginServiceService) {
   }
 
