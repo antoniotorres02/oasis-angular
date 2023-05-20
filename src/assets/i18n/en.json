@@ -4,5 +4,102 @@
   "header.login": "Sign In",
   "header.logout": "Sign Out",
   "header.cart": "Cart",
-  "header.addItems": "Add items"
+  "header.addItems": "Add items",
+  "footer": {
+    "whyBuy": "Why Buy",
+    "paymentMethod": "Payment Method",
+    "shippingCosts": "Shipping Costs",
+    "faq": "FAQ",
+    "customerOptions": "Customer Options",
+    "aboutUs": "About Us",
+    "commitment": "Commitment",
+    "purchaseConditions": "Purchase Conditions",
+    "allBrands": "All Brands",
+    "legalNotice": "Legal Notice",
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "supportCenter": "Support Center",
+    "returnsWarranty": "Returns and Warranty",
+    "advertising": "Advertising",
+    "workWithUs": "Work With Us",
+    "others": "Others",
+    "repairServices": "Repair Services",
+    "technicalAssistance": "Technical Assistance",
+    "responsibility": "Responsibility",
+    "loginAsStore": "Login as Store",
+    "companyName": "Oasis.com",
+    "copyright": "© 2023"
+  },
+  "cart": {
+    "cart": "Cart",
+    "price": "Price",
+    "picture": "Picture",
+    "description": "Description of the Item",
+    "deliveryAvailable": "Delivery Available",
+    "inStock": "In Stock.",
+    "quantity": "Q",
+    "brand": "Brand",
+    "pricePerUnit": "Price/Unit",
+    "delete": "Delete",
+    "buyNow": "Buy Now",
+    "total": "Total",
+    "similarProducts": "Similar Products"
+  },
+  "payment": {
+    "howToPay": "How do you want to pay?",
+    "creditCard": "Credit Card",
+    "masterCard": "Master Card",
+    "payPal": "PayPal",
+    "cardNumber": "Card Number",
+    "enterCardNumber": "Enter Card Number",
+    "expirationDate": "Expiration Date",
+    "month": "Month",
+    "cvv": "CVV/CVC",
+    "cardHolderName": "Card Holder Name",
+    "enterCardHolderName": "Enter Card Holder Name",
+    "userName": "User Name",
+    "password": "Password",
+    "pay": "Pay"
+  },
+  "registration": {
+    "noAccount": "Don't have an account?",
+    "startSelling": "Start selling on our website, with no commissions.",
+    "increaseSales": "Increase the reach of your sales.",
+    "unifiedMarketplace": "We have a unified marketplace, making it easier for customers to shop through our website.",
+    "customizeStore": "Customize the look of your store.",
+    "promoteOffers": "Promote your offers and new releases.",
+    "register": "Register",
+    "companyName": "Company Name",
+    "companyNamePlaceholder": "Company's name",
+    "companyEmail": "Company Email",
+    "companyEmailPlaceholder": "example@example.com",
+    "contactNumber": "Contact Number",
+    "contactNumberPlaceholder": "123456789",
+    "headquartersAddress": "Headquarters Address",
+    "headquartersAddressPlaceholder": "Direction",
+    "businessSector": "Business Sector",
+    "businessSectorPlaceholder": "Sector",
+    "submit": "Submit"
+  } ,
+  "manager": {
+    "title": "PRIMARK MANAGER FOR OASIS",
+    "orders": "Orders",
+    "myShop": "My Shop",
+    "myInfo": "My Information",
+    "support": "Support",
+    "apiUsage": "How to Use API"
+  },  "card": {
+  "searchPlaceholder": "Search..."
+},
+  "comment": "Here goes your comment",
+  "main": {
+    "searchPlaceholder": "Search",
+    "searchButton": "Search"
+  },
+  "shopManager": {
+    "title": "SHOP MANAGER",
+    "shopUserLabel": "Shop User:",
+    "passwordLabel": "Password:",
+    "loginButton": "Log in"
+  }
 }
