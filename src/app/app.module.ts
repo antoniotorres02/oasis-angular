@@ -36,9 +36,7 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
-
-
-
+import { CartService} from "./Services/cart.service";
 
 
 const appRoute: Routes = [
@@ -111,7 +109,7 @@ const appRoute: Routes = [
         provideFirestore(() => getFirestore()),
         FormsModule
     ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 

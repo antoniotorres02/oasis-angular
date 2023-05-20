@@ -14,29 +14,23 @@
   </div>
 
   <div class="containerCartSimilar">
-    <div class="containerCart"></div>
+    <div class="containerCart">
+      <div *ngFor="let item of cartItems">
+        <p>{{ item.name }}</p>
+        <p>{{ item.description }}</p>
+        <img [src]="item.picture" alt="Product Image">
+      </div>
+    </div>
     <div class="containerSimilar"></div>
   </div>
   <div class="containerBottom">
     <div class="containerBottom1">
       <div class="buyButton">
-        <a class="btn btn-primary" id="buy">Buy</a>
+        <a class="btn btn-primary" id="buy" (click)="printCart()">Buy</a>
       </div>
       <div class="headerTotal">
         <h2 id="total"> Total: 0.00€</h2>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-      <div class="cart-box-bottom">
-
-
-      </div>
-
 </div>
