@@ -20,7 +20,6 @@
       <div class="col">
         <div class="row">
           <img src="assets/IMG/accountCircle.png" alt="Imagen de Perfil" id="img-perfil-central">
-
         </div>
         <div class="row" id="div-text">
           <div *ngIf="(auth.user | async)">
@@ -70,10 +69,20 @@
     <app-s-queries></app-s-queries>
   </div>
   <div *ngIf="arrayAux[4]">
-    <app-profile-data></app-profile-data>
-    <app-linked-cards [card] = "card1" *ngIf="(auth.user | async)"></app-linked-cards>
-  </div>
+    <app-profile-data [name] = "name" [lastName] = "lastName" ></app-profile-data>
+    <div class="paco">
+      <div class="ship-address-component" *ngFor="let direccion of addresses" >
+        <app-shipment-address [address] = "direccion" ></app-shipment-address>
+      </div>
 
+    </div>
+    <button (click)="openDialog()" type="button" class="btn btn-outline-secondary cosita btn-add-direcciones" >Añadir más direcciones</button>
+    <app-linked-cards [card] = "card1" ></app-linked-cards>
+  </div>
+  <div *ngIf="dialogoAbierto">
+    <app-new-shippment-address></app-new-shippment-address>
+
+  </div>
 
   <!--fin pedido-->
   <!--Fin pedidos en curso-->

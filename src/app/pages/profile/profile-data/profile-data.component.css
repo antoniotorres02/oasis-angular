@@ -1,4 +1,4 @@
-#s_profileData h2{
+#s_profileData h2,h4{
   margin-top: 2%;
   margin-left: 2%;
 }
@@ -9,8 +9,15 @@
 
 }
 
+#nameLastname p{
+  padding-right: 1%;
+}
+
 .nombre_apellidos{
   display: inline-flex;
+}
+.nombre_apellidos p{
+  margin-right: 1%;
 }
 
 .input_perfil{

@@ -104,4 +104,24 @@ h5{
 }
 
 /*Configuración */
+.div-direcciones-envio{
+  display:flex;
+}
 
+.ship-address-component{
+  display:flex;
+  flex-flow: row;
+}
+
+.paco{
+  display:flex;
+  flex-flow: row;
+  gap: 2em;
+  padding-left: 1%;
+  flex-wrap: wrap;
+}
+
+.btn-add-direcciones{
+  margin-top: 2%;
+  margin-left: 2%;
+}

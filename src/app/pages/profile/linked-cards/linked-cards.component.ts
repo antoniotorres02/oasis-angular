@@ -13,7 +13,7 @@ export class LinkedCardsComponent implements OnInit{
 
 
   constructor() {
-    console.log("hola");
+
 
   }
 
