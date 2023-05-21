@@ -52,6 +52,7 @@ import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.
 
 
 
+import { CartService} from "./Services/cart.service";
 
 
 const appRoute: Routes = [
@@ -134,7 +135,7 @@ const appRoute: Routes = [
         FormsModule,
         BrowserAnimationsModule
     ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 

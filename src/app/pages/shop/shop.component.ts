@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+import { CartService } from '../../Services/cart.service';
+
 import {filter, Observable} from 'rxjs';
 
 interface Producto {
@@ -18,7 +21,7 @@ export class ShopComponent implements OnInit {
   selectedImg = '';
   productos!: Observable<Producto[]>;
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, private router: Router) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore,private router: Router, private cartService: CartService) { }
 
   ngOnInit() {
 
@@ -31,7 +34,14 @@ export class ShopComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.selectedImg = params.get('img')!;
       this.loadProducts(this.selectedImg); // Llama a la función loadProducts aquí
+      this.route.paramMap.subscribe(params => {
+        // ...
+      });
     });
+  }
+
+  addToCart(productName: string, productDescription: string, productPicture: string) {
+    this.cartService.addToCart(productName, productDescription, productPicture);
   }
 
   // Crea la función loadProducts para cargar los productos de la tienda seleccionada
