@@ -9,6 +9,7 @@ export interface Shop {
   login_id: string;
   passwd: string;
   image: string;
+  description: string;
   products: string[];
   info: Info;
 }
@@ -22,6 +23,7 @@ export function initializeShop() {
     passwd: '',
     image: '',
     products: [],
+    description: '',
     info: {
       phone: '',
       secondary_phone: '',

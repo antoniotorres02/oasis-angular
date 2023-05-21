@@ -54,4 +54,11 @@ export class ShopService {
       info: info
     })
   }
+
+  applyDescription(shopId: string, description: string) {
+    this.db.collection('shops').doc(shopId).update({
+      description: description
+    })
+
+  }
 }

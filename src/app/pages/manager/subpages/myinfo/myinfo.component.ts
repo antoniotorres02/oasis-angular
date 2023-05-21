@@ -51,4 +51,10 @@ export class MyinfoComponent {
   clearInfo() {
     this.shop.info = initializeInfo();
   }
+
+  applyDescription() {
+    this.shopService.applyDescription(this.shop.id, this.shop.description);
+
+  }
+
 }
