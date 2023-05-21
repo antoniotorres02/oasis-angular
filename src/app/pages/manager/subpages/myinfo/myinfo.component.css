@@ -181,14 +181,60 @@ main hr {
 #questions {
   grid-row: 3;
   background-color: white;
-  height: 100%;
-  width: 100%;
+  display: grid;
+  overflow-y: scroll;
+  max-height: 40vh;
   border-radius: 10px;
+  grid-auto-rows: min-content;
   border: 1px solid rgba(128, 128, 128, 0.49);
   padding: 10px;
 }
 
 
+.faq_message {
+  color: #7c7c7c;
+  font-size: 28px;
+  align-self: center;
+  justify-self: center;
+  margin-top: 50px;
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.question {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.49);
+  padding: 10px;
+}
+
+.question_text {
+  grid-column: span 3;
+  font-size: 20px;
+  align-self: center;
+}
+
+.question_buttons {
+  align-self: center;
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.question_buttons img {
+  align-self: center;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transition: rotate 0.5s, transform 0.5s;
+}
 
 
+.question_buttons img:hover {
+  transform: scale(1.4);
+  rotate: 360deg;
+}
 

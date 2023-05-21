@@ -3,12 +3,6 @@ interface Shop_ticket {
   shopId: string;
   subject: string;
   content: string;
-  status: Status;
+  status: string;
 }
 
-enum Status {
-  archived,
-  pending,
-  answered,
-  closed
-}

@@ -26,7 +26,7 @@ export class ShopLoginServiceService {
         if (shop.login_id == shop_login.shop_id && shop.passwd == shop_login.shop_passwd) {
           this.shop_id = shop.id;
           console.log("Login correcto" + this.shop_id);
-          this.router.navigate(['/manager']);
+          this.router.navigate(['/manager'], { queryParams: { shop_id: this.shop_id } });
         }
       });
     });

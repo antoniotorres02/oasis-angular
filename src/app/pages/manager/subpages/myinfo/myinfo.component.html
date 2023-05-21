@@ -12,26 +12,26 @@
   <div id="contact">
     <h1>Mis datos de contactos</h1>
     <label for="first_phone">Telefono de contacto:</label>
-    <input id="first_phone">
+    <input id="first_phone" [(ngModel)]="shop.info.phone">
     <label for="second_phone">Otro telefono de contacto:</label>
-    <input id="second_phone">
+    <input id="second_phone" [(ngModel)]="shop.info.secondary_phone">
     <label for="entity_name">Nombre de la entidad:</label>
-    <input id="entity_name">
+    <input id="entity_name" [(ngModel)]="shop.info.entity">
     <label for="country">País:</label>
-    <input id="country">
+    <input id="country"[(ngModel)]="shop.info.country">
     <label for="state">Localidad:</label>
-    <input id="state">
+    <input id="state" [(ngModel)]="shop.info.state">
     <label for="postal_code">Código postal:</label>
-    <input id="postal_code">
+    <input id="postal_code" [(ngModel)]="shop.info.postal_code">
     <label for="street">Calle:</label>
-    <input id="street">
+    <input id="street" [(ngModel)]="shop.info.street">
     <label for="address_number">Número</label>
-    <input id="address_number">
+    <input id="address_number" [(ngModel)]="shop.info.street_number">
     <label for="additional">Información adicional</label>
-    <input id="additional">
+    <input id="additional"  [(ngModel)]="shop.info.additional_info">
     <div id="contact_buttons">
-      <button id="contact_clean" class="">Limpiar</button>
-      <button id="contact_apply" class="">Aplicar Cambios</button>
+      <button id="contact_clean" class="" (click)="clearInfo()">Limpiar</button>
+      <button id="contact_apply" class="" (click)="applyInfo()">Aplicar Cambios</button>
     </div>
   </div>
 
@@ -39,17 +39,23 @@
     <h1>FAQS</h1>
     <div id="question_adder">
       <label for="question">Pregunta:</label>
-      <input id="question">
-      <label for="answer">Respuesta:</label>
-      <input id="answer">
-      <button>Añadir</button>
+      <input id="question" [(ngModel)]="question">
+      <label for="answer" >Respuesta:</label>
+      <input id="answer" [(ngModel)]="answer">
+      <button (click)="addFaq()">Añadir</button>
     </div>
     <div id="questions">
-      preguntas<br>
-      respuestas
+      <h1 *ngIf="faqs.length == 0" class="faq_message">Aún no hay preguntas disponibles</h1>
+      <div class="question" *ngFor="let question of faqs">
+        <div class="question_text">
+          <h3>{{question.question}}</h3>
+          <p>{{question.answer}}</p>
+        </div>
+        <div class="question_buttons">
+          <img src="assets/IMG/borrar.png" (click)="deleteQuestion(question)" alt="">
+        </div>
+      </div>
     </div>
-
-    <div *ngFor="faqs"></div>
   </div>
 
 </main>

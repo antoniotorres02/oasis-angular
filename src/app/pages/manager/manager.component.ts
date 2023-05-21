@@ -5,7 +5,8 @@ import {opacity} from "../../animations/animation";
 import {ShopLoginServiceService} from "../../services/shop-login-service.service";
 import {ShopService} from "../../services/shop.service";
 import {ActivatedRoute, Route, Router} from "@angular/router";
-import {Shop} from "../../../interfaces/shop";
+import {initializeShop, Shop} from "../../../interfaces/shop";
+import {initializeInfo} from "../../../interfaces/info";
 
 @Component({
   selector: 'app-manager',
@@ -15,15 +16,7 @@ import {Shop} from "../../../interfaces/shop";
 })
 export class ManagerComponent {
 
-  shop: Shop = {
-    id: 'generic',
-    name: 'generic',
-    email: 'generic@oasis.com',
-    login_id: 'generic',
-    passwd: 'generic',
-    image: 'generic',
-    products: []
-  }
+  shop: Shop = initializeShop()
   constructor(private shopService: ShopService, private shopLoginService: ShopLoginServiceService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
