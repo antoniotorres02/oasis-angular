@@ -36,7 +36,6 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
-import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
 import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 
 
@@ -45,7 +44,6 @@ import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipm
 import { NewShippmentAddressComponent } from './pages/profile/new-shippment-address/new-shippment-address.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
-import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
 import { EditarTarjetaComponent } from './pages/profile/editar-tarjeta/editar-tarjeta.component';
 import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.component';
