@@ -192,7 +192,7 @@ h1#header{
 
 
 .scroll-div{
-  width: 817.75px;
+  width: 100%;
   height: 358px;
   overflow: hidden;
   overflow-y: scroll;
