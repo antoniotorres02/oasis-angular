@@ -5,6 +5,7 @@ import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {Observable} from "rxjs";
 import {ShipmentAddress} from "../../../../interfaces/shipment-address";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-shippment-address',
@@ -17,7 +18,7 @@ export class NewShippmentAddressComponent {
 
 
 
-  constructor(private dialogService: DialogService, public auth: AngularFireAuth, private firestore: Firestore, private firestore2: AngularFirestore) {
+  constructor(private router: Router,private dialogService: DialogService, public auth: AngularFireAuth, private firestore: Firestore, private firestore2: AngularFirestore) {
     this.auth.authState.subscribe(user => {
       //console.log(this.actualuser$);
       this.user = user;
@@ -29,6 +30,9 @@ export class NewShippmentAddressComponent {
   onCancel() {
     // Cierra el diálogo sin guardar los datos
     this.dialogService.$dialogoAbierto.emit(false);
+    /*this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/tu-ruta']);
+    });*/
   }
   saveData() {
     const formData: { [key: string]: string } = {
@@ -55,16 +59,17 @@ export class NewShippmentAddressComponent {
         const dataArray = Object.values(formData);
         console.log(dataArray); // Aquí puedes hacer lo que desees con el array de strings (por ejemplo, pasarlo a Angular)
         this.subirDireccion(dataArray);
+        this.onCancel();
       }
     }
 
-    this.onCancel();
+
   }
 
   async subirDireccion(direccion: String[]){
+    const randomInt = Math.floor(Math.random() * 10000);
     await updateDoc(doc(this.firestore, `Usuarios/${this.user?.uid}/cards/shippingAddresses`), {
-
-      valorprueba2:direccion
+      [randomInt]:direccion
     });
   }
 

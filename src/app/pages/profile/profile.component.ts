@@ -65,7 +65,7 @@ export class ProfileComponent implements OnInit{
     const userDocSnapshot = await getDoc(userDocRef);
     const userDocCardShot = await getDoc(userDocCardsRef);
     const userDocSAShot = await getDoc(userDocSARef);
-
+    console.log(userDocSARef);
     if (userDocSnapshot.exists()) {
       const userData = userDocSnapshot.data();
       const userCard:any =  userDocCardShot.data();
@@ -99,6 +99,7 @@ export class ProfileComponent implements OnInit{
       console.log('El usuario no existe.');
     }
   }
+
 
   public cargarComponente(currentDisplay: number) {
     this.arrayAux[this.current] = false;
