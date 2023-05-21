@@ -52,7 +52,7 @@ import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.
 
 
 
-import { CartService} from "./Services/cart.service";
+import { CartService} from "./services/cart.service";
 
 
 const appRoute: Routes = [
@@ -121,7 +121,7 @@ const appRoute: Routes = [
     EditarTarjetaComponent,
     AddTarjetasComponent,
     OpcionesTarjetaComponent,
-    NewShippmentAddressComponent
+    NewShippmentAddressComponent,
     MyproductsComponent,
 
   ],

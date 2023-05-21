@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PrincipalModalServicioService} from "../../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../../services/principal-modal-servicio.service";
 import {DocumentData} from "@angular/fire/compat/firestore";
 
 @Component({

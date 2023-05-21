@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {filter, Observable} from 'rxjs';
-import { CartService } from '../../Services/cart.service';
+import { CartService } from '../../services/cart.service';
 
 
 interface Producto {

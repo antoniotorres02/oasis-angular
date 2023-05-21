@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getDoc } from "firebase/firestore";
 import {ShipmentAddress} from "../../../interfaces/shipment-address";
-import {DialogService} from "../../Services/dialog-service.service";
+import {DialogService} from "../../services/dialog-service.service";
 import {DocumentData} from "@angular/fire/compat/firestore";
-import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-profile',

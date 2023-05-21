@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PrincipalModalServicioService} from "../../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../../services/principal-modal-servicio.service";
 
 @Component({
   selector: 'app-marcos',

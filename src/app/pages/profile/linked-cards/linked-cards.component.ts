@@ -2,7 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ProfileComponent} from "../profile.component";
 import {Firestore} from "@angular/fire/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {PrincipalModalServicioService} from "../../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../../services/principal-modal-servicio.service";
 import {first} from "rxjs";
 import {DocumentData} from "@angular/fire/compat/firestore";
 import {object} from "@angular/fire/database";

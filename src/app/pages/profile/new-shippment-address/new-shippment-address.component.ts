@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DialogService} from "../../../Services/dialog-service.service";
+import {DialogService} from "../../../services/dialog-service.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import {AngularFirestore} from "@angular/fire/compat/firestore";

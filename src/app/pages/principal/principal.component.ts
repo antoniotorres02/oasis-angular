@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild, Compiler, Pipe, PipeTransform} from '@angular/core';
-import {PrincipalModalServicioService} from "../../Services/principal-modal-servicio.service";
+import {PrincipalModalServicioService} from "../../services/principal-modal-servicio.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {doc, Firestore, setDoc} from "@angular/fire/firestore";
 import {filter, Observable} from "rxjs";
