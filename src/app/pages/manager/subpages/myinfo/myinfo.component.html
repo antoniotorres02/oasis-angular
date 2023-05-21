@@ -3,10 +3,10 @@
   <hr>
   <div id="description">
     <h1>Mi descripción</h1>
-    <textarea id="description_text"></textarea>
+    <textarea id="description_text" [(ngModel)]="shop.description"></textarea>
     <div id="description_buttons">
-      <button id="description_clean" class="apply">Limpiar</button>
-      <button id="description_apply" class="clean">Aplicar Cambios</button>
+      <button id="description_clean" class="apply" (click)="shop.description = ''">Limpiar</button>
+      <button id="description_apply" class="clean" (click)="applyDescription()">Aplicar Cambios</button>
     </div>
   </div>
   <div id="contact">
