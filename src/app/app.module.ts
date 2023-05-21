@@ -44,6 +44,7 @@ import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
 import { EditarTarjetaComponent } from './pages/profile/editar-tarjeta/editar-tarjeta.component';
 import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.component';
+import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
 
 
 
@@ -114,6 +115,7 @@ const appRoute: Routes = [
     OpcionesTarjetaComponent,
     EditarTarjetaComponent,
     AddTarjetasComponent,
+    OpcionesTarjetaComponent,
 
   ],
     imports: [
