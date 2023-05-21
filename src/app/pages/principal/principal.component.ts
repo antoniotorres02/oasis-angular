@@ -32,8 +32,10 @@ export class PrincipalComponent implements OnInit{
   nombreUser!:string;
   tiendas_fav!:string[];
   editarMarco!:boolean;
+  card!:string[];
 
   constructor(private modal:PrincipalModalServicioService, public auth: AngularFireAuth, private firestore: Firestore, private router: Router) {
+
 
   }
 

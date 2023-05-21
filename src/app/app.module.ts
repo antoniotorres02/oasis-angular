@@ -43,8 +43,16 @@ import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 
 import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipment-address.component';
 import { NewShippmentAddressComponent } from './pages/profile/new-shippment-address/new-shippment-address.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
+import { MarcosComponent } from './pages/principal/marcos/marcos.component';
+import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
+import { EditarTarjetaComponent } from './pages/profile/editar-tarjeta/editar-tarjeta.component';
+import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.component';
+
+
+
+
 
 
 
@@ -108,6 +116,11 @@ const appRoute: Routes = [
     EditarMarcoComponent,
     MarcosComponent,
     ShipmentAddressComponent,
+    NewShippmentAddressComponent,
+    OpcionesTarjetaComponent,
+    EditarTarjetaComponent,
+    AddTarjetasComponent,
+    OpcionesTarjetaComponent,
     NewShippmentAddressComponent
 
   ],
@@ -121,7 +134,6 @@ const appRoute: Routes = [
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
         FormsModule,
-        MatDialogModule,
         BrowserAnimationsModule
     ],
   providers: [],
