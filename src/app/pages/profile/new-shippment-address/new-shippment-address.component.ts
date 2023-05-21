@@ -30,10 +30,16 @@ export class NewShippmentAddressComponent {
   onCancel() {
     // Cierra el diálogo sin guardar los datos
     this.dialogService.$dialogoAbierto.emit(false);
-    /*this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/tu-ruta']);
-    });*/
+
   }
+
+  onReload() {
+
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/profile']);
+    });
+  }
+
   saveData() {
     const formData: { [key: string]: string } = {
       name: (document.getElementById('name') as HTMLInputElement)?.value,
@@ -59,7 +65,7 @@ export class NewShippmentAddressComponent {
         const dataArray = Object.values(formData);
         console.log(dataArray); // Aquí puedes hacer lo que desees con el array de strings (por ejemplo, pasarlo a Angular)
         this.subirDireccion(dataArray);
-        this.onCancel();
+        this.onReload();
       }
     }
 
