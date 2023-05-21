@@ -178,6 +178,7 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border: none;
+  background-color: white;
 }
 .cerrar_sesion img{
   max-width: 80%;

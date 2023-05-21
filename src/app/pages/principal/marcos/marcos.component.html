@@ -1,0 +1,37 @@
+<div class="contenedor-total">
+  <div class="contenedor" *ngIf="this.tiendas_fav[0] != undefined">
+    <div class="marco">
+      <a [routerLink]="['/shop', {img: this.tiendas_fav[0]+ '.svg'}]"><img src="../../../../assets/IMG/{{this.tiendas_fav[0]}}.svg" alt=""></a>
+    </div>
+    <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="1"></a>
+    <div class="dialogo" *ngIf="dialog == true">
+      <app-dialogo [marco]="this.marco_visible"></app-dialogo>
+    </div>
+
+
+  </div>
+
+  <div class="contenedor" *ngIf="this.tiendas_fav[1] != undefined ">
+    <div class="marco">
+      <a [routerLink]="['/shop', {img: this.tiendas_fav[1]+ '.svg'}]"><img src="../../../../assets/IMG/{{this.tiendas_fav[1]}}.svg" alt=""></a>
+    </div>
+    <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="2"></a>
+    <div class="dialogo" *ngIf="dialog2 == true">
+      <app-dialogo [marco2]="this.marco_visible2"></app-dialogo>
+    </div>
+  </div>
+
+  <div class="contenedor" *ngIf="this.tiendas_fav[2] != undefined">
+    <div class="marco">
+      <a [routerLink]="['/shop', {img: this.tiendas_fav[2]+ '.svg'}]"><img src="../../../../assets/IMG/{{this.tiendas_fav[2]}}.svg" alt=""></a>
+    </div>
+    <a (click)="openDialog($event)"><img src="./assets/IMG/tres_puntos.svg" class="option" title ="Opciones" id="3"></a>
+    <div class="dialogo" *ngIf="dialog3 == true">
+      <app-dialogo [marco3]="this.marco_visible3"></app-dialogo>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -38,7 +38,7 @@
 
       </div>
       <button type="button">
-        <a><div *ngIf="(auth.user | async) && signedOut != true" [routerLink]="['./profile']">
+        <a ><div *ngIf="(auth.user | async) && signedOut != true" [routerLink]="['./profile']">
           <p>{{this.nombreUser}}</p> <!--{{ (auth.user | async)?.email}}-->
 
         </div>
@@ -58,10 +58,10 @@
     </div>
 
     <div class="cart">
-      <div class="btn2_cart">
+      <div class="btn2_cart" routerLink="/cart">
         <img src="./assets/IMG/carrito.svg" alt=""/>
       </div>
-      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><p>Carrito</p></button>
+      <button type="button" routerLink="/cart"><p>Carrito</p></button>
     </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

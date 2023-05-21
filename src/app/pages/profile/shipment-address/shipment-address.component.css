@@ -1,0 +1,47 @@
+.direccion-envio {
+  display:flex;
+  flex-flow: column;
+  border: 1px solid black; /* Establecemos el borde negro */
+  padding: 10px; /* Añadimos un poco de espacio dentro del div */
+  /*width: 30%;*/
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 2%;
+  animation: aparecer 1s ease-out both;
+
+}
+
+.rem {
+  font-weight: bold; /* Ponemos en negrita el nombre del remitente */
+}
+
+.dir {
+  font-style: italic; /* Ponemos la dirección en cursiva */
+}
+
+.tel {
+  font-weight: bold; /* Ponemos en negrita el número de teléfono */
+}
+
+.dni{
+
+}
+
+@keyframes desplazar {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

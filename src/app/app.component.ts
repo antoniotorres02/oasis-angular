@@ -12,13 +12,11 @@ import {PrincipalModalServicioService} from "./services/principal-modal-servicio
 })
 export class AppComponent{
 
-  @ViewChild(PrincipalComponent) principal!: PrincipalComponent;
   principalRef = true;
   title: any;
 
   constructor(private router: Router) {
-    this.principal = new PrincipalComponent(new PrincipalModalServicioService());
-    this.principalRef = this.principal.principalRef;
+
   }
 
   GetPrincipal(){

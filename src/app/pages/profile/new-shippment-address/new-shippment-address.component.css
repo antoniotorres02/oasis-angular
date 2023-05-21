@@ -1,0 +1,84 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.form-container {
+
+  padding: 20px;
+  background-color: rgb(46, 79, 79);
+
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.form-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.form-container label {
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  border-radius: 50px;
+  height: 35px;
+  outline: none;
+  border: solid 0.5px black;
+  background-color: rgb(46, 79, 79);
+  transition: all 0.6s ease;
+  text-indent: 1em;
+}
+
+.form-container input{
+  color: white;
+}
+
+.form-container input::placeholder{
+  color: #CBE4DE;
+
+}
+
+.form-container input:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: black;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+label {
+  color: white; /* Color de texto blanco */
+}
+
+
+.button-container button {
+  width: 70px;
+  height: 30px;
+  background-color: rgba(46, 79, 79, 0.75);
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  transition: all 0.6s ease;
+  color: #CBE4DE;
+}
+
+.error-message {
+  color: red; /* Color de texto rojo para el mensaje de error */
+  margin-top: 10px;
+}
+
+

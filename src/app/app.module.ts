@@ -36,10 +36,23 @@ import {ManagerComponent} from "./pages/manager/manager.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
+import { MarcosComponent } from './pages/principal/marcos/marcos.component';
 import { MyproductsComponent } from './pages/manager/subpages/myproducts/myproducts.component';
 
 
+import { ShipmentAddressComponent } from './pages/profile/shipment-address/shipment-address.component';
+import { NewShippmentAddressComponent } from './pages/profile/new-shippment-address/new-shippment-address.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditarMarcoComponent } from './pages/principal/editar-marco/editar-marco.component';
+import { OpcionesTarjetaComponent } from './pages/profile/opciones-tarjeta/opciones-tarjeta.component';
+import { EditarTarjetaComponent } from './pages/profile/editar-tarjeta/editar-tarjeta.component';
+import { AddTarjetasComponent } from './pages/profile/add-tarjetas/add-tarjetas.component';
 
+
+
+
+
+import { CartService} from "./Services/cart.service";
 
 
 const appRoute: Routes = [
@@ -100,6 +113,15 @@ const appRoute: Routes = [
     DialogoComponent,
     CheckoutComponent,
     ShoploginComponent,
+    EditarMarcoComponent,
+    MarcosComponent,
+    ShipmentAddressComponent,
+    NewShippmentAddressComponent,
+    OpcionesTarjetaComponent,
+    EditarTarjetaComponent,
+    AddTarjetasComponent,
+    OpcionesTarjetaComponent,
+    NewShippmentAddressComponent
     MyproductsComponent,
 
   ],
@@ -112,9 +134,10 @@ const appRoute: Routes = [
         AngularFireAuthModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule
     ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 

@@ -70,8 +70,32 @@
     <app-s-queries></app-s-queries>
   </div>
   <div *ngIf="arrayAux[4]">
-    <app-profile-data></app-profile-data>
+    <app-profile-data [name] = "name" [lastName] = "lastName" ></app-profile-data>
+    <div class="paco">
+      <div class="ship-address-component" *ngFor="let direccion of addresses" >
+        <app-shipment-address [address] = "direccion" ></app-shipment-address>
+      </div>
+
+    </div>
+    <button (click)="openDialog()" type="button" class="btn btn-outline-secondary cosita btn-add-direcciones" >Añadir más direcciones</button>
     <app-linked-cards [card] = "card1" ></app-linked-cards>
+
+  </div>
+  <div *ngIf="dialogoAbierto">
+    <app-new-shippment-address></app-new-shippment-address>
+
+  </div>
+
+  <div class="editar-tarjetas" *ngIf="this.editar_tarjetas">
+    <div class="modal-editar-tarjetas">
+      <app-editar-tarjeta></app-editar-tarjeta>
+    </div>
+  </div>
+
+  <div class="add-tarjetas" *ngIf="this.add_tarjeta">
+    <div class="modal-add-tarjetas">
+      <app-add-tarjetas></app-add-tarjetas>
+    </div>
   </div>
 
 

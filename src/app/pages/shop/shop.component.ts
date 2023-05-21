@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
-import {opacity} from "../../animations/animation";
-import {Shop} from "../../../interfaces/shop";
+import {filter, Observable} from 'rxjs';
+import { CartService } from '../../Services/cart.service';
+
 
 interface Producto {
   name: string;
@@ -14,20 +14,33 @@ interface Producto {
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css'],
-  animations: [ opacity ]
+  styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
   selectedImg = '';
   productos!: Observable<Producto[]>;
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore,private router: Router, private cartService: CartService) { }
 
   ngOnInit() {
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+
     this.route.paramMap.subscribe(params => {
       this.selectedImg = params.get('img')!;
       this.loadProducts(this.selectedImg); // Llama a la función loadProducts aquí
+      this.route.paramMap.subscribe(params => {
+        // ...
+      });
     });
+  }
+
+  addToCart(productName: string, productDescription: string, productPicture: string) {
+    this.cartService.addToCart(productName, productDescription, productPicture);
   }
 
   // Crea la función loadProducts para cargar los productos de la tienda seleccionada
@@ -35,13 +48,13 @@ export class ShopComponent implements OnInit {
     let collectionName: string;
 
     switch (store) {
-      case 'foot_locker.svg':
+      case 'FootLocker.svg':
         collectionName = 'footLocker';
         break;
-      case 'Zara_logo.svg':
+      case 'Zara.svg':
         collectionName = 'Zara';
         break;
-      case 'JD_logo.svg':
+      case 'JD.svg':
         collectionName = 'JD';
         break;
       default:
