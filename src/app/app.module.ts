@@ -1,3 +1,5 @@
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -33,7 +35,7 @@ import {ShopapiComponent} from "./pages/manager/subpages/shopapi/shopapi.compone
 import {MyshopComponent} from "./pages/manager/subpages/myshop/myshop.component";
 import {OrdersComponent} from "./pages/manager/subpages/orders/orders.component";
 import {ManagerComponent} from "./pages/manager/manager.component";
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ShoploginComponent } from "./pages/shoplogin/shoplogin.component";
 import {FormsModule} from "@angular/forms";
 import { CartService} from "./Services/cart.service";
@@ -98,21 +100,32 @@ const appRoute: Routes = [
     ShoploginComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(appRoute),
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
-        HttpClientModule,
-        AngularFireAuthModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore()),
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoute),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    HttpClientModule, // Importación correcta
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+  ],
   providers: [CartService],
   bootstrap: [AppComponent]
 })
 
+
 export class AppModule {
 
+}
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

@@ -3,7 +3,7 @@
 </div>
 
 <div class="search">
-  <input type="text" class="search__input" placeholder="Search...">
+  <input type="text" class="search__input" placeholder="{{ 'card.searchPlaceholder' | translate }}">
   <button class="search__button">
     <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
       <g>
@@ -13,15 +13,6 @@
   </button>
 </div>
 
-
-<!-- Aquí va tu comentario
-<div class="container-fluid2">
-  <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
-</div>
--->
 <div class="main" style="display: inline-flex;">
   <div class="card" style="width: 18rem;" *ngFor="let producto of productos | async; index as i">
     <img [src]="producto.foto" class="card-img-top " alt="...">
@@ -37,11 +28,11 @@
         <div class="accordion-item">
           <h2 class="accordion-header" [id]="'flush-heading' + i">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i">
-              {{producto.name}}
+              {{ producto.name }}
             </button>
           </h2>
           <div [id]="'flush-collapse' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-heading' + i" [attr.data-bs-parent]="'#accordionFlushExample' + i">
-            <div class="accordion-body">{{producto.description}}</div>
+            <div class="accordion-body">{{ producto.description }}</div>
           </div>
         </div>
       </div>
@@ -49,4 +40,3 @@
     </div>
   </div>
 </div>
-
