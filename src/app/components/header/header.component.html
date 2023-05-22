@@ -67,7 +67,7 @@
   </div>
 
   <div class="cart">
-    <div class="btn2_cart">
+    <div class="btn2_cart" routerLink="/cart">
       <img src="./assets/IMG/carrito.svg" alt="{{ 'header.cart' | translate }}">
     </div>
     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -83,7 +83,7 @@
       </button>
     </div>
     <div class="offcanvas-body" id="cuerpo_carrito">
-      <button class="btn_añadir_articulos" type="button">{{ 'header.addItems' | translate }}</button>
+      <button class="btn_añadir_articulos" routerLink="/cart" type="button">{{ 'header.addItems' | translate }}</button>
     </div>
   </div>
 </nav>
