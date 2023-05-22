@@ -119,6 +119,7 @@ h5{
   border-radius: 4px; /* Radio de la esquina del pulgar */
 }
 
+
 @media (max-width: 900px){
   .contenedor{
     width: 250px;

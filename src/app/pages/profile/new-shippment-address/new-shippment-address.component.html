@@ -1,0 +1,43 @@
+<div class="overlay">
+  <div class="form-container">
+    <form id="myForm">
+      <div class="form-column">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="lastName">Apellidos:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+
+        <label for="phoneNumber">Número de teléfono:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+        <label for="alias">Alias:</label>
+        <input type="text" id="alias" name="alias" required>
+
+        <label for="shipmentAddress">Dirección de envío:</label>
+        <input type="text" id="shipmentAddress" name="shipmentAddress" required>
+
+        <label for="additionalInformation">Información Adicional:</label>
+        <input type="text" id="additionalInformation" name="additionalInformation" required>
+
+        <label for="zipCode">Código Postal:</label>
+        <input type="text" id="zipCode" name="zipCode" required>
+
+        <label for="population">Población:</label>
+        <input type="text" id="population" name="population" required>
+
+        <label for="province">Provincia:</label>
+        <input type="text" id="province" name="province" required>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" (click)="saveData()">Guardar</button>
+        <button type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+    <div id="errorMessage" class="error-message"></div>
+  </div>
+</div>

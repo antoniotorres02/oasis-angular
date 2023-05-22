@@ -5,12 +5,13 @@
   background-color: #FCCD5F;
   height: 50px;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding-right: 10px;
   padding-left: 10px;
   align-items: center;
   border-radius: 20px 20px 0px 0px;
+  border: 2px solid rgba(0, 0, 0, 0.44);
 }
 
 #selector button {
@@ -34,13 +35,13 @@
   display: grid;
   grid-template-rows: 300px 100px;
   justify-content: center;
-
 }
 
 #manager_top img {
-  max-height: 400px;
-  max-width: 600px;
+  max-height: 200px;
+  max-width: 400px;
   align-self: center;
+  justify-self: center;
 }
 
 #manager_top h1 {

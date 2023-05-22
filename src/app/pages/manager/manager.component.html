@@ -1,15 +1,17 @@
 <div id="manager_top">
-  <img src="assets/IMG/logo-primark-for-website.png" alt="shop_logo">
-  <h1 id="shop_name">{{ 'manager.title' | translate }}</h1>
+  <img src="{{shop.image}}" alt="shop_logo">
+  <h1 id="shop_name">{{shop.name}} manager for Oasis</h1>
 </div>
+
 
 <div id="manager">
   <div id="selector">
-    <button routerLink="orders">{{ 'manager.orders' | translate }}</button>
-    <button routerLink="myshop">{{ 'manager.myShop' | translate }}</button>
-    <button routerLink="myinfo">{{ 'manager.myInfo' | translate }}</button>
-    <button routerLink="shopsupport">{{ 'manager.support' | translate }}</button>
-    <button routerLink="shopapi">{{ 'manager.apiUsage' | translate }}</button>
+    <button (click)="navigate('orders')">Pedidos</button>
+    <button (click)="navigate('myshop')">Mi tienda</button>
+    <button (click)="navigate('myinfo')">  Mi información</button>
+    <button (click)="navigate('shopsupport')">Soporte</button>
+    <button (click)="navigate('shopapi')">Como usar API</button>
+    <button (click)="navigate('myproducts')">Mis productos</button>
   </div>
   <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,33 @@
+<div class="contenedor">
+  <div class="contenedor-modal">
+
+    <div class="top">
+      <h5>Añadir Tarjeta</h5>
+    </div>
+
+    <div class="formulario">
+      <div class="almacen">
+        <button (click)="Mastercard()">MasterCard</button>
+        <button (click)="Visa()">Visa</button>
+      </div>
+      <div class="almacen">
+        <p>Titular:</p>
+        <input type="text" [(ngModel)]="Datos[1]">
+      </div>
+      <div class="almacen">
+        <p>Fecha:</p>
+        <input type="text" [(ngModel)]="Datos[2]">
+      </div>
+      <div class="almacen">
+        <p>Número:</p>
+        <input type="text" [(ngModel)]="Datos[3]">
+      </div>
+    </div>
+
+    <div class="botom">
+      <button (click)="Anadir()">Añadir</button>
+      <button (click)="Cerrar()">Cerrar</button>
+    </div>
+
+  </div>
+</div>

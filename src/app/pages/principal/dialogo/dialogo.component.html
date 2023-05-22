@@ -1,9 +1,9 @@
 <div class="contenido">
   <div class="editar">
-    <button (click)="closeDialog()">Editar Marco</button>
+    <button (click)="openEditDialog();closeDialog()">Editar Marco</button>
   </div>
   <div class="quitar">
-    <button (click)="closeDialog()">Quitar Marco</button>
+    <button (click)="closeMarco(); closeDialog()">Quitar Marco</button>
   </div>
 </div>
 

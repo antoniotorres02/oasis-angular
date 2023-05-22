@@ -1,133 +1,47 @@
-
-
-
-
-<div class="containerCart">
-  <div class="cartBox">
-    <div class="cart-header-box">
-      <div class="headerBox1">
-        <h1 id="header">{{ 'cart.cart' | translate }}</h1>
-      </div>
-      <div class="headerBox2">
-        <h1 id="header">{{ 'cart.price' | translate }}</h1>
-      </div>
+<div class="all">
+  <div class="headerTitle">
+    <div class="headerCart">
+      <h1 id="header"> Cart</h1>
     </div>
 
-    <div class="scroll-bg">
-      <div class="scroll-div">
-        <div class="cart-item-box">
-          <div class="cart-item-picture">
-            <h1 class="picture">{{ 'cart.picture' | translate }}</h1>
-          </div>
-          <div class="cart-item-description">
-            <h1 class="description">{{ 'cart.description' | translate }}</h1>
-            <h2 class="delivery">{{ 'cart.deliveryAvailable' | translate }}</h2>
-            <h2 class="in-stock">{{ 'cart.inStock' | translate }}</h2>
-            <h2 class="quantity">{{ 'cart.quantity' | translate }}: 1</h2>
-          </div>
-          <div class="cart-item-others">
-            <div class="cart-item-brand">
-              <h1 class="brand">{{ 'cart.brand' | translate }}</h1>
-            </div>
-            <div class="cart-others-middle-box">
-              <div class="cart-price-per-unit">
-                <h1 class="price-per-unit">{{ 'cart.pricePerUnit' | translate }}</h1>
-              </div>
-              <div class="cart-delete">
-                <h1 class="delete">{{ 'cart.delete' | translate }}</h1>
-              </div>
-            </div>
-            <div class="cart-price">
-              <h1 class="price">0.00€</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart-item-box">
-          <div class="cart-item-picture">
-            <h1 class="picture">{{ 'cart.picture' | translate }}</h1>
-          </div>
-          <div class="cart-item-description">
-            <h1 class="description">{{ 'cart.description' | translate }}</h1>
-            <h2 class="delivery">{{ 'cart.deliveryAvailable' | translate }}</h2>
-            <h2 class="in-stock">{{ 'cart.inStock' | translate }}</h2>
-            <h2 class="quantity">{{ 'cart.quantity' | translate }}: 1</h2>
-          </div>
-          <div class="cart-item-others">
-            <div class="cart-item-brand">
-              <h1 class="brand">{{ 'cart.brand' | translate }}</h1>
-            </div>
-            <div class="cart-others-middle-box">
-              <div class="cart-price-per-unit">
-                <h1 class="price-per-unit">{{ 'cart.pricePerUnit' | translate }}</h1>
-              </div>
-              <div class="cart-delete">
-                <h1 class="delete">{{ 'cart.delete' | translate }}</h1>
-              </div>
-            </div>
-            <div class="cart-price">
-              <h1 class="price">0.00€</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart-item-box">
-          <div class="cart-item-picture">
-            <h1 class="picture">{{ 'cart.picture' | translate }}</h1>
-          </div>
-          <div class="cart-item-description">
-            <h1 class="description">{{ 'cart.description' | translate }}</h1>
-            <h2 class="delivery">{{ 'cart.deliveryAvailable' | translate }}</h2>
-            <h2 class="in-stock">{{ 'cart.inStock' | translate }}</h2>
-            <h2 class="quantity">{{ 'cart.quantity' | translate }}: 1</h2>
-          </div>
-          <div class="cart-item-others">
-            <div class="cart-item-brand">
-              <h1 class="brand">{{ 'cart.brand' | translate }}</h1>
-            </div>
-            <div class="cart-others-middle-box">
-              <div class="cart-price-per-unit">
-                <h1 class="price-per-unit">{{ 'cart.pricePerUnit' | translate }}</h1>
-              </div>
-              <div class="cart-delete">
-                <h1 class="delete">{{ 'cart.delete' | translate }}</h1>
-              </div>
-            </div>
-            <div class="cart-price">
-              <h1 class="price">0.00€</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="headerPrice">
+      <h1 id="header"> Price</h1>
     </div>
 
-    <div class="cart-box-bottom">
-      <div class="buy-button-box">
-        <button class="buy-button">{{ 'cart.buyNow' | translate }}</button>
-      </div>
-      <div class="total-box">
-        <h2 id="total-cost">{{ 'cart.total' | translate }}: 0.00€</h2>
-      </div>
+    <div class="headerSimilar">
+      <h1 id="header">Similar Products</h1>
     </div>
   </div>
 
-  <div class="cartSimilar">
-    <div class="header-similar-box">
-      <h1 id="header-similar">{{ 'cart.similarProducts' | translate }}</h1>
+  <div class="containerCartSimilar">
+    <div class="containerCart" [ngClass]="{'scrollable': cartItems.length > 2}">
+      <div *ngFor="let item of cartItems">
+        <div class="container">
+          <div class="col producto_pedido ">
+            <div class="col producto_imagen col-md-2">
+              <img [src]="item.picture" width="100%" height="100%" alt="Product Image">
+            </div>
+            <div class="col col-lg-6">
+              <p>{{ item.name }}</p>
+              <p>{{ item.description }}</p>
+              <p>x 1 Unidades</p>
+            </div>
+            <div id="col-lg-2">
+              <button type="button" class="btn btn-outline-secondary pedido_boton_devolver " (click)="eliminarItem(item.name)">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="similar-product-box">
-      <div class="similar-product">
-        <h1 class="similar-picture">{{ 'cart.picture' | translate }}</h1>
+    <div class="containerSimilar"></div>
+  </div>
+  <div class="containerBottom">
+    <div class="containerBottom1">
+      <div class="buyButton">
+        <a class="btn btn-primary" id="buy" (click)="printCart()">Buy</a>
       </div>
-      <div class="similar-product">
-        <h1 class="similar-picture">{{ 'cart.picture' | translate }}</h1>
-      </div>
-      <div class="similar-product">
-        <h1 class="similar-picture">{{ 'cart.picture' | translate }}</h1>
-      </div>
-      <div class="similar-product">
-        <h1 class="similar-picture">{{ 'cart.picture' | translate }}</h1>
+      <div class="headerTotal">
+        <h2 id="total"> Total: 0.00€</h2>
       </div>
     </div>
   </div>

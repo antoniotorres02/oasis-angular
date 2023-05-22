@@ -1,0 +1,35 @@
+<div class="contenedor">
+  <div class="contenedor-modal">
+
+    <div class="top">
+      <h5>Editar Tarjeta</h5>
+    </div>
+
+    <div class="formulario">
+      <div class="almacen">
+        <p>Titular:</p>
+        <input type="text" [(ngModel)]="Datos[0]">
+      </div>
+      <div class="almacen">
+        <p>Fecha:</p>
+        <input type="text" [(ngModel)]="Datos[1]">
+      </div>
+      <div class="almacen">
+        <p>Número:</p>
+        <input type="text" [(ngModel)]="Datos[2]">
+      </div>
+    </div>
+    <div class="colores">
+      <div class="black" id="color"></div>
+      <div class="red" id="color"></div>
+      <div class="blue" id="color"></div>
+      <div class="platinum" id="color"></div>
+      <div class="gold" id="color"></div>
+    </div>
+    <div class="botom">
+      <button (click)="Editar();Cerrar()">Editar</button>
+      <button (click)="Cerrar()">Cerrar</button>
+    </div>
+
+  </div>
+</div>
